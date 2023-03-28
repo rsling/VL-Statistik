@@ -1,0 +1,192 @@
+\def\GRAPHPATH{localgraphics}
+
+\ifdefined\HANDOUT
+  \documentclass[handout,aspectratio=1610,dvipsnames]{beamer}
+  \def\GRAPHPATH{graphics}
+\else
+  \documentclass[aspectratio=1610,dvipsnames]{beamer}
+\fi
+
+\input{localpackages.tex}
+\input{localcommands.tex}
+
+\ifdefined\TITLE
+  \title[Syntax | \StrSubstitute{\TITLE}{+}{ }]{Deutsche Syntax\\\StrSubstitute{\TITLE}{+}{ }}
+\else
+  \title[Deutsche Syntax]{Deutsche Syntax}
+\fi
+
+\author{Roland Schäfer}
+\institute[FSU Jena]{Institut für Germanistische Sprachwissenschaft\\Friedrich-Schiller-Universität Jena}
+\date[EGBD3]{\grau{stets aktuelle Fassungen: \url{https://github.com/rsling/VL-Deutsche-Syntax}}}
+
+\begin{document}
+
+\begingroup
+  \setbeamertemplate{navigation symbols}{}
+  \begin{frame}[noframenumbering,plain]
+   \titlepage
+  \end{frame}
+
+  \ifdefined\TITLE
+    \begin{frame}[noframenumbering,plain]
+      \centering 
+      \begin{minipage}[c]{0.975\textwidth}
+      \begin{block}
+        {\rot{Hinweise für diejenigen, die die Klausur bestehen möchten}}
+        \begin{enumerate}
+          \item Folien sind niemals selbsterklärend und nicht zum Selbststudium geeignet.\\
+            Sie müssen sich die Videos ansehen und regelmäßig das Seminar besuchen.
+          \item Ohne eine gründliche Lektüre der angegebenen Abschnitte des Buchs\\
+            bestehen Sie die Klausur nicht.
+            Das Buch definiert den Klausurstoff.
+          \item Arbeiten Sie die entsprechenden Übungen im Buch durch.
+            Nichts hilft\\
+            Ihnen besser, um sich auf die Klausur vorzubereiten.
+          \item \rot{Beginnen Sie spätestens jetzt mit dem Lernen.}
+            \Zeile
+          \item \rot{Langjähriger Erfahrungswert:
+            Wenn Sie diese Hinweise nicht berücksichtigen, bestehen Sie die Klausur wahrscheinlich nicht.}
+        \end{enumerate}
+      \end{block}
+      \end{minipage}
+    \end{frame}
+  \else
+  \begin{frame}{Inhalt}
+    \centering 
+    \scalebox{0.9}{\begin{minipage}{\textwidth}
+      \begin{multicols}{2}
+        \tableofcontents
+      \end{multicols}
+    \end{minipage}}
+    \end{frame}
+  \fi
+\endgroup
+
+\ifdefined\TITLE
+  \input{includes/\TITLE}
+\else
+  \section[Grammatik]{Grammarik}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/01.+Grammatik.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Grundbegriffe]{Grundbegriffe}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/02.+Grundbegriffe.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Wortklassen]{Wortklassen}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/03.+Wortklassen.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Konstituenten]{Konstituen und Satzglieder}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/04.+Konstituenten+und+Satzglieder.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Nominalphrasen]{Nominalphrasen}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/05.+Nominalphrasen.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Phrasen]{Andere Phrasen}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/06.+Andere+Phrasen.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Verbphrasen]{Verbphrasen und Verbkomplexe}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/07.+Verbphrasen+und+Verbkomplexe.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Sätze]{Sätze}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/08.+Sätze.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Nebensätze]{Nebensätze}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/09.+Nebensätze.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Subjekte\slash Prädikate]{Subjekte und Prädikate}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/10.+Subjekte+und+Prädikate.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Passive\slash Objekte]{Passive und Objekte}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/11.+Passive+und+Objekte.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section[Infinitivsyntax]{Syntax infiniter Verbformen}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/12.+Syntax+infiniter+Verbformen.tex}
+  \let\subsection\section\let\section\woopsi
+
+  \section{Vor der Klausur}
+
+  \begin{frame}
+    {Deutsche Syntax | Plan}
+    \rot{Alle} angegebenen Kapitel\slash Abschnitte aus \rot{\citet{Schaefer2018b}} sind \rot{Klausurstoff}!\\
+    \Halbzeile
+    \begin{enumerate}
+      \item Grammatik und Grammatik im Lehramt \rot{(Kapitel 1 und 3)}
+      \item Grundbegriffe \rot{(Kapitel 2)}
+      \item Wortklassen \rot{(Kapitel 6)}
+      \item Konstituenten und Satzglieder \rot{(Kapitel 11 und Abschnitt 12.1)}
+      \item Nominalphrasen \rot{(Abschnitt 12.3)}
+      \item Andere Phrasen \rot{(Abschnitte 12.2 und 12.4--12.7)}
+      \item Verbphrasen und Verbkomplex \rot{(Abschnitte 12.8)}
+      \item Sätze \rot{(Abschnitte 12.9 und 13.1--13.3)} 
+      \item Nebensätze \rot{(Abschnitt 13.4)}
+      \item Subjekte und Prädikate \rot{(Abschnitte 14.1--14.3)}
+      \item Passive und Objekte \rot{(14.4 und 14.5)}
+      \item Syntax infiniter Verbformen \rot{(Abschnitte 14.7--14.9)}
+    \end{enumerate}
+    \Halbzeile
+    \centering 
+    \url{https://langsci-press.org/catalog/book/224}
+  \end{frame}
+\fi
+
+
+\makeatletter
+\setcounter{lastpagemainpart}{\the\c@framenumber}
+\makeatother
+
+\appendix
+
+\begin{frame}[allowframebreaks]
+  {Literatur}
+  \renewcommand*{\bibfont}{\footnotesize}
+  \setbeamertemplate{bibliography item}{}
+  \printbibliography
+\end{frame}
+
+\begin{frame}
+  {Autor}
+  \begin{block}{Kontakt}
+    Prof.\ Dr.\ Roland Schäfer\\
+    Institut für Germanistische Sprachwissenschaft\\
+    Friedrich-Schiller-Universität Jena\\
+    Fürstengraben 30\\
+    07743 Jena\\[\baselineskip]
+    \url{https://rolandschaefer.net}\\
+    \texttt{roland.schaefer@uni-jena.de}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  {Lizenz}
+  \begin{block}{Creative Commons BY-SA-3.0-DE}
+    Dieses Werk ist unter einer Creative Commons Lizenz vom Typ \textit{Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Deutschland} zugänglich.
+    Um eine Kopie dieser Lizenz einzusehen, konsultieren Sie \url{http://creativecommons.org/licenses/by-sa/3.0/de/} oder wenden Sie sich brieflich an Creative Commons, Postfach 1866, Mountain View, California, 94042, USA.
+  \end{block}
+\end{frame}
+
+\mode<beamer>{\setcounter{framenumber}{\thelastpagemainpart}}
+
+\end{document}

@@ -1,0 +1,702 @@
+\section{Freiheitsgrade}
+
+\begin{frame}
+  {Freiheitsgrade "`intuitiv"'}
+  \begin{itemize}[<+->]
+    \item Beispiel: Schätzung eines Parameters (\zB Mittel)\\
+      auf Basis von 1000 gemessenen Werten
+    \item Wenn 999 Werte bekannt sind,\\
+      steht abhängig vom Mittel der 1000ste Wert fest.
+      \Zeile
+    \item Für jedes Mittel $\mu$ einer Stichprobe mit $n$ Messungen\\
+      sind also nur $n-1$ frei wählbar.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {(Unintuitive) Erweiterung(en)}
+  \begin{itemize}[<+->]
+    \item generell: \alert{$df=n-|E|$}\\
+      wobei $E$ die zu schätzenden Parameter sind. $|E|$ ist ihre Anzahl.
+    \item Warum bei \alert{$\chi^2$} dann \alert{$df=(Zeilenzahl-1)\cdot(Spaltenzahl-1)$}?
+      \Zeile
+    \item Bsp.: Tabelle mit $2\times3$ Feldern, also $df=(2-1)(3-1)=1\cdot2=2$\ldots
+    \item Bei bekannten Randsummen sind aber tatsächlich nur 2 Felder frei wählbar!
+  \end{itemize}
+  \begin{center}
+    \visible<4->{
+      \begin{tabular}[h!]{|c|c|c|c}
+	\cline{2-3}
+	\multicolumn{1}{c|}{}& X1 & X2 \\
+	\cline{1-3}
+	Y1 & $\oplus$ & & ZS1 \\
+	\cline{1-3}
+	Y2 & $\oplus$ & & ZS2 \\
+	\cline{1-3}
+	Y3 & & & ZS3 \\
+	\cline{1-3}
+	\multicolumn{1}{c}{}& \multicolumn{1}{c}{SQ1} & \multicolumn{1}{c}{SQ2} & \\
+      \end{tabular}
+    }
+  \end{center}
+\end{frame}
+
+
+\section{Mehr zu Zähldatentests}
+
+
+\subsection[Effektstärke]{Effektstärke für $\chi^2$: Cramérs $v$ und $\phi$}
+
+\begin{frame}{Effektstärke}
+
+  Der $\chi^2$-Wert sagt nichts über die \alert{Stärke eines Zusammenhangs}!\\
+  \onslide<2->{Bei höheren absoluten Frequenzen wird auch der $\chi^2$-Wert größer.}
+
+  \begin{figure}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+      \hline
+      &  haben & sein\\
+      \hline
+      nord   &  27      & 33 \\
+      \hline
+	sued   &   3      & 34 \\
+      \hline
+    \end{tabular}~$\chi^2$ = \onslide<4->{\alert{12,89}}~\visible<6->{
+    \begin{tabular}{|c|c|c|}
+      \hline
+	    &  haben & sein\\
+      \hline
+	nord   &  27.84\% & 34.02\% \\
+      \hline
+	sued   &  3.09\%     & 35.05\% \\
+      \hline
+    \end{tabular}
+    }
+  \end{figure}
+
+  \begin{figure}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+      \hline
+	    &  haben & sein\\
+      \hline
+	nord   &  54      & 66 \\
+      \hline
+	sued   &  6     & 68 \\
+      \hline
+      \end{tabular}~$\chi^2$ = \onslide<5->{\alert{27,46}}~\visible<7->{
+      \begin{tabular}{|c|c|c|}
+      \hline
+	    &  haben & sein\\
+      \hline
+	nord   &  27.84\%      & 34.02\% \\
+      \hline
+	sued   &   3.09\%      & 35.05\% \\
+      \hline
+    \end{tabular}
+  }
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Effektstärke II}
+  Pearsons $\phi$: Maß für die Stärke des Zusammenhangs in 2$\times$2-Tabellen
+    
+  \begin{figure}
+    \centering
+    \alert{$\phi = \sqrt{\frac{\chi^2}{n}}$}
+  \end{figure}
+
+  \visible<2->{$\phi$ ist eine Zahl zwischen 0 und 1:\\
+  Je größer, desto stärker der Zusammenhang zwischen den Variablen.}
+
+  \visible<3->{
+  \begin{figure}
+  \centering
+  Beispiel: \(\phi = \sqrt{\frac{\chi^2}{n}} = \sqrt{\frac{12.89}{97}} = \onslide<1->{\alert{0.3648}\)}}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  {Cramérs $v$}
+
+  Cramérs $v$ für $n\times n$-Tabellen mit $n>2$ oder $m>2$
+
+  \begin{center}
+    \alert{$v=\sqrt{\frac{\frac{\chi^2}{n}}{min(s-1,z-1)}}$}\\
+    mit: $s$ die Spaltenzahl und $z$ die Zeilenzahl
+  \end{center}
+
+  \vspace{1cm}
+  \footnotesize
+  Beachte: für $2\times2$-Tabellen: $s-1=1$ und $z-1=1$,\\[2ex]
+  also $min(s-1,z-1)=1$\\[1ex]
+  daher: $v=\sqrt{\frac{\ \ \frac{\chi^2}{n}\ \ }{1}}=\sqrt{\frac{\chi^2}{n}}=\phi$
+
+\end{frame}
+
+
+\begin{frame}
+  {In \texttt{R}}
+  Speichern des Test-Objekts:\\
+  \texttt{> my.chi2.test <- chisq.test(my.matrix)}\\
+  \vspace{0.5cm}
+  
+  Speichern des $\chi^2$-Werts mit:\\
+  \texttt{> my.chi2.value <- as.numeric(my.chi2.test\$statistic})\\
+  \vspace{0.5cm}
+  
+  Speichern von $n$:\\
+  \texttt{> my.n <- sum(my.matrix)}\\
+  \vspace{0.5cm}
+
+  Also Effektstärke (mit Ausgabe):\\
+  \texttt{> my.phi <- sqrt( my.chi2.value / my.n ); my.phi}
+\end{frame}
+
+
+\subsection[Chancenverhältnis]{Chancenverhältnis}
+
+\begin{frame}
+  {Chance (odds)}
+  \begin{itemize}[<+->]
+    \item Die \alert{Chance (odds)} $o$ setzt die Wahrscheinlichkeit $p$ eines Ereignisses $E$\\
+      in Relation zur Gegenwahrscheinlichkeit:
+  \end{itemize}
+  \pause
+   \begin{center}
+     \alert{$o(E)=\frac{p(E)}{1-p(E)}$}\\[2ex]
+     \pause
+     und damit\\[2ex]
+     \pause
+     \alert{$p(E)=\frac{o(E)}{1+o(E)}$}
+  \end{center}
+  \pause
+  \begin{itemize}[<+->]
+    \item Ein Ereignis ist in Korpusstudien i.\,d.\,R.\\\
+      das Auftreten einer \alert{Variablenausprägung}.
+    \item Die Information in den Maßen Wahrscheinlichkeit und Chance\\
+      ist dieselbe (s. Umrechenbarkeit ineinander).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Chance und Wahrscheinlichkeit und Zähldaten}
+  \vspace{-1cm}
+      \begin{center}
+	\begin{tabular}{|c|c|}
+	      \hline
+	      \textbf{Aux} & \textbf{Anzahl} \\
+	      \hline
+	      haben   &  27   \\
+	      \hline
+	      sein   &  33   \\
+	      \hline
+	    \end{tabular}\\
+      \end{center}
+      \pause
+      $p(haben)=\frac{27}{27+33}=\frac{27}{60}=0.45$ (Wahrscheinlichkeit)\\[2ex]
+      \pause
+      $1-p(haben)=p(\neg haben)=\frac{33}{27+33}=\frac{33}{60}=0.55$ (\alert{Gegenwahrscheinlichkeit})\\[2ex]
+      \pause
+      Beachte: $p(haben)+p(\neg haben)=1$\\[2ex]
+      \pause
+      \alert{$o(haben)=\frac{\ \frac{27}{60}\ }{\frac{33}{60}}=\frac{27}{60}\cdot\frac{60}{33}=\frac{27}{33}=0.82$}\\[2ex]
+      \pause
+      allgmein: \alert{$p(E)=\frac{Anzahl(E)}{Anzahl(E)+Anzahl(\neg E)}$} und \alert{$o(E)=\frac{Anzahl(E)}{Anzahl(\neg E)}$}\\[2ex]
+\end{frame}
+
+\begin{frame}
+  {Chancenverhältnis (odds ratio)}
+  \begin{itemize}
+    \item Das \alert{Chancenverhältnis (odds ratio)} gibt das Verhältnis an, wie sich\\
+      die Chancen einer Variablenausprägung $E$ unter Bedingung $A$ --\\
+      also $o(E|A)$ -- und unter Bedingung $B$ -- also $o(E|B)$ -- \\
+      zueinander Verhalten:
+  \end{itemize}
+  \begin{center}
+    \alert{$r(E|A, E|B)=\frac{o(E|A)}{o(E|B)}$}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Beispiel zum Chancenverhältnis (1)}
+  \begin{itemize}
+    \item Wir haben Texte aus Süddeutschland und Norddeutschland auf\\
+      das Auftreten des Perfektauxiliars \textit{haben} und \textit{sein} bei\\
+      bestimmten Verben untersucht.
+    \item Die Kreuztabelle:
+      \begin{center}
+	\begin{tabular}{|c|c|c|}
+	      \hline
+	      &  nord & sued \\
+	      \hline
+	      haben   &  27      & 3   \\
+	      \hline
+	      sein   &  33      & 34  \\
+	      \hline
+	\end{tabular}
+      \end{center}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Beispiel zum Chancenverhältnis (2)}
+    \begin{center}
+      \scalebox{0.7}{
+	\begin{tabular}{|c|c|c|}
+	      \hline
+	      &  nord & sued \\
+	      \hline
+	      haben   &  27      & 3   \\
+	      \hline
+	      sein   &  33      & 34  \\
+	      \hline
+	\end{tabular}
+      }
+    \end{center}
+    \begin{itemize}
+      \item $o(haben|nord)=\frac{27}{33}=0.82$
+      \item $o(haben|sued)=\frac{3}{34}=0.09$
+	\pause\pause\pause
+      \item Verhältnis zwischen den Chancen: \onslide<5->{$or=\frac{0.82}{0.09} = 9.11$}
+	\pause\pause
+      \item D.\,h.\ die Chance von \textit{haben} ist 9.11 mal größer, wenn \textit{Region} \textit{nord} ist.
+	\pause
+      \item Ersatz für Effektstärke bei Fisher-Test
+    \end{itemize}
+\end{frame}
+
+\subsection{Binomialtest}
+
+\begin{frame}
+  {Bernoulli-Experimente}
+  \begin{itemize}[<+->]
+    \item binäre Daten: Ereignis vs.\ Nicht-Ereignis bzw.\ Ja\slash Nein
+      \vspace{0.5cm}
+    \item Vgl. Behauptung: "`Gen/Dat alternieren frei bei \textit{wegen}."'
+      \begin{itemize}[<+->]
+	\item "`frei alternieren"' = beide Kasus haben die gleiche Chance.
+	\item Grundgesamtheit per Hypothese: \alert{50\% Genitive} und \alert{50\% Dative}
+      \end{itemize}
+      \vspace{0.5cm}
+    \item Korpusstichprobe: \alert{F(Genitiv)=41} und \alert{F(Dativ)=59}
+    \item Passt das zur Hypothese bei sig=0.05?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Binomialtest}
+  \begin{itemize}[<+->]
+    \item H0: Es gibt keine Abweichung von der erwarteten Wahrscheinlichkeit.
+      \Zeile
+    \item \alert{H0: $p(Dativ)=0.5$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Binomialtest im Einzelnen}
+  Benötigte Größen:
+
+  \begin{itemize}[<+->]
+    \item Stichproben der Größe \alert{$n$}
+    \item H0-Wahrscheinlichkeit \alert{$p$} (hier $p=0.5$)
+    \item Anzahl der beobachteten Ereignisse: \alert{X} (hier $X(Dativ)=59$)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Unter Annahme der H0\ldots}
+  \begin{itemize}[<+->]
+    \item Wenn \alert{$p\cdot n>10$ und $(1-p)\cdot n>10$}\\
+      approximiert die Binomialverteilung die Normalverteilung.
+      \Zeile
+    \item Es gilt dann (unter Annahme der H0!) für die Normalverteilung:
+      \Zeile
+      \begin{itemize}
+	\item Mittel: \alert{$\mu=p\cdot n$}
+	\item Standardabweichung: \alert{$s=\sqrt{n\cdot p\cdot(1-p)}$}
+	\item Wir können für den gemessenen Wert den z-Wert ausrechnen.
+      \end{itemize}
+  \end{itemize}
+  \pause
+  \vspace{0.5cm}
+  \begin{center}
+    \alert{$z=\frac{X-\mu}{s}=\frac{X-p\cdot n}{\sqrt{n\cdot p\cdot (1-p)}}$}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Ausrechnen des Beispiels und Signifikanz}
+  \begin{center}
+    $z=\frac{59-(0.5\cdot 100)}{\sqrt{100\cdot 0.5\cdot 0.5}}=\frac{59-50}{\sqrt{25}}=\frac{9}{5}=1.8$
+  \end{center}
+  \pause
+  \begin{itemize}[<+->]
+    \item Der gemessene Wert liegt 1.8 Standardabweichungen\\
+      vom H0-Mittel entfernt.
+    \item Wir kennen bereits die kritischen Werte für Normalverteilungen\\
+      und sig=0.05: \alert{$-1.96 .. 1.96$}
+    \item Die H0 kann also nicht zurückgewiesen werden bei sig=0.05.
+      \Zeile
+    \item \alert{Interpretation: Wir haben keine Evidenz dafür,\\
+      dass die Variation in der Grundgesamtheit von\\
+    einer 50:50-Verteilung abweicht.}
+      \Zeile
+    \item \rot{Falsche Interpretation: Wir haben Evidenz dafür,\\
+      dass die Verteilung in der Grundgesamtheit 50:50 ist.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {In \texttt{R}}
+  \begin{center}
+    \texttt{> binom.test(59, 100, 0.5)}
+  \end{center}
+\tt\footnotesize
+\ \ \ \ \ Exact binomial test\\[4ex]
+
+data:  59 and 100\\
+number of successes = 59, number of trials = 100, p-value = 0.08863\\
+alternative hypothesis: true probability of success is not equal to 0.5\\
+95 percent confidence interval:\\
+\ \ 0.4871442\ \ 0.6873800
+sample estimates:\\
+probability of success 0.59 \\
+\end{frame}
+
+\section{Effektstärken bei t-Test und ANOVA}
+
+\subsection{Ein-Stichpropben-t-Test}
+
+\begin{frame}
+  {Effektstärke Ein-Stichproben-t-Test}
+  \begin{itemize}[<+->]
+    \item Signifikanz $\neq$ starker Effekt
+    \item Effektstärke beim t-Test für Stichprobe $x$:
+  \end{itemize}
+  \pause
+  \begin{center}
+    \alert{Cohens $d=\frac{\bar{x}-\mu}{s(x)}$}
+  \end{center}
+  \pause
+  \begin{itemize}
+    \item Herleitung\slash Erklärung: Gravetter \& Wallnau, Kap.\ 9
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Erklärung der Varianz}
+  \begin{itemize}
+    \item ähnlich der Effektstärke: \\
+      \alert{Welcher Anteil der Varianz in den Daten\\
+      wird durch die Unabhängige erklärt?}
+  \end{itemize}
+  \pause
+  \begin{center}
+    \alert{Cohens $r^2=\frac{t^2}{t^2+df}$}
+  \end{center}
+  \pause
+  \begin{itemize}
+    \item Herleitung\slash Erklärung: Gravetter \& Wallnau, Kap.\ 9
+  \end{itemize}
+\end{frame}
+
+\subsection{Zwei-Stichproben-t-Test}
+
+
+
+\begin{frame}
+  {Effektstärke Zwei-Stichproben-t-Test}
+  Effektstärke
+  \begin{center}
+    $d=\frac{\bar{x_1}-\bar{x_2}}{\sqrt{s^2_p}}$
+  \end{center}
+  \pause
+  Erklärung der Varianz
+  \begin{center}
+    $r^2=\frac{t^2}{t^2+df}$
+  \end{center}
+\end{frame}
+
+
+\subsection{ANOVA}
+
+\begin{frame}
+  {Effektstärke einfaktorielle ANOVA}
+
+  \begin{center}
+    \alert{$\eta^2=\frac{SQ_{zwischen}}{SQ_{gesamt}}$}\\[4ex]
+    (wieder ein $r^2$-Maß)
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  {Effektstärken bei der zweifaktoriellen ANOVA}
+  Entsprechend sind \alert{drei} $\eta^2$ auszurechnen:\\
+
+  \vspace{0.5cm}
+  \begin{center}
+    $\eta^2_A=\frac{SQ_A}{SQ_{gesamt} - SQ_B - SQ_{A\times B}}$ \\[3ex]
+    $\eta^2_B=\frac{SQ_B}{SQ_{gesamt} - SQ_A - SQ_{A\times B}}$ \\[3ex]
+    $\eta^2_{A\times B}=\frac{SQ_{A\times B}}{SQ_{gesamt} - SQ_A - SQ_B}$ \\
+  \end{center}
+
+  Wir fragen jeweils, welchen Anteil an der Varianz,\\
+  die die anderen beiden Faktoren \alert{nicht} erklären,\\
+  der jeweilige dritte Faktor hat.
+\end{frame}
+
+
+
+\section{Voraussetzungen für t-Test und ANOVA}
+
+\begin{frame}
+  {Caveat}
+  \Zeile
+  \begin{center}
+    Bedingung für \rot{alle} Tests:\\
+    \alert{Unabhängigkeit} der Messungen \\
+    \Zeile
+    Wenn bei t-Test oder ANOVA also gepaarte Stichproben vorliegen\\
+    (Messung derselben Proband*innen unter Bedingung 1 und 2 usw.):\\
+    \alert{Besondere Versionen für geparte Stichproben nehmen!}\\
+    \Zeile
+    Details hier nicht besprochen.
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Voraussetzungen prüfen I}
+  Die \alert{GGs müssen normalerverteilt} sein:
+  \begin{center}
+    \texttt{shapiro.test(x)}\\
+    Wenn $p\leq0.05$ wird die Nullhypothese des Shapiro-Wilk-Tests verworfen.\\
+    H0: Die Werte stammen aus einer normalverteilten GG.
+  \end{center}
+  \Zeile
+  \pause
+  Die \alert{Varianzen müssen homogen sein}:
+  \begin{center}
+    \texttt{var.test(x1, x2)}\\
+    Auch hier: $p\leq0.05$ weist die H0 zurück.\\
+    H0: Die Varianzen von x1 und x2 sind homogen.
+  \end{center}
+\pause
+  \Halbzeile
+\begin{center}
+  \alert{Solche Tests sind umstritten, weil sie angeblich zu empfindlich reagieren.\\
+    \cite{ZuurEa2009} empfehlen \zB grafische Methoden. Ich nicht.}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+  {Voraussetzungen prüfen II}
+  Wenn Voraussetzungen nicht erfüllt sind:
+  \begin{itemize}[<+->]
+    \item steigt das Risiko für Typ 1-Fehler
+      \Zeile
+    \item nicht-parametrische Alternative nehmen
+    \item Daten transformieren (Logarithmus für Normalverteilung)
+      \Zeile
+    \item sich über Robustheit des Test ggü. verletzten Annahmen informieren\\
+      (oft schwer zugängliche und kontroverse Spezialliteratur)
+  \end{itemize}
+\end{frame}
+
+
+\section[Alternativen]{Nichtparametrische Alternativen zu t-Test und ANOVA}
+
+\begin{frame}
+  {Übersicht}
+  \begin{itemize}[<+->]
+    \item Alternativen, wenn Bedingungen für t-Test und ANOVA \\
+      nicht erfüllt sind (Normalverteilung, Varianzhomogenität)
+      \Zeile
+    \item Prinzip: \alert{Umrechnen von Werten in Ränge}
+    \item nicht-parametrische Tests
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Literatur}
+  \begin{itemize}
+    \item \cite{BortzLienert2008}
+    \item \cite{GravetterWallnau2007}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Übersicht}
+  \begin{itemize}[<+->]
+    \item Mann-Whitney U-Test: Alternative zum t-Test mit zwei Stichproben
+    \item Kruskal-Wallis H-Test: Alternative zur einfaktoriellen ANOVA
+  \end{itemize}
+\end{frame}
+
+\subsection{Mann-Whitney U-Test}
+
+\begin{frame}
+  {Wiederholung: Bedingungen für t-Test}
+  \begin{itemize}[<+->]
+    \item Intervallskalierung der Abhängigen
+    \item Normalität der Abhängigen
+    \item Varianzhomogenität der Abhängigen in den Gruppen
+    \item Unabhängigkeit der Messungen
+      \Zeile
+  \end{itemize}
+  \pause
+  \begin{center}
+    Alle bis auf die letzte entfallen beim Mann-Whitney U-Test.
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Direkte Berechnung beim MWU}
+  Gruppen\slash Stichproben (Messwerte):\\
+  $x_1=[9,8,12,16]$\\
+  $x_2=[4,11,7,13]$\\[2ex]
+  \pause
+  Ränge in der \alert{zusammengelegten} Stichprobe:\\
+  $X=[4,7,8,9,11,12,13,16]$\\
+  $R(x_1)=[4,3,6,8]$\\
+  $R(x_2)=[1,5,2,7]$\\[2ex]
+  \pause
+  Addiere für jeden Wert beider Gruppen die Anzahl der\\
+  \alert{niedrigeren Ränge (=höhere Rangzahl!)} in der anderen Gruppe:\\
+  $U(x_1)=2+2+1+0=5$\\
+  $U(x_2)=4+2+4+1=11$\\
+  \alert{$U=min(U_{x_1}, U_{x_2})=U_{x_1}=5$}
+\end{frame}
+
+\begin{frame}
+  {Allgemeine Formel}
+  \begin{center}
+    \alert{$U(x_{\alpha})=n_1\cdot n_2+\frac{n_{\alpha}(n_{\alpha}+1)}{2}-\sum R(x_{\alpha})$}
+  \end{center}
+  \pause
+  \begin{itemize}[<+->]
+    \item $\sum R(x_1)=4+3+6+8=21$
+    \item $\sum R(x_2)=1+5+2+7=15$
+    \item $n_1\cdot n_2=4\cdot 4=16$
+    \item $n_1(n_1+1)=n_2(n_2+1)=4\cdot5=20$
+    \item $U(x_1)=16+10-21=5$
+    \item $U(x_2)=16+10-15=11$
+    \item \alert{$U=5$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Siginifikanz und Effektstärke}
+  \begin{itemize}[<+->]
+    \item Signifikanz für kleine Stichproben: \alert{Tabelle}
+    \item bei großen Stichproben: U ugf.\ normalverteilt, also \alert{z-Test}
+    \item in \texttt{R}:
+  \end{itemize}
+  \pause
+  \begin{center}
+    \alert{\texttt{> wilcox.test(x1,x2, paired = FALSE)}}
+  \end{center}
+  \pause
+  \Zeile
+  \begin{itemize}[<+->]
+    \item Effektstärke: Punkt-biserielle Korrelation
+    \item entspricht Pearson-Korrelation, aber Unabhängige ist dichotom
+    \item In \texttt{R}: \alert{\texttt{cor(c(x1,x2), c(rep(0,4),rep(1,4)))}}
+  \Zeile
+    \item alternativ: "`relativer Effekt"' (Bortz \& Lienert, S.\ 142)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Probleme}
+  \begin{itemize}[<+->]
+    \item Bei sehr vielen gleichen Rängen ist\\
+      der Mann-Whitney U-Test unzuverlässig.
+    \item Bei gleichen Rängen generell: korrigierte Version\\
+      (s. Bortz \& Lienert, S.\ 146).
+      \Zeile
+    \item Er ist daher nur begrenzt geeignet für Dinge wie 5-Punkt-Skalen.
+    \item generell am stärksten bei gleich großen und\\
+      gleich stark streuenden Stichproben
+      \Zeile
+    \item letzter Ausweg: \alert{Mediantest} (Bortz \& Lienert, S.\ 137)
+  \end{itemize}
+\end{frame}
+
+\subsection{Kruskal-Wallis H-Test}
+
+\begin{frame}
+  {Mehr als zwei Gruppen}
+  Wie vom t-Test zur ANOVA\ldots\\
+  $x_1=[9,8,12,16]$\\
+  $x_2=[4,11,7,13]$\\
+  $x_3=[13,12,5,15]$\\[2ex]
+  \pause
+  Gleiches Vorgehen wie bei Mann-Whitney über\\
+  \alert{Rang in der zusammengelegten Stichprobe}:\\
+  \begin{center}
+    \begin{tabular}[h!]{|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      X    & 4 & 5 & 7 & 8 & 9 & 11 & 12 & 12 & 13 & 13 & 15 & 16 \\
+      \hline
+      R(X) & 1 & 2 & 3 & 4 & 5 & 6 & \multicolumn{2}{c|}{7.5} & \multicolumn{2}{c|}{9.5} & 11 & 12 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \pause
+  $R(x_1)=[5,4,7.5,12]$\\
+  $R(x_2)=[1,6,3,9.5]$\\
+  $R(x_3)=[9.5,7.5,2,11]$\\
+\end{frame}
+
+\begin{frame}
+  {Berechnung des Kruskal-Wallis H-Werts}
+  \begin{center}
+    \alert{$H=\frac{12}{N(N+1)}\cdot\sum\limits_i \frac{(\sum R(x_i))^2}{n_i}-3(N+1)$}
+  \end{center}
+  \pause
+  Am Beispiel:
+  \begin{itemize}[<+->]
+    \item Gruppen-Rang-Summen:
+      \begin{itemize}
+	\item $R(x_1)=[5,4,7.5,12]$, \alert{$\sum R(x_1)=28.5$}
+	\item $R(x_2)=[1,6,3,9.5]$, \alert{$\sum R(x_2)=19.5$}
+	\item $R(x_3)=[9.5,7.5,2,11]$, \alert{$\sum R(x_3)=30$}
+      \end{itemize}
+    \item $\alert{H}=\frac{12}{12\cdot(12+1)}\cdot(\frac{28.5^2}{4}+\frac{19.5^2}{4}+\frac{30^2}{4})-3(12+1)=$
+    \item $0.077\cdot(203.06+95.06+225)-39=\alert{1.28}$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Signifikanztest}
+  \begin{itemize}[<+->]
+    \item Bei $n>5$ ist H unter der H0 \alert{$\chi^2$-verteilt}.
+    \item mit \alert{$df=k-1$} ($k$ ist die Anzahl der Gruppen)
+      \Zeile
+    \item Effektstärke: tja\ldots
+    \item "`relative Effekte"' sind rechenbar (Bortz \& Lienert, S.\ 159)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {In \texttt{R}}
+  \begin{center}
+    \alert{\texttt{> kruskal.test(c(x1,x2,x3)~c(rep(0,4),rep(1,4),rep(2,4)))}}
+  \end{center}
+  Rechnen Sie bitte mal die U- und H-Tests von diese Folien\\
+  und vergleichen Sie die p-Werte mit denen von t-Test und ANOVA\\
+  über die gleichen Daten:\\[3ex]
+  $x_1=[9,8,12,16]$\\
+  $x_2=[4,11,7,13]$\\
+  $x_3=[13,12,5,15]$
+\end{frame}
+
