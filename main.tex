@@ -28,30 +28,6 @@
    \titlepage
   \end{frame}
 
-  \ifdefined\TITLE
-    \begin{frame}[noframenumbering,plain]
-      \centering 
-      \begin{minipage}[c]{0.975\textwidth}
-      \begin{block}
-        {\rot{Hinweise für diejenigen, die die Klausur bestehen möchten}}
-        \begin{enumerate}
-          \item Folien sind niemals selbsterklärend und nicht zum Selbststudium geeignet.\\
-            Sie müssen sich die Videos ansehen und regelmäßig das Seminar besuchen.
-          \item Ohne eine gründliche Lektüre der angegebenen Abschnitte des Buchs\\
-            bestehen Sie die Klausur nicht.
-            Das Buch definiert den Klausurstoff.
-          \item Arbeiten Sie die entsprechenden Übungen im Buch durch.
-            Nichts hilft\\
-            Ihnen besser, um sich auf die Klausur vorzubereiten.
-          \item \rot{Beginnen Sie spätestens jetzt mit dem Lernen.}
-            \Zeile
-          \item \rot{Langjähriger Erfahrungswert:
-            Wenn Sie diese Hinweise nicht berücksichtigen, bestehen Sie die Klausur wahrscheinlich nicht.}
-        \end{enumerate}
-      \end{block}
-      \end{minipage}
-    \end{frame}
-  \else
   \begin{frame}{Inhalt}
     \centering 
     \scalebox{0.9}{\begin{minipage}{\textwidth}
@@ -60,98 +36,61 @@
       \end{multicols}
     \end{minipage}}
     \end{frame}
-  \fi
 \endgroup
 
 \ifdefined\TITLE
   \input{includes/\TITLE}
 \else
-  \section[Grammatik]{Grammarik}
+  \section{Statistik, Inferenz und probabilistische Grammatik}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/01.+Grammatik.tex}
+  \input{includes/01.+Statistik,+Inferenz+und+probabilistische+Grammatik.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Grundbegriffe]{Grundbegriffe}
+  \section{Deskriptive Statistik}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/02.+Grundbegriffe.tex}
+  \input{includes/02.+Deskriptive+Statistik.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Wortklassen]{Wortklassen}
+  \section{Nichtparametrische Verfahren}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/03.+Wortklassen.tex}
+  \input{includes/03.+Nichtparametrische+Verfahren.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Konstituenten]{Konstituen und Satzglieder}
+  \section{z-Test und t-Test}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/04.+Konstituenten+und+Satzglieder.tex}
+  \input{includes/04.+z-Test+und+t-Test.tex}
+  \let\subsection\section\let\section\woopsi
+  
+  \section{ANOVA}
+  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
+  \input{includes/05.+ANOVA.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Nominalphrasen]{Nominalphrasen}
+  \section{Freiheitsgrade und Effektstärken}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/05.+Nominalphrasen.tex}
+  \input{includes/06.+Freiheitsgrade+und+Effektstärken.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Phrasen]{Andere Phrasen}
+  \section{Power}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/06.+Andere+Phrasen.tex}
+  \input{includes/07.+Power.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Verbphrasen]{Verbphrasen und Verbkomplexe}
+  \section{Lineare Modelle}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/07.+Verbphrasen+und+Verbkomplexe.tex}
+  \input{includes/08.+Lineare+Modelle.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Sätze]{Sätze}
+  \section{Generalisierte Lineare Modelle}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/08.+Sätze.tex}
+  \input{includes/09.+Generalisierte+Lineare+Modelle.tex}
   \let\subsection\section\let\section\woopsi
 
-  \section[Nebensätze]{Nebensätze}
+  \section{Gemischte Modelle}
   \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/09.+Nebensätze.tex}
+  \input{includes/10.+Gemischte+Modelle.tex}
   \let\subsection\section\let\section\woopsi
-
-  \section[Subjekte\slash Prädikate]{Subjekte und Prädikate}
-  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/10.+Subjekte+und+Prädikate.tex}
-  \let\subsection\section\let\section\woopsi
-
-  \section[Passive\slash Objekte]{Passive und Objekte}
-  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/11.+Passive+und+Objekte.tex}
-  \let\subsection\section\let\section\woopsi
-
-  \section[Infinitivsyntax]{Syntax infiniter Verbformen}
-  \let\woopsi\section\let\section\subsection\let\subsection\subsubsection
-  \input{includes/12.+Syntax+infiniter+Verbformen.tex}
-  \let\subsection\section\let\section\woopsi
-
-  \section{Vor der Klausur}
-
-  \begin{frame}
-    {Deutsche Syntax | Plan}
-    \rot{Alle} angegebenen Kapitel\slash Abschnitte aus \rot{\citet{Schaefer2018b}} sind \rot{Klausurstoff}!\\
-    \Halbzeile
-    \begin{enumerate}
-      \item Grammatik und Grammatik im Lehramt \rot{(Kapitel 1 und 3)}
-      \item Grundbegriffe \rot{(Kapitel 2)}
-      \item Wortklassen \rot{(Kapitel 6)}
-      \item Konstituenten und Satzglieder \rot{(Kapitel 11 und Abschnitt 12.1)}
-      \item Nominalphrasen \rot{(Abschnitt 12.3)}
-      \item Andere Phrasen \rot{(Abschnitte 12.2 und 12.4--12.7)}
-      \item Verbphrasen und Verbkomplex \rot{(Abschnitte 12.8)}
-      \item Sätze \rot{(Abschnitte 12.9 und 13.1--13.3)} 
-      \item Nebensätze \rot{(Abschnitt 13.4)}
-      \item Subjekte und Prädikate \rot{(Abschnitte 14.1--14.3)}
-      \item Passive und Objekte \rot{(14.4 und 14.5)}
-      \item Syntax infiniter Verbformen \rot{(Abschnitte 14.7--14.9)}
-    \end{enumerate}
-    \Halbzeile
-    \centering 
-    \url{https://langsci-press.org/catalog/book/224}
-  \end{frame}
 \fi
-
 
 \makeatletter
 \setcounter{lastpagemainpart}{\the\c@framenumber}

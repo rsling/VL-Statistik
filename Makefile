@@ -57,37 +57,33 @@ $(OUTDIR)/%$(SLIDESUFF)$(PROJECT)$(SUFFSUFF): main.tex $(SOURCEDIR)%.tex $(OUTDI
 
 # Phony shit.
 
-.PHONY: handout01 handout02 handout03 handout04 handout05 handout06 handout07 handout08 handout09 handout10 handout11 handout12 slides01 slides02 slides03 slides04 slides05 slides06 slides07 slides08 slides09 slides10 slides11 slides12 allhandouts allslides all clean realclean edit
+.PHONY: handout01 handout02 handout03 handout04 handout05 handout06 handout07 handout08 handout09 handout10 slides01 slides02 slides03 slides04 slides05 slides06 slides07 slides08 slides09 slides10 allhandouts allslides all clean realclean edit
 
-handout01: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout02: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout03: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout04: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout05: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout06: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout07: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout08: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout09: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout10: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout11: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout12: $(OUTDIR)                                                     $(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout01: $(OUTDIR)/01.+Statistik,+Inferenz+und+probabilistische+Grammatik$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout02: $(OUTDIR)/02.+Deskriptive+Statistik$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout03: $(OUTDIR)/03.+Nichtparametrische+Verfahren$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout04: $(OUTDIR)/04.+z-Test+und+t-Test$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout05: $(OUTDIR)/05.+ANOVA$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout06: $(OUTDIR)/06.+Freiheitsgrade+und+Effektstärken$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout07: $(OUTDIR)/07.+Power$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout08: $(OUTDIR)/08.+Lineare+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout09: $(OUTDIR)/09.+Generalisierte+Lineare+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout10: $(OUTDIR)/10.+Gemischte+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
 
-allhandouts: handout01 handout02 handout03 handout04 handout05 handout06 handout07 handout08 handout09 handout10 handout11 handout12
+allhandouts: handout01 handout02 handout03 handout04 handout05 handout06 handout07 handout08 handout09 handout10
 
-slides01: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides02: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides03: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides04: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides05: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides06: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides07: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides08: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides09: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides10: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides11: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
-slides12: $(OUTDIR)                                                     $(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides01: $(OUTDIR)/01.+Statistik,+Inferenz+und+probabilistische+Grammatik$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides02: $(OUTDIR)/02.+Deskriptive+Statistik$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides03: $(OUTDIR)/03.+Nichtparametrische+Verfahren$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides04: $(OUTDIR)/04.+z-Test+und+t-Test$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides05: $(OUTDIR)/05.+ANOVA$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides06: $(OUTDIR)/06.+Freiheitsgrade+und+Effektstärken$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides07: $(OUTDIR)/07.+Power$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides08: $(OUTDIR)/08.+Lineare+Modelle$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides09: $(OUTDIR)/09.+Generalisierte+Lineare+Modelle$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
+slides10: $(OUTDIR)/10.+Gemischte+Modelle$(SLIDESUFF)$(PROJECT)$(SUFFSUFF)
 
-allslides: slides01 slides02 slides03 slides04 slides05 slides06 slides07 slides08 slides09 slides10 slides11 slides12
+allslides: slides01 slides02 slides03 slides04 slides05 slides06 slides07 slides08 slides09 slides10
 
 complete: $(OUTDIR)/$(PROJECT)$(HANDOUTSUFF)$(FULL)$(SUFFSUFF)
 

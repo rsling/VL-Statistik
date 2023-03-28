@@ -57,7 +57,7 @@
   zu einer intervallskalierten Unabhängigen $x$\\
   und lineares Modell $y\textasciitilde x$
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{lm_on_dichotomous}
+    \includegraphics[width=0.4\textwidth]{graphics/lm_on_dichotomous}
   \end{center}
 \end{frame}
 
@@ -99,7 +99,7 @@
   {Darstellung des Effekts der Logit-Transformation}
   Die transformierten Logits als $\hat{p}(y=1)$:
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{logits}
+    \includegraphics[width=0.4\textwidth]{graphics/logits}
   \end{center}
 \end{frame}
 
@@ -139,7 +139,7 @@
   In der Interpretation stellen die Odds die Linearität her,\\
   die den Wahrscheinlichkeiten bei der log.\ Regression fehlen.
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{odds}
+    \includegraphics[width=0.4\textwidth]{graphics/odds}
   \end{center}
 \end{frame}
 
@@ -504,7 +504,7 @@
   \alert{Die Varianz sollte nicht mit den Regressorausprägungen variieren!}\\
 
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{glmvarianz}
+    \includegraphics[width=0.4\textwidth]{graphics/glmvarianz}
   \end{center}
 \end{frame}
 
@@ -611,3 +611,24 @@
       \texttt{library(boot); cv.glm(mydata, m, K=10)\$delta}
   \end{enumerate}
 \end{frame}
+
+
+\ifdefined\TITLE
+  \section{Nächste Woche | Überblick}
+
+  \begin{frame}
+    {Einzelthemen}
+    \begin{enumerate}
+      \item Statistik, Inferenz und probabilistische Grammatik
+      \item Deskriptive Statistik
+      \item Nichtparametrische Verfahren
+      \item z-Test und t-Test
+      \item ANOVA
+      \item Freiheitsgrade und Effektstärken
+      \item Power
+      \item Lineare Modelle
+      \item Generalisierte Lineare Modelle
+      \item \alert{Gemischte Modelle}
+    \end{enumerate}
+  \end{frame}
+\fi

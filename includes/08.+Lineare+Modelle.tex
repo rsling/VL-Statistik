@@ -140,7 +140,7 @@
   {Spezifikation der Funktion für die Regressionsgerade}
   \vspace{-0.5cm}
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{regline}
+    \includegraphics[width=0.3\textwidth]{graphics/regline}
   \end{center}
   \vspace{-0.5cm}
   \pause
@@ -159,7 +159,7 @@
   zu den Beobachtungen (blau) haben.
   \vspace{-0.5cm}
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{lmerrors}
+    \includegraphics[width=0.3\textwidth]{graphics/lmerrors}
   \end{center}
   \pause
   Die Summe der \alert{quadrierten} negativen und positiven Differenzen (blau)\\
@@ -298,7 +298,7 @@
   Hier wird die Varianz der Residuen mit steigendem x immer größer.\\
   Ein lineares Modell versagt hier wegen verletzter Verteilungsannahmen.
   \begin{center}
-    \includegraphics[width=0.4\textwidth]{hetresid}
+    \includegraphics[width=0.4\textwidth]{graphics/hetresid}
   \end{center}
 \end{frame}
 
@@ -328,11 +328,11 @@
       \cline{3-5}
       \multicolumn{2}{c|}{} & $A_1$ & $A_2$ & $A_3$ \\
       \hline
-      \multirow{3}{*}{\begin{sideways}\textbf{Regressor}\end{sideways}} & \rule{0px}{18px} $x_1=$ & $\mathbf{1}$ & $0$ & $0$ \\
+      \multirow{3}{*}{\begin{sideways}\textbf{Regressor}\end{sideways}} & \rule{0em}{2em} $x_1=$ & $\mathbf{1}$ & $0$ & $0$ \\
       \cline{2-5}
-      & \rule{0px}{18px} $x_2=$ & $0$ & $\mathbf{1}$ & $0$ \\
+      & \rule{0em}{2em} $x_2=$ & $0$ & $\mathbf{1}$ & $0$ \\
       \cline{2-5}
-      & \rule{0px}{18px} $x_3=$ & $0$ & $0$ & $\mathbf{1}$ \\
+      & \rule{0em}{2em} $x_3=$ & $0$ & $0$ & $\mathbf{1}$ \\
       \hline
     \end{tabular}
   \end{center}
@@ -494,3 +494,24 @@ F-statistic:\ 48.06\ on\ 1\ and\ 18\ DF,\ \ p-value:\ 1.768e-06\ \\
 %  \end{center}
 %  Hinweis: Mit \texttt{"{}Mean Sq"} ist $s^2$ gemeint.
 %\end{frame}
+
+
+\ifdefined\TITLE
+  \section{Nächste Woche | Überblick}
+
+  \begin{frame}
+    {Einzelthemen}
+    \begin{enumerate}
+      \item Statistik, Inferenz und probabilistische Grammatik
+      \item Deskriptive Statistik
+      \item Nichtparametrische Verfahren
+      \item z-Test und t-Test
+      \item ANOVA
+      \item Freiheitsgrade und Effektstärken
+      \item Power
+      \item Lineare Modelle
+      \item \alert{Generalisierte Lineare Modelle}
+      \item Gemischte Modelle
+    \end{enumerate}
+  \end{frame}
+\fi
