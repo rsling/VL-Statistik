@@ -1,5 +1,531 @@
+\section[Quantitativ]{Quantitative Analyse}
 
+\begin{frame}
+  {Übersicht}
+  \begin{itemize}[<+->]
+    \item Messungen und Experimente
+    \item Hypothesen und Theorien
+    \item Begriff der "`Variablen"'
+    \item statistische Inferenz:
+      \begin{itemize}[<+->]
+	\item Hypothesenpaare H1 und H0
+	\item Typ I- und Typ II-Fehler
+	\item Validität
+	\item exakte Hypothesentestung
+      \end{itemize}
+  \end{itemize}
+\end{frame}
 
+\begin{frame}
+  {Literatur}
+  \begin{itemize}
+    \item \alert{\citet[Kap.\ 1 und 2]{MaxwellDelaney2004}}
+    \item \citet[Kap.\ 1]{GravetterWallnau2007}
+  \end{itemize}
+\end{frame}
+
+\subsection{Quantitative empirische Forschung}
+
+\begin{frame}
+  {Empirisch}
+  \begin{itemize}[<+->]
+    \item beobachtbare Phänomene
+    \item Beobachtungen reproduzierbar
+    \item messbar = beobachtbar (Sinneswahrnehmung an sich irrelevant)
+    \item Realismus: "`wirkliche"' Phänomene und ihre Mechanismen
+      \Zeile
+    \item \alert{Experiment}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Empirie: Gründe für Reproduzierbarkeitsbedingung}
+  \begin{itemize}[<+->]
+    \item nicht-arbiträre Genauigkeit der Messung (Wirkung und Störeinflüsse)
+    \item potentiell inadäquate Messung des theoretischen Konstrukts
+    \item $\Rightarrow$ Vermeidung von Fehlschluss auf unechte Ursachen
+    \item $\Rightarrow$ \alert{relevante Ursachen}
+    \item Generalisierbarkeit der Ergebnisse
+    \item Überkommen der individuell gefärbten Wahrnehmung
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Individualgrammatik und fehlgeleitete Generative Grammatiker}
+  \begin{itemize}[<+->]
+    \item Gegenstand: interne (mentale) Grammatik (I-Grammatik)\\
+      universeller und individueller Teil
+    \item I-Grammatik bei jedem Sprecher (leicht) verschieden
+    \item I-Grammatik erlaubt immer binäre Grammatikalitätsentscheidung
+    \item also: \alert{Linguisten können eigene Grammatik untersuchen!}\\
+      (Introspektion)
+    \item universalistische Aussagen auf Basis solcher Ergebnisse zulässig
+    \item \alert{Das ist auf allen Ebenen eine Frechheit!}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Hypothesen}
+  \begin{itemize}[<+->]
+    \item Ursprung der Hypothesen: Theorien
+    \item interessante Hypothesen:
+      \begin{itemize}[<+->]
+	\item Formulierung relevanter Kausationsbedingung (wenn, dann)
+	\item großer Gültigkeitsbereich (ein Sprecher vs.\ alle Sprecher)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Hypothesenprüfung}
+  \begin{itemize}[<+->]
+    \item Kann die Hypothese weiter angenommen werden,\\
+      oder liefert das Experiment starke Evidenz gegen sie?
+    \item Probleme bei Prüfung:
+      \begin{itemize}[<+->]
+	\item störende Einflüsse
+	\item ungenaue Operationalisierung (s.\,u.)
+	\item stochastische Natur des Phänomens
+	\item kleine Stichprobe (s.\,u.)
+      \end{itemize}
+    \item falsche Positive und falsche Negative jeweils zu vermeiden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Qualitative Forschung}
+  \begin{itemize}[<+->]
+    \item Daten besorgen\slash Experiment machen
+    \item typischerweise \alert{kleine Datenmengen}
+    \item Datenbetrachtung durch menschliche Wahrnehmung
+    \item Interpretation der Daten durch Nachdenken
+      \Zeile
+    \item extrem fehleranfällig (Fehler = unzulässige Generalisierung)
+    \item wichtig zur Hypothesengenerierung
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Quantitative Forschung}
+  \begin{itemize}[<+->]
+    \item Daten besorgen\slash Experiment machen
+    \item typischerweise \alert{größere Datenmengen}
+    \item Datenanalyse durch Visualisierung\slash mathematische Datenbeschreibung
+    \item Hypothesenprüfung durch \alert{Testverfahren} (s.\,u.)
+    \item Grundlage moderner Wissenschaft
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Operationalisierung, Theorie und Auxiliarhypothesen}
+  \begin{itemize}[<+->]
+    \item Operationalisierung = präzise Formulierung der Messmethode\\
+      für ein theoretisches Konstrukt
+    \item Bsp.\ Konstruk "`Satzlänge"': Wortanzahl? Phonemanzahl? Phrasenanzahl?
+    \item Bsp.\ Konstrukt "`Satztopik"': Oha!?! \citep{CookBildhauer2013}
+    \item alle genannten Beispiele: \alert{abhängig von Auxiliarhypothesen}\\
+      bzw.\ anderen theoretischen Konstrukten (Wort, Phonem, Phrase, \dots)
+  \end{itemize}
+\end{frame}
+
+\subsection{Grundbegriffe der quantitativen Forschung}
+
+\begin{frame}
+  {Grundgesamtheit}
+  \begin{itemize}[<+->]
+    \item von Interesse: allgemeine Gesetzmäßigkeiten
+    \item also Untersuchungsgegenstand: \alert{alle X} (Sprecher, Sätze, \dots)
+    \item untersuchbar: kleine Menge von X
+    \item wenn "`alle X"' an sich sowieso sehr klein:\\
+      interessante Fragestellung nur schwer möglich
+      \Zeile
+    \item fiktives Beispiel:
+      \begin{itemize}[<+->]
+	\item Sprecher ohne Ersatzinfinitiv (\textit{dass ich schlafen gemusst habe})\\
+	  benutzen Modalverben öfter im Präteritum (\textit{dass ich schlafen musste})
+	\item \dots aber es gibt nur einen Sprecher ohne Ersatzinfinitiv
+	\item $\Rightarrow$ dann auch kein Theorie- und Empiriebedarf
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Stichprobe}
+  \begin{itemize}[<+->]
+    \item weil Grundgesamtheit intrinsisch nicht betrachtbar:\\
+      \alert{Verwendung eingeschränkter Datensätze}
+    \item ideal: \alert{uniform zufällige Stichprobe}\\
+      = jedes Element der Grundgesamtheit hat die gleiche Chance beim Ziehen\\
+    \item andere Möglichkeit: \alert{stratifizierte Stichprobe}\\
+      = Stichprobe so zusammengesetzt, dass wichtige Eigenschaften\\
+      proportional repräsentiert sind
+    \item Problem bei Letzterem: haufenweise Auxiliarhypothesen
+    \item außerdem: nicht unbedingt erforderlich, s.\ letzten Teil der heutigen VL
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Induktive Inferenz}
+  \begin{itemize}[<+->]
+    \item Ziel: Schluss von Stichprobe auf Grundgesamtheit
+    \item kritisch: Stichprobengröße
+    \item Kriterium: Wahrscheinlichkeit, das Ergebnis per Zufall zu bekommen
+    \item starker Einfluss: Stärke des Effekts in der Stichprobe
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Variablen I}
+  \begin{itemize}[<+->]
+    \item meist uninteressanter Typ Fragestellung:\\
+      "`Wieviel Prozent X haben Eigenschaft A?"'
+    \item wegen \alert{Fehlens kausaler Zusammenhänge}
+    \item Bsp.: wie oft \textit{wegen} mit Dat bzw.\ Gen?
+    \item besser:\\
+      \alert{"`Hängt bei X die Wahrscheinlichkeit für Eigenschaft B von A ab?"'}
+    \item Bsp.: "`Nehmen denominale Präp eher Gen oder Dat?"'
+  \end{itemize}
+  \pause
+  \begin{center}
+    konzeptuell:
+    \scalebox{0.7}{
+      \begin{tabular}[h!]{|c||c|c|}
+	\cline{2-3}
+	\multicolumn{1}{c||}{} & denominale P & andere P \\
+	\hline
+	\hline
+	Dat & $x_1$ & $x_2$\\
+	\hline
+	Gen & $x_3$ & $x_4$\\
+	\hline
+      \end{tabular}
+    }
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Variablen II}
+  \begin{itemize}[<+->]
+    \item Eigenschaften, quantitativ gemessen: \alert{Variablen}
+    \item im Experiment:
+      \begin{itemize}[<+->]
+	\item \alert{kontrolliere} für Theorie irrelevante Variablen (\alert{Störvariablen})
+	\item \alert{variiere} "`Ursachen-Variablen"' (\alert{unabhängige Variablen})
+	\item \alert{beobachte} "`Wirkung-Variablen"' (\alert{abhängige Variablen})
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Experiment und Quasi-Experiment}
+  \begin{itemize}[<+->]
+    \item Problem in Astronomie, Korpuslinguistik usw.: keine Experimente möglich
+    \item \alert{unabhängige Variablen nicht variierbar}
+    \item Daten liegen bereits vor bzw.\ fallen vom Himmel
+    \item Auswahl von Datensätzen, so dass von den unabhängigen Variablen\\
+      die zur Theorieprüfung nötigen Permutationen im Datensatz vorkommen
+    \item dabei Zusatzproblem bei Korpuslinguistik: Korpus meist nicht\\
+      das eigene, wenig Informationen über mögliche Verzerrungen
+      \Zeile
+    \item \alert{Was ist die Grundgesamtheit?}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Hypothesenpaare}
+  \begin{itemize}[<+->]
+    \item \alert{H1 (eigene Hypothese)}:\\
+      erwarteter Variablenzusammenhang aus Kausalrelation
+    \item \alert{H0 (Nullhypothese)}: Negation der H1
+    \item Ziel der Inferenzstatistik: \alert{Zurückweisung der H0}
+    \item Logik: \textit{Entweder ein sehr seltenes Ereignis ist eingetreten,\\
+      oder es besteht tatsächlich ein Zusammenhang.}
+    \item $\Rightarrow$ Stärkung der H1, aber \alert{nicht "`Beweis"'}!
+      \vspace{\baselineskip}
+    \item geringe Bedeutung für sich genommen
+    \item \alert{Severity} hängt von viel mehr Faktoren ab (Mayo)
+    \item weitere Experimente\slash Replikationen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Mayos Strong Severity Principle}
+      \vspace{\baselineskip}
+  \begin{quote}
+    \textit{Severity (strong): We have evidence for a claim C just to the extent it survives a stringent scrutiny.} If C passes a test that was highly capable of finding flaws or discrepancies from C, and yet none or few are found, then the passing result, \textbf{x}, is evidence for C. [Mayo 2018:14]
+  \end{quote}
+\end{frame}
+
+\begin{frame}
+  {Gerichtete Hypothesen}
+  \begin{itemize}[<+->]
+    \item übliche Hypothesen (H1):\\
+      "`Es besteht ein Zusammenhang zwischen A und B."'
+    \item H0 dann: Fehlen des Zusammenhangs
+    \item = \alert{ungerichtete Hypothese}
+    \item gerichtete Version: Benennung des genauen numerischen Zusammenhangs
+    \item gerichtete Hypothesen: stärkere Aussage, schwerer zu zeigen,\\
+      immer noch kein "`Beweis"'
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Typ I- und Typ II-Fehler}
+  \begin{itemize}[<+->]
+    \item je nach
+      \begin{itemize}[<+->]
+	\item \alert{Stärke des Effekts}
+	\item \alert{Homogenität} der Grundgesamtheit\slash Stichprobe
+	\item \alert{Stichprobengröße}
+      \end{itemize}
+    \item Gefahr zweier möglicher Inferenzfehler:
+      \begin{itemize}[<+->]
+	\item \alert{Typ I ($\alpha$)}: H0 wird fälschlicherweise zurückgewiesen
+	\item \alert{Typ II ($\beta$)}: H0 fälschlicherweise \alert{nicht} zurückgewiesen
+      \end{itemize}
+    \item Typ II-Fehler mehr gefürchtet, weil Artikel dann nicht angenommen wird
+    \item inhaltlich beide gleich schwerwiegend
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {$\alpha$-Niveau und Teststärke}
+  \begin{itemize}
+    \item Logik der Hypothesenprüfung (genauer):\\
+      Das Testergebnis ist so unwahrscheinlich per Zufall (H0) zu erzielen,\\
+      dass H1 plausibel ist.
+    \item die akzeptierte Schranke: \alert{$\alpha$-Niveau}
+    \item Linguistik\slash Sozialwissenschaften: \alert{$\alpha=0.05$}
+    \item wenn erreicht, gilt: \alert{Wenn in der GG der Zusammenhang nicht besteht,\\
+      würde man nur in einer von 20 Stichproben die beobachtete Verteilung erwarten.}
+      \Zeile
+    \item \textit{If I tell you, you have a 5\% chance of being shot when you walk through the door, you go through the window.}
+      \Zeile
+    \item $\alpha$=Häufigkeit, mit der man sich langfristig positiv irrt\\
+      (H0 korrekt, aber zurückgewiesen)
+    \item vs.\ \alert{Teststärke}: $\beta$=Häufigkeit, mit der man sich langfristig negativ irrt\\
+      (H0 falsch, aber nicht zurückgewiesen)
+  \end{itemize}
+\end{frame}
+
+\subsection{Validität}
+
+\begin{frame}
+  {Statistische Validität}
+  Gefahren für Typ I\slash II-Fehler
+  \begin{itemize}[<+->]
+    \item math.\ Bedingungen für Test nicht erfüllt (Typ I)
+    \item kumulierter $\alpha$-Fehler (Typ I, s.\ nächste Folie)
+    \item kleine Stichprobe (Typ II)
+    \item zu große Variantion in der GG (Typ II)
+      \Zeile
+    \item in Korpora: schlechte Zusammensetzung des Korpus\\
+      $\Rightarrow$ Phänomen mit mangelhafter Dispersion (Typ I)
+  \end{itemize}
+\end{frame}
+
+%\begin{frame}
+%  {$\alpha$-Kumulation}
+%  \begin{itemize}[<+->]
+%    \item Haupt-Hypothese H zerlegt in mehrere Teilhypothesen H1a, H1b, H1c
+%    \item getestet mit gleichem Test an gleichem Datensatz
+%    \item bei $\alpha$=0.05:
+%      \begin{itemize}[<+->]
+%	\item P(bestätige H1a|H0)=0.05
+%	\item P(bestätige H1b|H0)=0.05
+%	\item P(bestätige H1c|H0)=0.05
+%	\item \alert{P(bestätige H1|H0)=\\
+%	  P(bestätige H1a|H0)+P(bestätige H1b|H0)+P(bestätige H1c|H0)=0.15}
+%      \end{itemize}
+%    \item anders gesagt: Jede einzelne H1 wird bei $\alpha=0.05$ in einem von 20 Fällen fälschlicherweise bestätigt, aber für die gesamte H1 haben wir drei Testfälle produziert.
+%    \item $\alpha$-Fehlerwahrscheinlichkeit steigt also auf $0.15$\\
+%      \alert{einer von 6.67 Tests mit Typ I-Fehler}
+%  \end{itemize}
+%\end{frame}
+
+\begin{frame}
+  {Interne Validität}
+  \begin{itemize}[<+->]
+    \item Irrtum beim Herstellen des Kausalzusammenhangs
+    \item Grund (Korpuslinguistik): verzerrte Stichprobenzusammensetzung
+    \item Bsp.:
+      \begin{itemize}[<+->]
+	\item H1: Im DECOW2012 kommt öfter das Pronomen \textit{son} vor als im DWDS Kernkorpus, weil es erst nach 2000 zum eigenständigen Pronomen wurde.
+	\item H0 wird auf Basis zweier Stichproben (DECOW2012, DWDS) zurückgewiesen.
+	\item wirkliche Ursache: Registerunterschiede
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Validität des Konstrukts}
+  \begin{itemize}[<+->]
+    \item Korrektheit des theoretischen Konstrukts
+    \item eigentlich aus der Psychologie
+    \item aber riesiges mißachtetes Problem in der Linguistik
+    \item Bsp.:
+      \begin{itemize}
+	\item Beobachtung: Das Deutsche bewahrt\\
+	  genus-typische Pluralflexion am Substantiv.
+	\item Konstrukt: Nominalklammer\slash Klammerprinzip\\
+	  (NP-Kongruenzklammer Artikel--Substantiv, \citealt{Ronneberger2010})
+	\item Hypothese zu Beobachtung: Flexionserhalt stärkt Klammerprinzip
+	\item \alert{Das Konstrukt ist hochgradig beliebig und unterdefiniert.}
+	\item \alert{Abhilfe: nur Konstrukte\slash Hypothesen,\\
+	  die starke Vorhersagen generieren (s.\ Junggrammatiker)}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Externe Validität}
+  \begin{itemize}[<+->]
+    \item Generalisierbarkeit der Ergebnisse (über Raum, Zeit usw.)
+    \item Problem: zu große Homogenität der Stichprobe\\
+      (was für statistische Validität wiederum gut ist)
+    \item Bezug auf Korpora:
+      \begin{itemize}[<+->]
+	\item zu spezifische Stratifikation (DeReKo)
+	\item verzerrte Stichprobe (evtl.\ traditionelle Webkorpora)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{Ableitung des Fisher-Exakt-Tests aus ersten Prinzipien}
+
+\begin{frame}
+  {Ronald A.\ Fisher (1890--1962)}
+  \begin{itemize}[<+->]
+    \item Statistik als Teil der rationalen wissenschaftlichen Argumentation,\\
+      der Interpretation von Experimenten
+    \item daher: möglichst kein Mathematik-Jargon
+    \item eingeschränkte Induktion als theoriegeleitete Dateninterpretation
+    \item Kontrolle aller unabhängigen Variablen
+    \item \alert{alle anderen (Stör-)Variablen konzeptuell zufallsgebunden}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Das Tassen-Problem}
+  \begin{itemize}[<+->]
+    \item Behauptung: Dame X kann am Geschmack erkennen,\\
+      ob der Tee oder die Milch zuerst in die Tasse gegossen wurde.
+    \item prä-fishersches Konzept: \alert{alle Störvariablen kontrollieren}\\
+      und gleich machen, sonst keine valide Inferenz möglich
+    \item Fisher: Das ist prinzipiell unmöglich, umständlich, teuer, \alert{unnötig}!
+    \item wenn alle irrelvanten Stör-Faktoren zufällig, dann:
+      \begin{itemize}[<+->]
+	\item Variiere die relevante unabhängige Variable.
+	\item Vergleiche das Ergebnis mit zufällig erwartbaren Ergebnissen.
+	\item \alert{Wie unwahrscheinlich ist das erzielte Ergebnis\\
+	  unter der Zufallsannahme?}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Wahrscheinlichkeiten, richtig zu raten}
+  \begin{itemize}[<+->]
+    \item acht Tassen (zwei Milch zuerst, zwei Tee zuerst)
+    \item \alert{Mit wie vielen richtigen Treffern wären Sie zufrieden?}
+      \pause
+      \pause
+    \item Es muss die Wahrscheinlichkeit errechnet werden,\\
+      eine, zwei, drei oder vier Tassen richtig zu raten.
+      \Zeile
+    \item \alert{Typischerweise schätzen Menschen solche Kombinatorikprobleme\\
+      intuitiv falsch ein.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {GENAU Richtig durch Zufall}
+  \begin{equation}
+    P(\mathsf{richtig\ per\ Zufall})=\frac{\mathsf{Anzahl\ richtiger\ Zuweisungen}}{\mathsf{Anzahl\ aller\ potentiellen\ Zuweisungen}}
+  \end{equation}
+  \pause
+  \begin{itemize}[<+->]
+    \item Anzahl richtiger Zuweisungen: 1
+    \item mögliche Zuweisungen: einfaches kombinatorisches Problem
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {mögliche Zuweisung von acht Tassen zu Milch\slash Tee zuerst}
+  \begin{itemize}[<+->]
+    \item erste MZ-Tasse: eine von 8
+    \item zweite MZ-Tasse: eine von 7
+    \item dritte MZ-Tasse: eine von 6
+    \item vierte MZ-Tasse: eine von 5
+    \item fünfte MZ-Tasse: STOPP (automatisch TZ)
+    \item \alert{Möglichkeiten, 4 Tassen aus 8 auszuwählen:\\
+      $8\cdot7\cdot6\cdot5=1680$}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Reihenfolge egal}
+  \begin{itemize}[<+->]
+    \item bisher: jedes Set von 4 MZ-Tassen ist in verschiedenen Reihenfolgen\\
+      in der Menge der Möglichkeiten
+    \item \alert{Möglichkeiten, vier Tassen zu ordnen:\\
+      $4\cdot3\cdot2\cdot1=24$}
+      \Zeile
+    \item Reihenfolge hier egal, also:
+  \end{itemize}
+  \pause
+  \begin{equation}
+    \mathsf{Anzahl\ aller\ potentiellen\ Zuweisungen}=\frac{1680}{24}=70
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  {Wenn Dame X also genau richtig liegt}
+  \begin{itemize}[<+->]
+    \item per Zufall genau richtig:\\
+      in einem von 70 Fällen, $p=0.014$
+      \Zeile
+    \item $\alpha$-Niveau von 0.05 also erreicht
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Binomialkoeefizienten}
+  \begin{itemize}[<+->]
+    \item eigentlich \alert{Binomialkoeffizient}
+    \item "`Lotto-Kombinationen"': $k$ aus $n$\\
+      ohne Zurücklegen und ohne Beachtung der Reihenfolge
+  \end{itemize}
+  \Zeile
+  \pause
+  \begin{equation}
+    \binom{n}{k}=\frac{n!}{k!(n-k)!}
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  {Kombinatorik für 3 richtige MZ}
+  \begin{itemize}[<+->]
+    \item die drei richtigen: $\binom{4}{3}$
+    \item die eine falsche aus vier TZ: $\binom{4}{1}$
+    \item Anzahl der Möglichkeiten drei richtige aus vier MZ\\
+      und dann eine falsche aus vier TZ zu ziehen: $\binom{4}{3}\cdot\binom{4}{1}=4\cdot4=16$
+  \end{itemize}
+  \Zeile
+  \pause
+  \begin{equation}
+    P(drei\ richtig\ per\ Zufall)=\frac{16}{70}=0.229
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  {Problem zu kleiner Stichproben}
+  \begin{itemize}[<+->]
+    \item \alert{Bei $\alpha=0.05$ reichen also drei richtige nicht im Ansatz!}
+    \item alle schlechteren Ergebnisse: folglich auch nicht ausreichend
+    \item Und bei 30 von 40 richtigen (also insgesamt 80 Tassen)?
+  \end{itemize}
+\end{frame}
 
 
 \ifdefined\TITLE
