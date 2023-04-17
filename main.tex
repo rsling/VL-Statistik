@@ -11,14 +11,19 @@
 \input{localcommands.tex}
 
 \ifdefined\TITLE
-  \title{Statistik\\\StrSubstitute{\TITLE}{+}{ }}
+  \title[Statistik]{Statistik\\\StrSubstitute{\TITLE}{+}{ }}
 \else
-  \title{Statistik}
+  \title[Statistik]{Statistik}
 \fi
 
 \author{Roland Schäfer}
 \institute[FSU Jena]{Institut für Germanistische Sprachwissenschaft\\Friedrich-Schiller-Universität Jena}
-\date[EGBD3]{\grau{stets aktuelle Fassungen: \url{https://github.com/rsling/VL-Deutsche-Syntax}}}
+
+\ifdefined\TITLE
+  \date[\StrSubstitute{\TITLE}{+}{ }]{\grau{stets aktuelle Fassungen: \url{https://github.com/rsling/VL-Deutsche-Syntax}}}
+\else
+  \date[Kompletter Foliensatz]{\grau{stets aktuelle Fassungen: \url{https://github.com/rsling/VL-Deutsche-Syntax}}}
+\fi
 
 \begin{document}
 
