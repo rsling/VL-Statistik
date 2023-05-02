@@ -73,23 +73,24 @@
 
 \begin{frame}
   {Messvariablen und Skalenniveaus}
-  \alert{Skalierungen} von Variablen\\
-  \Halbzeile
   \begin{itemize}[<+->]
-    \item \alert{dichotom} (binär) | zwei Kategorien:\\
-      männlich, weiblich ; Präteritum, Perfekt
+    \item \alert{dichotom\slash binär} | \gruen{Menge $\{A, B\}$} | zwei disjunkte Kategorien\\
+      \grau{männlich, weiblich ; Präteritum, Perfekt}
       \Viertelzeile
-    \item \alert{nominal} (kategorial) | disjunkte Kategorien ohne numerische Interpretation:\\
-      Parteizugehörigkeit ; NP, AP, VP
+    \item \alert{nominal\slash kategorial} | \gruen{Menge $\{A, B, ..\}$} | disjunkte Kategorien\\
+      \grau{Parteizugehörigkeit ; NP, AP, VP}
       \Viertelzeile
-    \item \alert{ordinal} | disjunkte Kategorien, nach Rang geordnet:\\
-      Schulnoten ; 5-point oder 7-point scales\\
+    \item \alert{ordinal} | \gruen{Tupel $\langle A, B, ..\rangle$, \rot{nicht} $\mathbb{N}$ oder $\mathbb{Z}$} | disjunkte Kategorien mit Rang\\
+      \grau{Schulnoten ; 5- oder 7-Punkt-Skalen für Akzeptabilität}\\
       \Viertelzeile
-    \item \alert{Intervall} | geordnete Werte mit definierten Abständen,\\
-      aber mit arbiträrem Nullpunkt: Celsius
+    \item \alert{Verhältnis} | \gruen{$+\mathbb{Q}_0$} | geordnete Werte mit Nullpunkt\\
+      \grau{Temperatur in Kelvin ; Lesezeiten}
       \Viertelzeile
-    \item \alert{Verhältnis} | wie Intervall,\\
-      aber der Nullpunkt ist ein echter Nullpunkt: Kelvin
+    \item \alert{Intervall} | \gruen{$\mathbb{Q}$} | Wie Verhältnis, aber ohne Nullpunkt\\
+      \grau{Temperatur in Celsius}
+      \Zeile
+    \item \rot{Zähldaten} | \rot{Keine} beobachtbaren Variablen, sondern\\
+      Aggregation von dichtotomen, nominalen oder ordinalen Variablen\\
   \end{itemize}
 \end{frame}
 
@@ -181,7 +182,7 @@
 
 
 
-\section{Dispersionsmaße}
+\section{Empirische Verteilungen und Dispersion}
 
 \begin{frame}
   {Warum sind Dispersionsmaße wichtig?}
@@ -192,7 +193,7 @@
      \Zeile 
     \item \alert{Ein Maß für Zentraltendenz} für \orongsch{beliebig viele Verteilungsformen}
       \Halbzeile
-    \item Arithmetisches Mittel | besonders \orongsch{schlecht sensitiv für Verteilungform}
+    \item Arithmetisches Mittel | deskriptiv oft \orongsch{unbrauchbar ohne Betrachtung der Verteilung}
     \item Median | \orongsch{auch nur bedingt besser}
   \end{itemize}
 \end{frame}
@@ -225,7 +226,7 @@
 
 
 \begin{frame}
-  {Interquartilbereich und Boxplots}
+  {Interquartilbereich, Boxplots und Violinplots}
   \begin{itemize}[<+->]
     \item Interquartilbereich \alert{$IQR = Q_3-Q_1$} | Die mittleren 50 \%
      \Zeile 
@@ -234,9 +235,11 @@
       \begin{itemize}[<+->]
         \item \alert{Median} | Linie in der Mitte
         \item \alert{Oberes und unteres Quartil} | Boxen
-        \item \alert{1,5-fachen Interquartilabstand} | gestrichelte Hebel
+        \item \alert{1,5-facher Interquartilabstand} | gestrichelte Hebel
         \item \alert{Ausreißer} | Punkte
       \end{itemize}
+      \Halbzeile
+    \item Violinplots | Zusätzlich Plot der Verteilungsdichte (statt Box)
   \end{itemize}
 \end{frame}
 
@@ -250,7 +253,7 @@
 
 
 \begin{frame}
-  {Vioinplots | Noch bessere Zusammenfassung}
+  {Violinplots | Die noch bessere Zusammenfassung}
   \begin{center}
     \includegraphics[height=0.7\textheight]{RVorlesung/fourviolins}
   \end{center}
@@ -513,7 +516,7 @@
   \end{itemize}
   \Halbzeile
   \begin{center}
-    \alert{$SF(P)=\sqrt{\frac{P\cdot(1-P)}{n}}$}\\
+    \alert{$SF(P,n)=\sqrt{\frac{P\cdot(1-P)}{n}}$}\\
     \Doppelzeile
     Bsp. für $P=0.39$ und $n=100$ | $SF(p)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
   \end{center}
@@ -522,10 +525,10 @@
 \begin{frame}
   {Standardfehler | Interpretation}
   \begin{center}
-    \alert{$SF(p)=\sqrt{\frac{p\cdot(1-p)}{n}}$}\\
+    \alert{$SF(P,n)=\sqrt{\frac{P\cdot(1-P)}{n}}$}\\
 
     \vspace{.1cm}
-    Bsp.: $SF(p)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
+    Bsp.: $SF(0.39,100)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
   \end{center}
   \Zeile
   \begin{itemize}[<+->]
@@ -555,7 +558,7 @@
       \Zeile
     \item \alert{Quantilfunktion der Normalverteilung} | In R mit \alert{\texttt{qnorm()}} oder \alert{Tabelle}
     \item Quantilfunktion | Wie viele Standardabweichungen trennen auf jeder Seite 2.5\% ab?
-    \item \alert{\texttt{qnorm(0.025, lower.tail=FALSE)}} \ding{222} \orongsch{$z = 1.96$}
+    \item \alert{\texttt{qnorm(0.025, lower.tail=FALSE)}} \ding{222} \orongsch{$z(0.95) = 1.96$}
   \end{itemize}
 \end{frame}
 
@@ -564,13 +567,13 @@
   \begin{itemize}[<+->]
     \item Standardfehler | \alert{Standardabweichung} der Stichprobenwerte
     \item \alert{Konfidenzbreite} | \orongsch{z-Wert multipliziert mit Standardfehler}
-    \item 95\% der Werte | \orongsch{Wahrer Anteilswert ± Konfidenzbreite}
+    \item 95\% der Werte | Intervall \orongsch{Wahrer Anteilswert ± Konfidenzbreite}
   \end{itemize}
   \Doppelzeile
   \begin{center}
-    \alert{$KI=P\pm z\cdot SF(P)$}\\
+    \alert{$KI(P,n,s)=P\pm z(s)\cdot SF(P,n)$}\\
     \Zeile
-  Bsp.: $KI=0.39\pm1.96\cdot 0.0488=0.39\pm0.096=\alert{[0.29, 0.49]}$
+  Bsp.: $KI(0.39,100,0.95)=0.39\pm1.96\cdot 0.0488=0.39\pm0.096=\alert{[0.29, 0.49]}$
   \end{center}
 \end{frame}
 
@@ -579,9 +582,8 @@
   \begin{center}
     Konfidenzintervall im Beispiel | \alert{0.29 bis 0.49}\\
     \Halbzeile
-    In 95\% aller Stichproben mit $n=100$\\
-    liegt der Messwert zwischen $0.29$ und $0.49$\\
-    bei einem wahren Anteil von 0.39.
+    In 95\% aller Stichproben mit $n=100$ liegt der Messwert\\
+    zwischen $0.29$ und $0.49$ bei einem wahren Anteil von 0.39.
   \end{center}
   \Zeile
   \begin{itemize}[<+->]
@@ -589,10 +591,18 @@
     \Zeile
     \item \rot{Der gemessene Anteil $p$ kann aber eine totale Fehlschätzung sein!}
     \item Die Philosophie bezieht sich auf \alert{wiederholte Messungen}.
+      \Halbzeile
     \item Entweder liegt der gemessene Wert im Konfidenzintervall,\\
       \rot{oder ein seltenes Ereignis ist eingetreten}.
-    \item Vor allem: Wir sind \rot{\textbf{\ul{nicht}} zu 95\% sicher, dass \ldots\ !!!}
+      \Halbzeile
+    \item \rot{Wir sind \textbf{\ul{nicht}} zu 95\% sicher, dass der wahre Wert zwischen 0.29 und 0.49 liegt!}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  {Konfidenzintervall | Breite bei verschiedenen P, n und Niveaus}
+  \centering 
+  \includegraphics[height=0.85\textheight]{RVorlesung/threecis}
 \end{frame}
 
 \ifdefined\TITLE

@@ -4,7 +4,7 @@ set.seed(1294)
 
 smode <- c(rep("AP", 3), rep("CP", 2), rep("VP", 4), rep("NP", 6), rep("IP", 1), rep("PP", 2))
 pdf("mode.pdf")
-barplot(table(smode), col = c(rep("gray", 3), "navy", rep("gray", 2)), ylab = "Anzahl Belege", xlab = "Phrasentyp", border = "white", cex = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+barplot(table(smode)[order(table(smode), decreasing = T)], col = c("navy", rep("gray", 5)), ylab = "Anzahl Belege", xlab = "Phrasentyp", border = "white", cex = 1.5, cex.axis = 1.5, cex.lab = 1.5)
 dev.off()
 
 # Median
@@ -314,8 +314,8 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 # CI for proportions
 
-pdf("sixteenbernoullis.pdf")
-par(mar = c(2, 2, 1, 1))
+pdf("sixteenbernoullis.pdf", width = 8, height = 5)
+par(mar = c(2, 3, 1, 1))
 par(mfrow = c(2, 8))
 trial <- rbinom(16, 100, 0.39)
 for (i in 1:16) {
@@ -354,7 +354,7 @@ dev.off()
 
 # Normal for CI
 
-pdf("ci95.pdf")
+pdf("ci95.pdf", width = 10, height = 5)
 par(mar = c(2, 2, 1, 1))
 rmean <- 0.39
 rsf <- 0.0488
@@ -392,5 +392,55 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 
 
+# Variation in CIs
 
+ci.prop <- function(p = 0.5, n = 100, sig = 0.95, width = T) {
+  .se <- sqrt((p*(1-p)/n))
+  .z <- qnorm((1-sig)/2, lower.tail = F)
+  if (width) 2 * .se * .z
+  else .se * .z
+}
 
+pdf("threecis.pdf", width = 8, height = 5)
+par(mar = c(5, 3, 2, 0))
+par(mfrow = c(1, 3))
+ci.80.10 <- function(p) ci.prop(p = p, n = 10, sig = 0.8)
+ci.80.100 <- function(p) ci.prop(p = p, n = 100, sig = 0.8)
+ci.80.1000 <- function(p) ci.prop(p = p, n = 1000, sig = 0.8)
+plot(ci.80.10(seq(0, 1, 0.01)), ty = "l", col = cols[1], lwd = 3,
+     main = "80 % KI", ylim = c(0, 0.9), bty = "n", xaxt = "n", cex = 1.2,
+     cex.axis = 1.2, cex.main = 1.2, cex.lab = 1.2, xlab = "", ylab = "")
+axis(1, at = seq(1, 101, 10), labels = seq(0, 1, 0.1), cex = 1.2,
+     cex.axis = 1.2, las = 2)
+lines(ci.80.100(seq(0, 1, 0.01)), col = cols[2], lwd = 3, lty = 1)
+lines(ci.80.1000(seq(0, 1, 0.01)), col = cols[3], lwd = 3, lty = 1)
+legend("topleft", legend = c("n=10", "n=100", "n=1000"), lwd = 3, col = cols,
+       bty = "n", cex = 1.2)
+
+ci.95.10 <- function(p) ci.prop(p = p, n = 10)
+ci.95.100 <- function(p) ci.prop(p = p, n = 100)
+ci.95.1000 <- function(p) ci.prop(p = p, n = 1000)
+plot(ci.95.10(seq(0, 1, 0.01)), ty = "l", col = cols[1], lwd = 3,
+     main = "95 % KI", ylim = c(0, 0.9), bty = "n", cex = 1.2, cex.axis = 1.2,
+     cex.main = 1.2, cex.lab = 1.2, yaxt = "n", xaxt = "n", xlab = "",
+     ylab = "")
+axis(1, at = seq(1, 101, 10), labels = seq(0, 1, 0.1), cex = 1.2,
+     cex.axis = 1.2, las = 2)
+mtext("Wahrer Anteilswert P", side = 1, line = 4)
+lines(ci.95.100(seq(0, 1, 0.01)), col = cols[2], lwd = 3, lty = 1)
+lines(ci.95.1000(seq(0, 1, 0.01)), col = cols[3], lwd = 3, lty = 1)
+
+ci.99.10 <- function(p) ci.prop(p = p, n = 10, sig = 0.99)
+ci.99.100 <- function(p) ci.prop(p = p, n = 100, sig = 0.99)
+ci.99.1000 <- function(p) ci.prop(p = p, n = 1000, sig = 0.99)
+plot(ci.99.10(seq(0, 1, 0.01)), ty = "l", col = cols[1], lwd = 3,
+     main = "99 % KI", ylim = c(0, 0.9), bty = "n", cex = 1.2, cex.axis = 1.2,
+     cex.main = 1.2, cex.lab = 1.2, yaxt = "n", xaxt = "n", ylab = "",
+     xlab = "")
+axis(1, at = seq(1, 101, 10), labels = seq(0, 1, 0.1), cex = 1.2,
+     cex.axis = 1.2, las = 2)
+lines(ci.99.100(seq(0, 1, 0.01)), col = cols[2], lwd = 3, lty = 1)
+lines(ci.99.1000(seq(0, 1, 0.01)), col = cols[3], lwd = 3, lty = 1)
+dev.off()
+par(mfrow = c(1,1))
+par(mar = c(5.1, 4.1, 4.1, 2.1))
