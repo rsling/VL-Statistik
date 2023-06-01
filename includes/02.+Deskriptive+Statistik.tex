@@ -11,8 +11,6 @@
       \end{itemize}
     \item \orongsch{Theoretische vs.\ empirische Verteilungen}
       \Halbzeile
-    \item \alert{Kovarianz} | Miteinander variierende Variablen
-      \Halbzeile
     \item \alert{Konfidenzintervalle} | Genauigkeiten von Schätzungen?
   \end{itemize}
 \end{frame}
@@ -342,115 +340,6 @@
       &&\\
       \hline
     \end{tabular}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  {Korrelationen | Zusammenhänge zwischen numerischen Variablen}
-  Bivariate Korrelationskoeffizienten | \orongsch{ab Ordinalskala}\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/corrplot}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 1}
-  Koordinate von $\langle\bar{x},\bar{y}\rangle$ | Mittel der beiden gemessenen Variablen\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov02}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 2}
-  Punktvarianzen | $x_3-\bar{x}=-7.81$ und $y_3-\bar{y}=-5.80$ | \alert{$-7.81\cdot-5.80=45.30$}\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov03}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 3}
-  Punktvarianzen | $x_{17}-\bar{x}=4.95$ und $y_{17}-\bar{y}=7.11$ | \alert{$4.95\cdot7.11=35.19$}\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov04}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 4}
-  Puntvarianzen für alle $\langle x_i,y_i\rangle$ \ $cov(x,y)=34.52$\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov05}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 5}
-  Ausreißer bei ansonsten positiver Kovarianz | \alert{Negatives Produkt} der Punktvarianzen\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov06}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  {Kovarianz | Illustration 6}
-  Punktvarianzen | $x_{21}-\bar{x}=6.77$ und $y_{21}-\bar{y}=-8.79$ | \alert{$6.77\cdot-8.79=-59.51$}\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov07}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  {Negative Kovarianz}
-  Tendenziell negative Abhängigkeit | Punktvarianzen überwiegend | $cov(x,y)=-33.77$\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov08}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  {Kovarianz nahe Null}
-  Ohne Abhängigkeit | Kovarianz nahe 0 |$cov(x,y)=-1.74$\\
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{graphics/cov09}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  {Kovarianz}
-  \alert{Kovarianz} | Kombination der Abweichung der Messpunkte vom jeweiligen Mittel\\
-  \begin{center}
-    \alert{$cov(x,y)=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})\cdot(y_i-\bar{y})}{n-1}$}\\
-    \Halbzeile
-    \alert{Summe der Produkte} | Der Zählerterm | $SP(x,y)=\sum\limits_{i=1}^{n}(x_i-\bar{x})\cdot(y_i-\bar{y})$
-  \end{center}
-  \Halbzeile
-  \begin{itemize}[<+->]
-    \item \gruen{$x_i-\bar{x}>0$} und \gruen{$y_i-\bar{y}>0$} | Beitrag zur Kovarianz \gruen{positiv}
-    \item \orongsch{$x_i-\bar{x}<0$} und \orongsch{$y_i-\bar{y}<0$} | Beitrag zur Kovarianz \gruen{positiv}
-      \Halbzeile
-    \item \gruen{$x_i-\bar{x}>0$} und \orongsch{$y_i-\bar{y}<0$} | Beitrag zur Kovarianz \orongsch{negativ}
-    \item \orongsch{$x_i-\bar{x}<0$} und \gruen{$y_i-\bar{y}>0$} | Beitrag zur Kovarianz \orongsch{negativ}
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}
-  {Korrelationskoeffizient}
-  \alert{Korrelationskoeffizient} | Im Gegensatz zur Kovarianz \alert{skalenunabhängig}\\
-  \vspace{3\baselineskip}
-  \begin{center}
-    $r(x,y)=\frac{cov(x,y)}{s(x)\cdot s(y)}$\\
-    \Zeile
-    \grau{Pearson-Korrelation}
   \end{center}
 \end{frame}
 

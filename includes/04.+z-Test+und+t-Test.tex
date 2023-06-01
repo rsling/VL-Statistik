@@ -29,17 +29,17 @@
 \begin{frame}
   {Tests in Fishers Philosophie}
   \begin{enumerate}
-    \item \alert{Nullhypothese} (H0) festlegen: Der theoretisch angenommene Effekt\\
+    \item \alert{Nullhypothese} (\Null) festlegen: Der theoretisch angenommene Effekt\\
       existiert \alert{nicht} (z.\,B.: Die Versuchsperson [VP] kann \alert{nicht} erkennen,\\
       ob Tee oder Milch zuerst in der Tasse war).
     \item \alert{Stichprobengröße} und \alert{Versuchsaufbau} festlegen (z.\,B.\ acht Tassen\\
       mit vier \textit{Tee zuerst}-Tassen; VP kennt das Verhältnis)
-    \item \alert{\textit{sig}-Niveau} festlegen: Wie unwahrscheinlich darf das Ergebnis\\
-      unter Annahme der H0 sein, damit wir die H0 zurückweisen.
+    \item \alert{\Sig-Niveau} festlegen: Wie unwahrscheinlich darf das Ergebnis\\
+      unter Annahme der \Null\ sein, damit wir die \Null\ zurückweisen.
     \item Experiment durchführen, Ergebnis messen.
     \item \alert{p-Wert} berechnen: Wie wahrscheinlich \alert{war} es, dieses Ergebnis\\
-      oder ein extremeres Ergebnis zu erreichen, wenn die H0 die Welt korrekt beschreibt.
-    \item Wenn \alert{$p\leq sig$}, dann H0 zurückweisen: Entweder der Effekt existiert\\
+      oder ein extremeres Ergebnis zu erreichen, wenn die \Null\ die Welt korrekt beschreibt.
+    \item Wenn \alert{$p\leq$\,\Sig}, dann \Null\ zurückweisen: Entweder der Effekt existiert\\
       (\zB die VP kann die Reihenfolge des Einschenkens erkennen)\\
       \alert{oder ein seltenes Ereignis ist eingetreten}.
   \end{enumerate}
@@ -53,7 +53,7 @@
     \item keine Auskunft darüber, wie "`wahrscheinlich"' der Effekt ist
     \item keine Auskunft darüber, wie stark wir von der Existenz des Effekts\\
       überzeugt sein sollten (= \textit{inverse probability})
-    \item jede H0-Zurückweisung: nur ein kleinteiliger Hinweis auf einen Effekt
+    \item jede \Null-Zurückweisung: nur ein kleinteiliger Hinweis auf einen Effekt
     \item \alert{substantielle} theoretische Hypothese oft und hart testen!
       \vspace{\baselineskip}
     \item \alert{Sensitivity}: keine Auskunft über die \alert{Stärke} des Effekts
@@ -186,8 +186,8 @@
     \item Mittel $\mu$ über $X$ in der Grundgesamtheit bekannt\\
       (\zB mittlere Satzlänge im Korpus).
     \item Stichprobe (\zB der Grundriss von PE) zeigt gemessenes Mittel $\bar{x}$.
-    \item Ist die Abweichung signifikant?
-    \item \alert{H0: $\bar{x}=\mu$}
+    \item Reicht das für ein signifikantes Testergebnis?
+    \item \alert{\Null: $\bar{x}=\mu$}
   \end{itemize}
 \end{frame}
 
@@ -273,7 +273,7 @@
     \item \texttt{> qt(c(0+0.05/2, 1-0.05/2), df=9)\\
       $\Rightarrow 2.262157 .. -2.262157$}
     \item Der errechnete t-Wert ist nicht signifikant.
-    \item H0: $\mu=\bar{x}$ nicht zurückgewiesen.
+    \item \Null: $\mu=\bar{x}$ nicht zurückgewiesen.
   \end{itemize}
 \end{frame}
 
@@ -319,7 +319,7 @@
     \item dazu: \alert{zwei Stichproben} (je eine) mit einem \alert{Mittelwert} (\zB Länge)
     \item Interesse: anhand der \alert{zwei Stichproben} zeigen,\\
       dass sie (sehr wahrscheinlich) \alert{aus zwei Grundgesamtheiten} kommen
-    \item \alert{H0: $\mu_1-\mu_0=0$}
+    \item \alert{\Null: $\mu_1-\mu_0=0$}
     \item hier also: eine unabhängige Variable (Jahrhundert)\\
       und eine abhängige Variable (Satzlänge), gemessen als Mittel
   \end{itemize}
@@ -340,7 +340,7 @@
   \pause
   \begin{itemize}[<+->]
     \item Wir testen also auf die \alert{Differenz der Unterschiede}.
-    \item Per H0 wird gesetzt: \alert{$\mu_1-\mu_2=0$}
+    \item Per \Null\ wird gesetzt: \alert{$\mu_1-\mu_2=0$}
   \end{itemize} 
 \end{frame}
 
@@ -425,14 +425,14 @@
   \begin{center}
     \texttt{shapiro.test(x)}\\
     Wenn $p\leq0.05$ wird die Nullhypothese des Shapiro-Wilk-Tests verworfen --\\
-    H0: Die Werte stammen aus einer normalverteilten GG.
+    \Null: Die Werte stammen aus einer normalverteilten GG.
   \end{center}
   \pause
   Die \alert{Varianzen müssen homogen sein}:
   \begin{center}
     \texttt{var.test(x1, x2)}\\
-    Auch hier: $p\leq0.05$ weist die H0 zurück (sehr informell) --\\
-    H0: Die Varianzen von x1 und x2 sind homogen.
+    Auch hier: $p\leq0.05$ weist die \Null\ zurück (sehr informell) --\\
+    \Null: Die Varianzen von x1 und x2 sind homogen.
   \end{center}
 \pause
 \begin{center}

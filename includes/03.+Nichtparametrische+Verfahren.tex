@@ -104,7 +104,7 @@
   50 mal Norden, 50 mal Süden (= \alert{Zeilensummen})\\
 
   \begin{itemize}
-  \item<2-> erwartete Häufigkeiten unter Annahme der H0\\
+    \item<2-> erwartete Häufigkeiten unter Annahme der \Null\\
     = kein Zusammenhang zwischen Hilfsverb und Region?
   \end{itemize}
 
@@ -132,7 +132,7 @@
     30 mal Norden, 70 mal Süden (= \alert{Zeilensummen})\\
 
   \begin{itemize}
-  \item<1-> erwartete Häufigkeiten unter Annahme der H0?
+    \item<1-> erwartete Häufigkeiten unter Annahme der \Null?
   \end{itemize}
 
   \begin{figure}[h]
@@ -227,13 +227,13 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
 
   \begin{itemize}[<+->]
   \item Beobachtete und erwartete Häufigkeit weichen ab.
-  \item H0: kein Zusammenhang zwischen Region und Aux.
+  \item \Null: kein Zusammenhang zwischen Region und Aux.
   \item Ab wann ist der Unterschied "`signifikant"'?
     \vspace{\baselineskip}
   \item Ein gemessener Unterschied ist \alert{siginifikant}, wenn er angesichts der Stichprobengröße groß genug ist, dass wir das im Experiment gefundene Ergenbis nur sehr selten (typischwerweise in unter 5\% der Fälle) erwarten würden, wenn er gar nicht bestünde. 
     \vspace{\baselineskip}
   \item Diese 5\% (als \alert{Anteil} 0.05) sind das \alert{Signifikanzniveau}.
-  \item In Fishers Philosophie abgekürzt $sig$, nicht wie oft zu lesen "`$\alpha$-Niveau"'.
+  \item In Fishers Philosophie abgekürzt \Sig, nicht wie oft zu lesen "`$\alpha$-Niveau"'.
 \end{itemize}
   
 \end{frame}
@@ -330,13 +330,13 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
 
 \begin{frame}{Die $\chi^2$-Verteilung II}
   \begin{itemize}[<+->]
-    \item Wahrscheinlichkeit eines bestimmten $\chi^2$-Werts unter Annahme der H0?\\
+    \item Wahrscheinlichkeit eines bestimmten $\chi^2$-Werts unter Annahme der \Null?\\
       \alert{VOR dem Experiment! Nach dem Experiment ist die Wahrscheinlichkeit\\
       des gemessenen p-Werts immer 1.}
       \vspace{\baselineskip}
-    \item In Fishers Philosophie Entscheidung nach \alert{Signifikanzniveau} ($sig$):\\
-      \alert{Der $\chi^2$-Wert muss in den extremen $sig$-Anteilen liegen,\\
-      um die H0 zu $sig$ zurückzuweisen.}
+    \item In Fishers Philosophie Entscheidung nach \alert{Signifikanzniveau} (\Sig):\\
+      \alert{Der $\chi^2$-Wert muss in den extremen \Sig-Anteilen liegen,\\
+      um die \Null\ zu \Sig\ zurückzuweisen.}
   \end{itemize}
   \pause
   \begin{center}
@@ -359,13 +359,13 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
 	\item 1\%
 	\item 0.1\% ("`hochsignifikant"')
       \end{itemize}
-    \item Diese Niveaus entsprechen einem falsch interpretierten $sig$.
+    \item Diese Niveaus entsprechen einem falsch interpretierten \Sig.
     \item Die Idee von "`mehr oder weniger signifikant"' ist \alert{kompletter Schwachsinn}.
     \item Entweder ist das gesetzte Niveau akzeptabel,\\
       und dann bringt ein kleineres $p$ aber auch nicht mehr.
-    \item Oder es müsste eigtl.\ ein strengeres $sig$-Niveau gewählt werden,\\
+    \item Oder es müsste eigtl.\ ein strengeres \Sig-Niveau gewählt werden,\\
       und dann ist $p<0.05$ schlicht nicht ausreichend (s.\ Fishers \alert{Sensitivität}).
-    \item Die Entscheidung für ein bestimmtes $sig$-Niveau muss\\
+    \item Die Entscheidung für ein bestimmtes \Sig-Niveau muss\\
       auf Basis konzeptueller\slash inhaltlicher Gründe gefällt werden.
     \item \alert{EIN signifikantes Testergebnis alleine sagt nicht viel aus!!!}
   \end{itemize}
@@ -859,10 +859,10 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
   {Binomial-Test}  
   \pause
   \Large
-  H0: Es gibt keine Abweichung\\
+  \Null: Es gibt keine Abweichung\\
   von den erwarteten gleich großen Anteilen.\\[\baselineskip]
   \pause
-  \alert{H0: $p(Dativ)=0.5$} (p für proportion)
+  \alert{\Null: $p(Dativ)=0.5$} (p für proportion)
 \end{frame}
 
 \begin{frame}
@@ -877,11 +877,11 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
 \end{frame}
 
 \begin{frame}
-  {Unter Annahme der H0\ldots}
+  {Unter Annahme der \Null\ldots}
   \begin{itemize}[<+->]
     \item Wenn \alert{$p\cdot n>10$ und $(1-p)\cdot n>10$}\\
       approximiert die Binomialverteilung die Normalverteilung.
-    \item Es gilt dann (unter Annahme der H0!) für die Normalverteilung:
+    \item Es gilt dann (unter Annahme der \Null!) für die Normalverteilung:
       \begin{itemize}
 	\item Mittel: \alert{$\mu=p\cdot n$}
 	\item Standardabweichung: \alert{$s=\sqrt{n\cdot p\cdot(1-p)}$}
@@ -903,10 +903,10 @@ beobachtete Häufigkeiten für eine DeReKo-Stichprobe (\textit{geschwebt}):
   \pause
   \begin{itemize}[<+->]
     \item Der gemessene Wert liegt 1.8 Standardabweichungen\\
-      vom H0-Mittel entfernt.
+      vom \Null-Mittel entfernt.
     \item Wir kennen bereits die kritischen Werte für Normalverteilungen\\
       und $sig=0.05$: \alert{$-1.96 .. 1.96$}
-    \item Die H0 kann also nicht zurückgewiesen werden bei $sig=0.05$.
+    \item Die \Null\ kann also nicht zurückgewiesen werden bei $sig=0.05$.
       \vspace{\baselineskip}
     \item Interpretation: Entweder ist die Variation nicht genau gleich verteilt\\
       \alert{oder ein seltenes Ereignis ist eingetreten.}

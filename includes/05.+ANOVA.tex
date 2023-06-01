@@ -52,12 +52,12 @@
 \begin{frame}
   {Idee bei ANOVA (\zB drei Gruppen)}
   \begin{itemize}[<+->]
-    \item \alert{H0: $\bar{x_1}=\bar{x_2}=\bar{x3}$}
+    \item \alert{\Null: $\bar{x_1}=\bar{x_2}=\bar{x3}$}
     \item aber: \alert{Es gibt keinen ``Differenzwert'' für drei Mittel}\\
       (also sowas wie den t-Wert).
       \Zeile
     \item daher \alert{Varianzvergleich}
-    \item \alert{F-Wert} (Verteilung unter H0 bekannt) als Test-Statistik
+    \item \alert{F-Wert} (Verteilung unter \Null\ bekannt) als Test-Statistik
   \end{itemize}
   \pause
   \vspace{0.5cm}
@@ -122,7 +122,7 @@
   {Varianz zwischen den drei Gruppen}
   
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{graphics/anova_var_between}\\
+    \includegraphics[width=0.40\textwidth]{graphics/anova_var_between}\\
     $s^2([\bar{x_1}, \bar{x_2}, \bar{x_3}])=1.33$\\
     \vspace{0.5cm}
     Achtung: Bei unterschiedlichen Stichprobengrößen\\
@@ -136,9 +136,9 @@
 
   \begin{center}
     \begin{tabular}[h!]{ccccc}
-      \multirow{3}{*}{\includegraphics[width=0.2\textwidth]{graphics/anova_var_total}} & \multirow{3}{*}{$=$} & \multirow{3}{*}{\includegraphics[width=0.2\textwidth]{graphics/anova_var_between}} & \multirow{3}{*}{$+$} & \includegraphics[width=0.15\textwidth]{graphics/anova_var_x1} \\
-      &&&& \includegraphics[width=0.15\textwidth]{graphics/anova_var_x2} \\
-      &&&& \includegraphics[width=0.15\textwidth]{graphics/anova_var_x3} \\
+      \multirow{3}{*}{\includegraphics[width=0.175\textwidth]{graphics/anova_var_total}} & \multirow{3}{*}{$=$} & \multirow{3}{*}{\includegraphics[width=0.175\textwidth]{graphics/anova_var_between}} & \multirow{3}{*}{$+$} & \includegraphics[width=0.125\textwidth]{graphics/anova_var_x1} \\
+      &&&& \includegraphics[width=0.125\textwidth]{graphics/anova_var_x2} \\
+      &&&& \includegraphics[width=0.125\textwidth]{graphics/anova_var_x3} \\
       \hline
       $s^2(X)$ & $=$ & $s^2(\bar{x_1},\bar{x_2},\bar{x_3})$ & $+$ & $s^2(x_1)+s^2(x_2)+s^2(x_3)$ \\
     \end{tabular}\\
@@ -153,8 +153,8 @@
   \begin{center}
     \alert{$F=\frac{\mathsf{Varianz\ zwischen\ Stichprobenmitteln}}{\mathsf{Varianz\ in\ den\ Stichproben}}=\frac{\mathsf{Varianz\ zwischen\ Stichprobenmitteln}}{\mathsf{Varianz\ per\ Zufall}}$}\\
     \begin{tabular}[h!]{cc}
-      \multirow{2}{*}{$F=$} & \includegraphics[width=0.2\textwidth]{graphics/anova_var_between} \\\cline{2-2}
-      & \includegraphics[width=0.2\textwidth]{graphics/anova_var_x1}\ \raisebox{1.25cm}{+}\ \includegraphics[width=0.2\textwidth]{graphics/anova_var_x2}\ \raisebox{1.25cm}{+}\ \includegraphics[width=0.2\textwidth]{graphics/anova_var_x3} \\
+      \multirow{2}{*}{$F=$} & \includegraphics[width=0.175\textwidth]{graphics/anova_var_between} \\\cline{2-2}
+      & \includegraphics[width=0.175\textwidth]{graphics/anova_var_x1}\ \raisebox{1.25cm}{+}\ \includegraphics[width=0.175\textwidth]{graphics/anova_var_x2}\ \raisebox{1.25cm}{+}\ \includegraphics[width=0.175\textwidth]{graphics/anova_var_x3} \\
     \end{tabular}\\
     \Zeile
     \rot{Wenn man den Abstand zwischen den Mitteln verschiebt,\\\textbf{muss} die Gesamtvarianz größer werden!}
@@ -171,7 +171,7 @@
     \item Warum?
     \item $F=\frac{\mathsf{\alert{Unterschied\ durch\ Effekt}+Unterschiede\ durch\ restliche\ Varianz}}{\mathsf{Unterschied\ durch\ restliche\ Varianz}}$
     \Zeile
-    \item Unter Annahme der H0 gibt es keinen Effekt, \ldots
+    \item Unter Annahme der \Null\ gibt es keinen Effekt, \ldots
     \item also \alert{$Unterschied\ durch\ Effekt=0$}
     \Zeile
     \item dann: $F=\frac{\mathsf{\alert{0}+Unterschiede\ durch\ restliche\ Varianz}}{\mathsf{Unterschied\ durch\ restliche\ Varianz}}=\alert{1}$
@@ -287,7 +287,7 @@
   \end{center}
 
   \vspace{0.5cm}
-  In \texttt{R} für $df_{zwischen}=2$ und $df_{in}=12$ bei sig=0.05:\\
+  In \texttt{R} für $df_{zwischen}=2$ und $df_{in}=12$ bei \Sig=0.05:\\
   \texttt{> qf(0.95, 2, 12) $\Rightarrow$ 3.885294}
 \end{frame}
 
@@ -494,7 +494,7 @@
 \begin{frame}
   {Das jetzt alles zusammen}
   Bitte vollständige zweifaktorielle ANOVA\\
-  bei sig=0.05 und sig=0.01 rechnen:\\
+  bei \Sig=0.05 und \Sig=0.01 rechnen:\\
 
   \begin{center}
     \begin{tabular}[h!]{|c||c|c|c|}

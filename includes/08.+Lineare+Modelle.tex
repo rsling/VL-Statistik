@@ -22,7 +22,7 @@
 \begin{frame}
   {Übersicht}
   \begin{itemize}[<+->]
-    \item Wiederholung der Pearson-Korrleation ($r$, $r^2$)
+    \item Pearson-Korrleation ($r$, $r^2$)
     \item Siginifikanztests mit Korrelationen
     \item Unterschied von Pearsons $r$ zu Spearmans Rang-Korrelation
     \item Unterschiede zwischen Korrelation und Regression
@@ -35,21 +35,133 @@
 \subsection{Korrelation und Signifikanz}
 
 \begin{frame}
-  {Pearson-Korrelation (Wh.)}
+  {Korrelationen | Zusammenhänge zwischen numerischen Variablen}
+  Bivariate Korrelationskoeffizienten | \orongsch{ab Ordinalskala}\\
   \begin{center}
-    \alert{$r(x_1,x_2)=\frac{cov(x_1,x_2)}{s(x_1)\cdot s(x_2)}$}
-  \end{center}
-  \pause
-  In Gravetter \& Wallnau, Kap.\ 16 lautet die Formel:
-  \begin{center}
-    \alert{$r=\frac{SP}{\sqrt{SQ_x\cdot SQ_y}}$}
-  \end{center}
-  Die Formeln sind äquivalent, weil (mit $x,y$ statt $x_1,x_2$):
-  \begin{center}
-    $r(x,y)=\frac{cov(x,y)}{s(x)\cdot s(y)}=\onslide<3->{\frac{\frac{\sum(x_i-\bar{x})\cdot(y_i-\bar{x})}{n-1}}{\sqrt{\frac{\sum(x_i-\bar{x})}{n-1}\cdot\frac{\sum(y_i-\bar{y})}{n-1}}}=}\onslide<4->{\frac{\frac{SP(x,y)}{n-1}}{\sqrt{\frac{\sum(x_i-\bar{x})\cdot\sum(y_i-\bar{y})}{n-1}}}=}$\\[3ex]
-    $\onslide<5->{\frac{\frac{SP(x,y)}{n-1}}{\ \ \ \frac{\sqrt{\sum(x_i-\bar{x})\cdot\sum(y_i-\bar{y})}}{n-1}\ \ \ }=}\onslide<6->{\frac{SP(x,y)}{n-1}\cdot\frac{n-1}{\sqrt{SQ(x)\cdot SQ(y)}}=}\onslide<7->{\frac{SP(x,y)}{\sqrt{SQ(x)\cdot SQ(y)}}}$
+    \includegraphics[height=0.7\textheight]{graphics/corrplot}
   \end{center}
 \end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 1}
+  Koordinate von $\langle\bar{x},\bar{y}\rangle$ | Mittel der beiden gemessenen Variablen\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov02}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 2}
+  Punktvarianzen | $x_3-\bar{x}=-7.81$ und $y_3-\bar{y}=-5.80$ | \alert{$-7.81\cdot-5.80=45.30$}\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov03}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 3}
+  Punktvarianzen | $x_{17}-\bar{x}=4.95$ und $y_{17}-\bar{y}=7.11$ | \alert{$4.95\cdot7.11=35.19$}\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov04}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 4}
+  Puntvarianzen für alle $\langle x_i,y_i\rangle$ \ $cov(x,y)=34.52$\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov05}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 5}
+  Ausreißer bei ansonsten positiver Kovarianz | \alert{Negatives Produkt} der Punktvarianzen\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov06}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Kovarianz | Illustration 6}
+  Punktvarianzen | $x_{21}-\bar{x}=6.77$ und $y_{21}-\bar{y}=-8.79$ | \alert{$6.77\cdot-8.79=-59.51$}\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov07}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Negative Kovarianz}
+  Tendenziell negative Abhängigkeit | Punktvarianzen überwiegend | $cov(x,y)=-33.77$\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov08}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Kovarianz nahe Null}
+  Ohne Abhängigkeit | Kovarianz nahe 0 |$cov(x,y)=-1.74$\\
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{graphics/cov09}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  {Kovarianz}
+  \alert{Kovarianz} | Kombination der Abweichung der Messpunkte vom jeweiligen Mittel\\
+  \begin{center}
+    \alert{$cov(x,y)=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})\cdot(y_i-\bar{y})}{n-1}$}\\
+    \Halbzeile
+    \alert{Summe der Produkte} | Der Zählerterm | $SP(x,y)=\sum\limits_{i=1}^{n}(x_i-\bar{x})\cdot(y_i-\bar{y})$
+  \end{center}
+  \Halbzeile
+  \begin{itemize}[<+->]
+    \item \gruen{$x_i-\bar{x}>0$} und \gruen{$y_i-\bar{y}>0$} | Beitrag zur Kovarianz \gruen{positiv}
+    \item \orongsch{$x_i-\bar{x}<0$} und \orongsch{$y_i-\bar{y}<0$} | Beitrag zur Kovarianz \gruen{positiv}
+      \Halbzeile
+    \item \gruen{$x_i-\bar{x}>0$} und \orongsch{$y_i-\bar{y}<0$} | Beitrag zur Kovarianz \orongsch{negativ}
+    \item \orongsch{$x_i-\bar{x}<0$} und \gruen{$y_i-\bar{y}>0$} | Beitrag zur Kovarianz \orongsch{negativ}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  {Korrelationskoeffizient}
+  \alert{Korrelationskoeffizient} | Im Gegensatz zur Kovarianz \alert{skalenunabhängig}\\
+  \vspace{3\baselineskip}
+  \begin{center}
+    $r(x,y)=\frac{cov(x,y)}{s(x)\cdot s(y)}$\\
+    \Zeile
+    \grau{Pearson-Korrelation}
+  \end{center}
+\end{frame}
+
+
+
+
+% \begin{frame}
+%   {Pearson-Korrelation (Wh.)}
+%   \begin{center}
+%     \alert{$r(x_1,x_2)=\frac{cov(x_1,x_2)}{s(x_1)\cdot s(x_2)}$}
+%   \end{center}
+%   \pause
+%   In Gravetter \& Wallnau, Kap.\ 16 lautet die Formel:
+%   \begin{center}
+%     \alert{$r=\frac{SP}{\sqrt{SQ_x\cdot SQ_y}}$}
+%   \end{center}
+%   Die Formeln sind äquivalent, weil (mit $x,y$ statt $x_1,x_2$):
+%   \begin{center}
+%     $r(x,y)=\frac{cov(x,y)}{s(x)\cdot s(y)}=\onslide<3->{\frac{\frac{\sum(x_i-\bar{x})\cdot(y_i-\bar{x})}{n-1}}{\sqrt{\frac{\sum(x_i-\bar{x})}{n-1}\cdot\frac{\sum(y_i-\bar{y})}{n-1}}}=}\onslide<4->{\frac{\frac{SP(x,y)}{n-1}}{\sqrt{\frac{\sum(x_i-\bar{x})\cdot\sum(y_i-\bar{y})}{n-1}}}=}$\\[3ex]
+%     $\onslide<5->{\frac{\frac{SP(x,y)}{n-1}}{\ \ \ \frac{\sqrt{\sum(x_i-\bar{x})\cdot\sum(y_i-\bar{y})}}{n-1}\ \ \ }=}\onslide<6->{\frac{SP(x,y)}{n-1}\cdot\frac{n-1}{\sqrt{SQ(x)\cdot SQ(y)}}=}\onslide<7->{\frac{SP(x,y)}{\sqrt{SQ(x)\cdot SQ(y)}}}$
+%   \end{center}
+% \end{frame}
 
 \begin{frame}
   {$r^2$ und Siginifikanztests}
@@ -57,7 +169,7 @@
     \item Maß der Varianzerklärung durch $r$: \alert{$r^2$} (vgl. t-Test)
     \item \alert{Signifikanztest} möglich: Schluss auf Korrelation in der Grundgesamtheit
     \item $df_r=n-2$
-    \item Unter der H0 (keine Korrelation) t-verteilt:\\
+    \item Unter der \Null\ (keine Korrelation) t-verteilt:\\
       \alert{$t=r\sqrt{\frac{n-2}{1-r^2}}$}
     \item \dots oder Tabellen (\zB\ G\&W, B.6)
   \end{itemize}
@@ -163,7 +275,7 @@
   \end{center}
   \pause
   Die Summe der \alert{quadrierten} negativen und positiven Differenzen (blau)\\
-  soll \alert{minimiert} werden (=kleinste Quadrate): Minimierung von \alert{$\sum e^2$}
+  soll \alert{minimiert} werden (=kleinste Quadrate): Minimierung von \alert{$E=\sum e^2$}
 \end{frame}
 
 \begin{frame}
@@ -213,7 +325,7 @@
       \vspace{0.5cm}
     \item \alert{$SF(b)=\frac{\sqrt{\frac{\sum e^2}{n-1}}}{\sqrt{SQ(x)}}$}
       \vspace{0.5cm}
-    \item Unter der H0: $b=0$ ist dann t-verteilt:\\
+    \item Unter der \Null: $b=0$ ist dann t-verteilt:\\
       \alert{$t=\frac{b}{SF(b)}$}
   \end{itemize}
 \end{frame}
@@ -256,7 +368,7 @@
 \begin{frame}
   {Normalitätsannahme}
   \begin{center}
-    \alert{Die Residuen müssen normalverteilt sein.}\\
+    \alert{Die Residuen $E$ müssen normalverteilt sein.}\\
     (als Diagnostik für: \alert{Die Messwerte müssen normalverteilt sein.})
   \end{center}
   \begin{itemize}[<+->]
@@ -494,6 +606,157 @@ F-statistic:\ 48.06\ on\ 1\ and\ 18\ DF,\ \ p-value:\ 1.768e-06\ \\
 %  \end{center}
 %  Hinweis: Mit \texttt{"{}Mean Sq"} ist $s^2$ gemeint.
 %\end{frame}
+
+
+\section{Lineare Modelle und ANOVA}
+
+
+\begin{frame}
+  {Äquivalenz von ANOVA und LM}
+  Binäre Kodierung der Gruppenzugehörigkeit\\
+  Hier: drei Gruppen von einem Faktor (einfaktorielle ANOVA mit drei Gruppen)\\
+
+ \begin{center}
+   \begin{tabular}[h!]{|c|c|c|c|c|}
+     \cline{3-5}
+     \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\textbf{ANOVA-Gruppen}} \\
+     \cline{3-5}
+     \multicolumn{2}{c|}{} & $A_1$ & $A_2$ & $A_3$ \\
+     \hline
+     \multirow{3}{*}{\begin{sideways}\textbf{Regressor}\end{sideways}} & \rule{0pt}{18pt} $x_1=$ & $\mathbf{1}$ & $0$ & $0$ \\
+     \cline{2-5}
+     & \rule{0pt}{18pt} $x_2=$ & $0$ & $\mathbf{1}$ & $0$ \\
+     \cline{2-5}
+     & \rule{0pt}{18pt} $x_3=$ & $0$ & $0$ & $\mathbf{1}$ \\
+     \hline
+   \end{tabular}
+  \Zeile
+   \begin{equation}
+    \hat{y}=b_1x_1 + b_2x_2 + \cdots + b_nx_n + a
+  \end{equation}
+ \end{center}
+\end{frame}
+
+
+\begin{frame}
+  {Volles Modell, Kleinste Quadrate}
+  Kleinste Quadrate | für jeden Koeffizienten $b_i$ jeweils Mittelwert der Gruppe $i$ ($\bar{y_i}$)\\
+  Außerdem erstmal $a=0$ | dann:\\
+  \Halbzeile 
+  \begin{equation}
+    \hat{y}=\bar{y_1}x_1 + \bar{y_2}x_2 + \cdots + \bar{y_n}x_n
+  \end{equation}
+
+  \Zeile
+  Allgemeines Mittel als Intercept | $a=\bar{Y}$\\
+  Koeffizienten = Abweichung Gruppenmittel vom Gesamtmittel\\
+  \Halbzeile  
+  \begin{equation}
+    \hat{y}=(\bar{y_1}-\bar{Y})x_1 + (\bar{y_2}-\bar{Y})x_2 + \cdots + (\bar{y_n}-\bar{Y})x_n + \mathbf{\bar{Y}}
+  \end{equation}
+\end{frame}
+
+
+\begin{frame}
+  {Beispiel für einen Datenpunkt aus Gruppe 2}
+  Entsprechend in ANOVA $A_2$ | Unabhängige im LM: $x_1=0$, $x_2=1$ und $x_3=0$\\
+  Schätzung für den $y$-Wert:\\
+  \Halbzeile  
+  \begin{equation}
+    \begin{split}
+      \hat{y} & = (\bar{y_1}-\bar{Y})0 + \mathbf{(\bar{y_2}-\bar{Y})1} + \cdots + (\bar{y_n}-\bar{Y})0 + \mathbf{\bar{Y}}\\
+       &= 0 + (\bar{y_2}-\bar{Y}) + \cdots + 0 + \bar{Y} \\
+       &= \bar{y_2} - \bar{Y} + \bar{Y} \\
+       &= \bar{y_2}
+    \end{split}
+  \end{equation}
+  
+  \Zeile
+  Jeder $\hat{y}$-Wert | Mittel der beobachteten $y$-Werte der Gruppe, zu der er gehört\\
+  \grau{\footnotesize Das ergibt für ausschließlich nominale Unabhängige in der Tat den Schätzer mit den kleinsten Quadraten (s.\ Maxwell \& Delaney, Kap.\ 3).}
+\end{frame}
+
+\begin{frame}
+  {Test über Modell}
+  Kernfrag | \alert{Bringen Abweichungen der Gruppenmittel eine Verbesserung der Vorhersage\\
+  gegenüber dem Gesamt-Mittel?}\\
+  \Halbzeile
+  Methode | Vergleich der \alert{Residuen $E_f$ für volles Modell} (mit Gruppenmitteln)\\
+  vs.\ \alert{Residuen $E_r$ für reduziertes Modell} (ohne Gruppenmittel)\\
+
+  \Zeile
+  Gleichung~\ref{eq:fullmod} für volles und Gleichung~\ref{eq:redmod} für reduziertes Modell\\
+  
+  \begin{equation}
+      \mathbf{\hat{y_f}}=(\bar{y_1}-\bar{Y})x_1 + (\bar{y_2}-\bar{Y})x_2 + \cdots + (\bar{y_n}-\bar{Y})x_n + \bar{Y}
+      \label{eq:fullmod}
+  \end{equation}
+  
+  \begin{equation}
+    \mathbf{\hat{y_r}}=\bar{Y}
+      \label{eq:redmod}
+  \end{equation}
+  
+\end{frame}
+
+\begin{frame}
+  {Vergleich von Varianzen = ANOVA | F-Verteilung}
+  \begin{equation}
+    F=\frac{\ \ \frac{E_r-E_f}{df_r-df_f}\ \ }{\frac{E_f}{df_f}}=\frac{\text{erklärte Varianz}}{\text{zufällige\ Varianz}}
+  \end{equation}
+
+  \Zeile
+  \begin{enumerate}
+    \item Residuen = Maß für die Varianz
+    \item Residuen des vollen Modells = Maß für die Varianz,\\
+      die trotz der Erklärungskraft des vollen Modells bleibt (= unerklärte Varianz)
+    \item Residuen des reduzierten Modells = Maß für die Gesamtvarianz\\
+      (Abweichungen vom Gesamt-Mittel)
+    \item Zähler | trotz der Erklärung verbleibende Varianz $-$ vollen Varianz\\
+      abgezogen (=  erklärte Varianz)
+    \item Quotient insgesamt | Zählervarianz in Bezug zur Gesamtvarianz\\
+      (klassischer F-Quotient, s.\ ANOVA)
+  \end{enumerate}
+\end{frame}
+
+% Dieser Vergleich erfolgt über den folgenden F-Quotienten, mit dem konzeptuell und mathematisch die Konvergenz zur klassischen ANOVA hergestellt wird:
+% 
+% 
+% Alternativ kann man eins der Gruppenmittel zum Referenzmittel (= Intercept) machen.
+% Dann evaluiert man die anderen relativ zu diesem.
+% Konzeptuell ist das dasselbe.
+% 
+% In \texttt{R} kann man eine ANOVA folgendermaßen Rechnen und damit eine klassische ANOVA-Ausgabe produzieren (mit \texttt{Mean Sq} meint \texttt{R} einfach die Varianz $s^2$):
+% 
+% \begin{center}
+%   \textbf{\texttt{summary(aov(lm(y\textasciitilde A)))}}
+% \end{center}
+% 
+% \texttt{y} ist dabei ein Vektor, der die beobachteten Werte enthält, und \texttt{A} ein Faktor, der passend dazu die Faktor-Ausprägungen entsprechend der Gruppen paart.
+% Als Mini-Beispiel:
+% 
+% \begin{center}
+%   \begin{tabular}[h!]{|c|c|c|}
+%     \cline{1-1}\cline{3-3}
+%     \textbf{\texttt{y}} && \textbf{\texttt{A}} \\
+%     \cline{1-1}\cline{3-3}
+%     \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\\
+%     \cline{1-1}\cline{3-3}
+%     0 && 1 \\
+%     1 && 1 \\
+%     3 && 1 \\
+%     1 && 1 \\
+%     \cline{1-1}\cline{3-3}
+%     4 && 2 \\
+%     3 && 2 \\
+%     6 && 2 \\
+%     3 && 2 \\
+%     \cline{1-1}\cline{3-3}
+%   \end{tabular}
+% \end{center}
+
+
+
 
 
 \ifdefined\TITLE
