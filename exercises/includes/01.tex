@@ -1,0 +1,40 @@
+\section{Fisher-Exakt-Test und Stichprobengröße}
+
+\begin{enumerate}\Lf
+  \item Rekapitulieren Sie die Berechnung des klassischen \textit{Tea Tasting Lady}-Experiments für 6 richtige Tassen bei 8 Tassen insgesamt auf den Folien.
+  \item Berechnen Sie die Wahrscheinlichkeiten bzw.\ den p-Wert für dasselbe Verhältnis von richtigen Tassen, aber bei einer zehn Mal größeren Stichprobe, also 60 Tassen korrekt vorhergesagt bei 80 Tassen insgesamt.
+  \item Interpretieren Sie das Ergebnis.
+  \item Stellen Sie die Anfangswerte der zweiten Berechnung als Vier-Felder-Tabelle dar.
+\end{enumerate}
+
+
+\section{Vorgriff auf Kollostruktionsanalysen mit Fisher-Test}
+
+Uns werden im weiteren Verlauf sogenannte \textit{Kollostruktionsanalysen} begegnen.
+Diese sind ein Analyseverfahren für Korpusdaten und wurden ursprünglich (bei ihrer Erfindung vor 20 Jahren) mit Fisher-Exakt-Tests gerechnet.
+Ein möglicher Datensatz wäre folgender:%
+\footnote{Normalerweise nimmt man etwas andere Designs, aber das schauen wir uns dann in Ruhe an.}
+
+\begin{center}
+\begin{tabular}[h]{|l|c|c|}
+  \cline{2-3}
+  \multicolumn{1}{c|}{} & \textbf{\textit{kaufen}} & \textbf{\textit{umarmen}} \\\hline
+  \textbf{im Passiv} & 120 & 30 \\\hline
+  \textbf{im Aktiv} & 380 & 470 \\\hline
+\end{tabular}
+\end{center}
+
+Konzeptionell sind die tabulierten Zahlen die Anzahlen der Vorkommnisse von (in diesem konkreten Fall) dem Verb \textit{kaufen} im Aktiv und im Passiv und dem Verb \textit{umarmen} -- ebenfalls im Aktiv und im Passiv -- in einer Stichprobe aus irgendeinem Korpus (= Textsammlung) des Deutschen.
+(Die Zahlen sind hier der Einfachheit halber ausgedacht.)
+Wir möchten mit so einer Untersuchung quantifizieren, wie hoch die Affinität \textbf{der Verben im Vergleich zueinander} zur Passivbildung ist.
+
+\begin{enumerate}\Lf
+  \item Wie viele Vorkommnisse von \textit{kaufen} und \textit{umarmen} haben wir jeweils beobachtet?
+  \item Wie viele Sätze im Passiv und im Aktiv haben wir jeweils beobachtet?
+  \item Wie groß war die gesamte Stichprobe?
+  \item Was ist das Verhältnis zwischen Passiv und Aktiv bei \textit{kaufen} und bei \textit{umarmen}?
+  \item Wie würden Sie den p-Wert berechnen? Es reicht der Lösungsweg.
+  \item Der p-Wert ist $5,184\cdot 10^{-16}$. Überführen Sie diese Zahl aus der Exponentialschreibweise in herkömmliche Fließkommanotation, falls Sie das noch können.
+  \item Was sagt uns dieser p-Wert? Was ist das für eine Wahrscheinlichkeit? Das ist ja zunächst mal von der Idee her etwas völlig anderes als bei der \textit{Tea Tasting Lady}.
+  \item Es gibt zwischen den Designs der \textit{Tea Tasting Lady} und der Kollostruktionsanalyse einen wesentlichen Unterschied. Finden Sie den? Das ist allerdings eine optionale Transferaufgabe auf sehr hohem Niveau.
+\end{enumerate}
