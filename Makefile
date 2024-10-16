@@ -67,8 +67,8 @@ handout06: $(OUTDIR)/06.+Nichtparametrische+Verfahren$(HANDOUTSUFF)$(PROJECT)$(S
 handout07: $(OUTDIR)/07.+Freiheitsgrade+und+Effektstärken$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
 handout08: $(OUTDIR)/08.+Power+und+Severity$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
 handout09: $(OUTDIR)/09.+Lineare+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout10: $(OUTDIR)/20.+Generalisierte+Lineare+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
-handout11: $(OUTDIR)/12.+Gemischte+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout10: $(OUTDIR)/10.+Generalisierte+Lineare+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
+handout11: $(OUTDIR)/11.+Gemischte+Modelle$(HANDOUTSUFF)$(PROJECT)$(SUFFSUFF)
 
 allhandouts: handout01 handout02 handout03 handout05 handout06 handout07 handout08 handout09 handout10 handout11
 
