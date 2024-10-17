@@ -1,7 +1,7 @@
 \section{Fisher-Exakt-Test und Stichprobengröße}
 
 \begin{enumerate}\Lf
-  \item Rekapitulieren Sie die Berechnung des klassischen \textit{Tea Tasting Lady}-Experiments für 6 richtige Tassen bei 8 Tassen insgesamt (also 3 richtige "`Tee zuerst"'-Tipps und ein falscher Tipp von vier möglichen richtigen "`Tee zuerst"'-Tipps) auf den Folien.
+  \item Rekapitulieren Sie die Berechnung des klassischen \textit{Tea-Tasting Lady}-Experiments für 6 richtige Tassen bei 8 Tassen insgesamt (also 3 richtige "`Tee zuerst"'-Tipps und ein falscher Tipp von vier möglichen richtigen "`Tee zuerst"'-Tipps) auf den Folien.
   \item Berechnen Sie die Wahrscheinlichkeiten bzw.\ den p-Wert für dasselbe Verhältnis von richtigen Tassen, aber bei einer zehn Mal größeren Stichprobe, also 60 Tassen korrekt vorhergesagt bei 80 Tassen insgesamt.\label{ex:1b}
   \item Interpretieren Sie das Ergebnis.\label{ex:1c}
   \item Stellen Sie die Anfangswerte dieser Berechnung als Vier-Felder-Tabelle dar.\label{ex:1d}
@@ -34,7 +34,12 @@
     \frac{\binom{40}{40}\binom{40}{0}}{\binom{80}{40}}
   \end{math}
   \end{center}
-  \Zeile
+  \Halbzeile
+  Es fällt auf, dass mit steigender Stichprobengröße trotz einer gleichen Erkennungsrate für die relevanten Teetassen der p-Wert kleiner wird.
+  Es ist also schwerer, 30 von 40 richtig zu raten, als 3 von 4.
+  Das sollte hoffentlich intuitiv auch angemessen sein, gerade wenn die Fähigkeit der Tea-Tasting Lady, die Reihenfolge des Einschenkens zu erkennen, nicht absolut ist, aber trotzdem eine echte sensorische Fähigkeit darstellt.
+  Technisch gesprochen hängt der p-Wert von der \textbf{Effektstärke} (der Qualität der wahren Fähigkeit der Dame, die Reihenfolge des Einschenkens zu Erkennen) und der \textbf{Größe der Stichprobe} (und damit bei diskreten Ereignissen auch der Größe des Ereignisraums) ab.
+  \newpage
 }
 
 \Sol{%
@@ -78,7 +83,7 @@ Wir möchten mit so einer Untersuchung quantifizieren, wie hoch \textbf{die Affi
   \item Was ist das Verhältnis zwischen Passiv und Aktiv bei \textit{kaufen} und bei \textit{umarmen}? \Sol{\\\textit{kaufen}: $\frac{120}{380}\approx 0,32$ \hspace{3em} \textit{umarmen}: $\frac{30}{470}\approx 0,06$}
   \item Wie würden Sie den p-Wert berechnen? Es reicht der Lösungsweg, wenn Ihr Taschenrechner bei den großen Zahlen aussteigt.\Sol{\\$\frac{\binom{500}{120}\binom{500}{380}}{\binom{1000}{500}}\approx1,38\cdot 10^{-63}$}
   \item Der p-Wert ist ungefähr $1,38\cdot 10^{-63}$. Überführen Sie diese Zahl aus der Exponentialschreibweise in herkömmliche Fließkommanotation, falls Sie das noch können.\Sol{\\$0,00000000000000000000000000000000000000000000000000000000000000138$. Das sind 62 Nullen zwischen dem Komma und der ersten Stelle der Basis.}
-  \item Was sagt uns dieser p-Wert? Was ist das für eine Wahrscheinlichkeit? Das ist ja zunächst mal von der Idee her etwas völlig anderes als bei der \textit{Tea Tasting Lady}.\Sol{\\%
+  \item Was sagt uns dieser p-Wert? Was ist das für eine Wahrscheinlichkeit? Das ist ja zunächst mal von der Idee her etwas völlig anderes als bei der \textit{Tea-Tasting Lady}.\Sol{\\%
       Das war vor der Korpusstudie die Wahrscheinlichkeit, \textbf{genau} 120 Passive und 380 Aktive von \textit{kaufen} zu finden, wenn der wahre Anteil der Passive und Aktive bei \textit{kaufen} dem von \textit{umarmen} entspricht (also 30 Passive und 470 Aktive). Der empirisch interessantere p-Wert für "`eine so starke oder stärkere Abweichung von der Verteilung bei \textit{umarmen}"' liegt bei $2,59\cdot 10^{-16}$. Wenn man es umgekehrt formuliert (also die Abweichung von \textit{umarmen} relativ zu \textit{kaufen} beschreibt), kommt genau dasselbe raus. Warum?}
-    \item Es gibt zwischen den Designs der \textit{Tea Tasting Lady} und der Kollostruktionsanalyse einen wesentlichen Unterschied bezüglich der \textbf{Summen der Werte in den Spalten und den Zeilen der Tabelle}. Finden Sie den? Das ist allerdings eine optionale Transferaufgabe auf sehr hohem Niveau. \Sol{\\ Bei der Tea Tasting Lady sind die Summen der Werte in den Zeilen und Spalten der Tabelle durch das Design des Experiments festgelegt. Es wurde vereinbart, dass sie 8 Tassen bekommt, von denen in 4 die Milch zuerst eingeschenkt wurde. Außerdem sucht sie genau 4 Tassen aus. Egal, wie gut sie rät oder die Tassen erkennt, in jeder Zeile und Spalte der Tabelle ist die Summe der Werte 4. In der fiktiven Korpusstudie haben wir zwar für beide Verben 500 Belege gezogen, und die Spalten summieren sich daher jeweils zu 500, aber wie viele Passive und Aktive wir jeweils finden würden, konnten wir vor der Durchführung der Studie nicht wissen. Die erste Zeile summiert sich zu 150, die zweite zu 850, es hätte aber auch ganz anders kommen können. Daher ist der Fisher-Test eigentlich nicht geeignet für solche Studien. Überlegen Sie, warum. Das ist aber wirklich extrem fortgeschritten. Kaum jemand in der Linguistik weiß das überhaupt, ganz zu schweigen davon, zu wissen, wie es mathematisch zu begründen ist.}
+    \item Es gibt zwischen den Designs der \textit{Tea-Tasting Lady} und der Kollostruktionsanalyse einen wesentlichen Unterschied bezüglich der \textbf{Summen der Werte in den Spalten und den Zeilen der Tabelle}. Finden Sie den? Das ist allerdings eine optionale Transferaufgabe auf sehr hohem Niveau. \Sol{\\ Bei der Tea-Tasting Lady sind die Summen der Werte in den Zeilen und Spalten der Tabelle durch das Design des Experiments festgelegt. Es wurde vereinbart, dass sie 8 Tassen bekommt, von denen in 4 die Milch zuerst eingeschenkt wurde. Außerdem sucht sie genau 4 Tassen aus. Egal, wie gut sie rät oder die Tassen erkennt, in jeder Zeile und Spalte der Tabelle ist die Summe der Werte 4. In der fiktiven Korpusstudie haben wir zwar für beide Verben 500 Belege gezogen, und die Spalten summieren sich daher jeweils zu 500, aber wie viele Passive und Aktive wir jeweils finden würden, konnten wir vor der Durchführung der Studie nicht wissen. Die erste Zeile summiert sich zu 150, die zweite zu 850, es hätte aber auch ganz anders kommen können. Daher ist der Fisher-Test eigentlich nicht geeignet für solche Studien. Überlegen Sie, warum. Das ist aber wirklich extrem fortgeschritten. Kaum jemand in der Linguistik weiß das überhaupt, ganz zu schweigen davon, zu wissen, wie es mathematisch zu begründen ist.}
 \end{enumerate}
