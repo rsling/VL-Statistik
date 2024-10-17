@@ -1,7 +1,7 @@
 \section{Fisher-Exakt-Test und Stichprobengröße}
 
 \begin{enumerate}\Lf
-  \item Rekapitulieren Sie die Berechnung des klassischen \textit{Tea-Tasting Lady}-Experiments für 6 richtige Tassen bei 8 Tassen insgesamt (also 3 richtige "`Tee zuerst"'-Tipps und ein falscher Tipp von vier möglichen richtigen "`Tee zuerst"'-Tipps) auf den Folien.
+  \item Rekapitulieren Sie die Berechnung des klassischen \textit{Tea-Tasting Lady}-Experiments für 6 richtige Tassen bei 8 Tassen insgesamt (also 3 richtige und ein falscher "`Tee zuerst"'-Tipp von insgesamt 4 möglichen richtigen "`Tee zuerst"'-Tipps) auf den Folien.
   \item Berechnen Sie die Wahrscheinlichkeiten bzw.\ den p-Wert für dasselbe Verhältnis von richtigen Tassen, aber bei einer zehn Mal größeren Stichprobe, also 60 Tassen korrekt vorhergesagt bei 80 Tassen insgesamt.\label{ex:1b}
   \item Interpretieren Sie das Ergebnis.\label{ex:1c}
   \item Stellen Sie die Anfangswerte dieser Berechnung als Vier-Felder-Tabelle dar.\label{ex:1d}
@@ -10,15 +10,15 @@
 \Sol{%
   \textbf{Lösung zu~\ref{ex:1b}}\\
   \begin{center}
-    \begin{math}
-      \frac{\binom{40}{30}\binom{40}{10}}{\binom{80}{40}}=%
+    \resizebox{\textwidth}{!}{\begin{math}
+      p(\text{30 Richtige})=\frac{\binom{40}{30}\binom{40}{10}}{\binom{80}{40}}=%
       \frac{\frac{40!}{30!(40-30)!}\frac{40!}{10!(40-10)!}}{\frac{80!}{40!(80-40)!}}=%
       \frac{\frac{40!}{30!10!}\frac{40!}{10!30!}}{\frac{80!}{40!40!}}=%
       \frac{(\frac{40!}{30!10!})^2}{\frac{80!}{40!^2}}\approx%
       \frac{(\frac{8,16\cdot 10^{47}}{9,63\cdot 10^{38}})^2}{\frac{7,16\cdot 10^{118}}{6,66\cdot 10^{95}}}\approx%
       \frac{7,19\cdot 10^{17}}{1,08\cdot 10^{23}}\approx%
       6,68\cdot 10^{-6}\approx0,00000668
-    \end{math}
+    \end{math}}
   \end{center}
   \Zeile
 }
@@ -28,15 +28,15 @@
   Das ist vor dem Experiment die Wahrscheinlichkeit gewesen, durch Raten \textbf{genau 30 Richtige} zu erhalten. Zusätzliche Überlegung: Ist das wirklich das, was uns interessiert? Eigentlich interessiert uns für unsere Schlussfolgerung doch eher, wie wahrscheinlich es war, \textbf{mindestens ein so gutes Ergebnis} zu erzielen. Das ist das, was der tatsächliche Fisher-Test typischerweise berechnet, und das ergibt in diesem Fall $p\approx 7,44\cdot 10^{-6}$. Man kann sich das herleiten als:\\
   \begin{center}
   \begin{math}
-    \frac{\binom{40}{30}\binom{40}{10}}{\binom{80}{40}}+%
+    p(\text{30 oder mehr Richtige})=\frac{\binom{40}{30}\binom{40}{10}}{\binom{80}{40}}+%
     \frac{\binom{40}{31}\binom{40}{9}}{\binom{80}{40}}+%
     \frac{\binom{40}{32}\binom{40}{8}}{\binom{80}{40}}+\cdots+%
-    \frac{\binom{40}{40}\binom{40}{0}}{\binom{80}{40}}
+    \frac{\binom{40}{40}\binom{40}{0}}{\binom{80}{40}}\approx 7,44\cdot 10^{-6}
   \end{math}
   \end{center}
   \Halbzeile
   Es fällt auf, dass mit steigender Stichprobengröße trotz einer gleichen Erkennungsrate für die relevanten Teetassen der p-Wert kleiner wird.
-  Es ist also schwerer, 30 von 40 richtig zu raten, als 3 von 4.
+  Es ist also unwahrscheinlicher, 30 von 40 richtig zu raten, als 3 von 4 (wenn man die relevante Fähigkeit nicht hat).
   Das sollte hoffentlich intuitiv auch angemessen sein, gerade wenn die Fähigkeit der Tea-Tasting Lady, die Reihenfolge des Einschenkens zu erkennen, nicht absolut ist, aber trotzdem eine echte sensorische Fähigkeit darstellt.
   Technisch gesprochen hängt der p-Wert von der \textbf{Effektstärke} (der Qualität der wahren Fähigkeit der Dame, die Reihenfolge des Einschenkens zu Erkennen) und der \textbf{Größe der Stichprobe} (und damit bei diskreten Ereignissen auch der Größe des Ereignisraums) ab.
   \newpage
@@ -81,7 +81,7 @@ Wir möchten mit so einer Untersuchung quantifizieren, wie hoch \textbf{die Affi
   \item Wie viele Sätze im Passiv und im Aktiv haben wir jeweils beobachtet? \Sol{\\Im Passiv 150, im Aktiv 850.}
   \item Wie groß war die gesamte Stichprobe? \Sol{\\Genau 1000.}
   \item Was ist das Verhältnis zwischen Passiv und Aktiv bei \textit{kaufen} und bei \textit{umarmen}? \Sol{\\\textit{kaufen}: $\frac{120}{380}\approx 0,32$ \hspace{3em} \textit{umarmen}: $\frac{30}{470}\approx 0,06$}
-  \item Wie würden Sie den p-Wert berechnen? Es reicht der Lösungsweg, wenn Ihr Taschenrechner bei den großen Zahlen aussteigt.\Sol{\\$\frac{\binom{500}{120}\binom{500}{380}}{\binom{1000}{500}}\approx1,38\cdot 10^{-63}$}
+  \item Wie würden Sie den p-Wert berechnen? Es reicht der Lösungsweg, wenn Ihr Taschenrechner bei den großen Zahlen aussteigt.\Sol{\\$p(?)=\frac{\binom{500}{120}\binom{500}{380}}{\binom{1000}{500}}\approx1,38\cdot 10^{-63}$}
   \item Der p-Wert ist ungefähr $1,38\cdot 10^{-63}$. Überführen Sie diese Zahl aus der Exponentialschreibweise in herkömmliche Fließkommanotation, falls Sie das noch können.\Sol{\\$0,00000000000000000000000000000000000000000000000000000000000000138$. Das sind 62 Nullen zwischen dem Komma und der ersten Stelle der Basis.}
   \item Was sagt uns dieser p-Wert? Was ist das für eine Wahrscheinlichkeit? Das ist ja zunächst mal von der Idee her etwas völlig anderes als bei der \textit{Tea-Tasting Lady}.\Sol{\\%
       Das war vor der Korpusstudie die Wahrscheinlichkeit, \textbf{genau} 120 Passive und 380 Aktive von \textit{kaufen} zu finden, wenn der wahre Anteil der Passive und Aktive bei \textit{kaufen} dem von \textit{umarmen} entspricht (also 30 Passive und 470 Aktive). Der empirisch interessantere p-Wert für "`eine so starke oder stärkere Abweichung von der Verteilung bei \textit{umarmen}"' liegt bei $2,59\cdot 10^{-16}$. Wenn man es umgekehrt formuliert (also die Abweichung von \textit{umarmen} relativ zu \textit{kaufen} beschreibt), kommt genau dasselbe raus. Warum?}
