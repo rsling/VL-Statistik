@@ -1,0 +1,94 @@
+\section{Skalenniveaus}
+
+Bestimmen Sie das Skalenniveau von folgenden Messgrößen:
+
+\begin{enumerate}\Lf
+  \item Prozentwerte % verh
+  \item Wortfrequenz-Rang (häufigstes Wort, \ldots, seltenstes Wort) % ord
+  \item Kasus % nom
+  \item Geschwindigkeit % int
+  \item Akzentsitz (Erstsilbe, Mittelsilbe, Endsilbe) % nom
+  \item Satzlänge, gemessen in Wörtern % int
+  \item Frequenz eines Wortes im Korpus (absolute Zahl) % int
+  \item Höhe über NN % verh
+  \item DSH-Prüfungsniveau (I -- III) % ord
+  \item Verhältnis Satzlänge in Wörtern zu Wortlänge in Silben in einem Text % verh
+  \item Wortklasse (=~Wortart) % nom
+  \item Beschleunigung % verh
+  \item Textniveau (leicht, mittel, schwer) % ord
+  \item Frequenz eines Wortes im Korpus pro eine Millionen Wörter %int
+  \item Textsorte % nom
+\end{enumerate}
+
+\section{Modus und Median}
+\label{sec:modmed}
+
+Ermitteln von Hand (ohne R!) Sie den Modus und wo möglich den Median für folgende Messreihen:
+% Zeichnen Sie Histogramme (Häufigkeitsdiagramme) und ermitteln Sie den Modus und wenn möglich den Median für folgende Messreihen:
+
+\begin{enumerate}
+  \item $x=[$Nom, Akk, Akk, Akk, Nom, Dat, Gen, Nom, Nom, Akk, Dat, Dat, Akk, Akk$]$
+  \item $x=[$4, 5, 3, 3, 3, 2, 1, 2, 2, 1, 5, 4, 2, 2, 1, 3, 2$]$
+  \item $x=[$4.3, 5.0, 3.0, 3.3, 3.7, 2.3, 1.3, 2.7, 2.0, 1.0, 5.0, 4.3, 2.0, 2.0, 1.3, 3.0, 2.7$]$
+\end{enumerate}
+
+\newpage
+
+\section{Mittel und Streuung}
+\label{sec:mittelstreu}
+
+Ermitteln Sie zuerst von Hand (gerne "`von Hand in R"') für eine der Messreihen und dann in \texttt{R} für alle Messreihen das arithmetische Mittel, die Varianz und die Standardabweichung:
+% Zeichnen Sie Histogramme und ermitteln Sie zuerst von Hand und dann in \texttt{R} das arithmetische Mittel, die Varianz und die Standardabweichung für folgende Messreihen:
+
+\begin{enumerate}
+  \item $x=[2.73, 1.85, 21.24, 17.97, 5.49, 18.90, 12.46, 0.97, 6.45, 7.43]$
+  \item $x=[1.00, 1.91, 3.12, 4.38, 4.72, 5.29, 3.82, 3.25, 2.04, 0.93]$
+  \item $x=[1.07, 1.06, 0.94, 1.84, 3.04, 3.22, 4.18, 5.27, 6.27, 6.75]$
+\end{enumerate}
+
+\section{z-Werte und Standardfehler}
+
+Ermitteln Sie für die Messreihen aus Aufgabe~\ref{sec:mittelstreu} die z-Werte für die Messpunkte und die Standardfehler (entweder von Hand oder "`von Hand in R"').
+Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfehler angeben.
+
+% \section{Quartile}
+% 
+% Berechnen Sie für alle Messreihen aus Aufgabe~\ref{sec:modmed} und~\ref{sec:mittelstreu} das Minimum, die Quartile 1--4 und den Interquartilsabstand.
+% Zeichnen Sie von Hand einen Boxplot für die Messreihen 1 und 3 aus Aufgabe~\ref{sec:mittelstreu}.
+% Überprüfen Sie das Ergebnis mittels der Funktion \texttt{boxplot()} in \texttt{R}.
+
+% \section{Kovarianz und Korrelationskoeffizient}
+% 
+% Zeichnen Sie die folgenden Messungen in ein Koordinatensystem, wobei $x_i$ und $y_i$ jeweils einen Messpunkt darstellen.
+% Berechnen Sie zuerst von Hand und dann in \texttt{R}\footnote{\texttt{cov()} und \texttt{cor()}} die Kovarianz ($cov$) und den Korrelationskoeffizienten ($r$):
+% 
+% \begin{itemize}
+%   \item[ ] $x=[4.52, 5.37, 4.28, 3.85, 3.23, 2.72, 1.83, 2.12, 1.04, 0.96]$
+%   \item[ ] $y=[1.08, 2.12, 3.10, 4.26, 4.73, 6.13, 7.63, 7.83, 9.45, 9.60]$
+% \end{itemize}
+% 
+% \textbf{Vertiefende Aufgabe 1}:
+% Nehmen Sie in \texttt{R} die beiden Vektoren mal 100 und berechnen Sie Kovarianz und Korrelation erneut.
+% Interpretieren Sie das Ergebnis.
+% 
+% \textbf{Vertiefende Aufgabe 2}:
+% Erfinden Sie selber eine Messreihe (ggf.\ durch einen graphischen Ansatz), bei der $r$ möglichst nahe an $0$ ist.
+% Berechnen Sie $r$ dafür.
+% 
+% \textbf{Vertiefende Aufgabe 3 (mit Lektüre)}:
+% Finden Sie mit Gries, der R-Hilfe zu \texttt{cor}, Wikipedia usw.\ heraus, was \textit{Kendalls $\tau$} im Gegensatz zu \textit{Pearsons $r$}, das wir berechnet haben ist.
+% Beides sind Korrelationskoeffizienten.
+% Denken Sie sich selber Datenreihen mit jeweils einem hohen und einem niedrigen $\tau$ aus.
+
+\section{Konfidenzintervalle (Anteilswerte)}
+
+Berechnen Sie für folgende Anteilswerte (alle $p_i$) die Konfidenzintervalle bei den Stichprobengrößen $n=10$ und $n=100$ auf den Konfidenzniveaus $0.9$ und und $0.99$.
+Benutzen Sie zum Auffinden der kritischen Werte die Quantil-Funktion der Normalverteilung \texttt{qnorm()} in \texttt{R}.
+
+\begin{enumerate}
+  \item $p=[0.21, 0.79]$ 
+  \item $p=[0.49, 0.51]$
+  \item $p=[0.12, 0.71, 0.17]$
+\end{enumerate}
+
+
