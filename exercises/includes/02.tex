@@ -1,35 +1,39 @@
+\begin{center}
+  Hinweis: Wo nicht anders angegeben, runden Sie die Ergebnisse auf zwei Nachkommastellen.
+\end{center}
+
 \section{Skalenniveaus}
 
 Bestimmen Sie das Skalenniveau von folgenden Messgrößen:
 
 \begin{enumerate}\Lf
-  \item Prozentwerte % verh
-  \item Wortfrequenz-Rang (häufigstes Wort, \ldots, seltenstes Wort) % ord
-  \item Kasus % nom
-  \item Geschwindigkeit % int
-  \item Akzentsitz (Erstsilbe, Mittelsilbe, Endsilbe) % nom
-  \item Satzlänge, gemessen in Wörtern % int
-  \item Frequenz eines Wortes im Korpus (absolute Zahl) % int
-  \item Höhe über NN % verh
-  \item DSH-Prüfungsniveau (I -- III) % ord
-  \item Verhältnis Satzlänge in Wörtern zu Wortlänge in Silben in einem Text % verh
-  \item Wortklasse (=~Wortart) % nom
-  \item Beschleunigung % verh
-  \item Textniveau (leicht, mittel, schwer) % ord
-  \item Frequenz eines Wortes im Korpus pro eine Millionen Wörter %int
-  \item Textsorte % nom
+  \item Prozentwerte \Sol{Verhältnisskala}
+  \item Wortfrequenz-Rang (häufigstes Wort, \ldots, seltenstes Wort) \Sol{Ordinalskala}
+  \item Kasus \Sol{Nominalskala}
+  \item Geschwindigkeit \Sol{Intervallskala}
+  \item Akzentsitz (Erstsilbe, Mittelsilbe, Endsilbe) \Sol{Nominalskala}
+  \item Satzlänge, gemessen in Wörtern \Sol{Intervallskala}
+  \item Frequenz eines Wortes im Korpus (absolute Zahl) \Sol{Intervallskala}
+  \item Höhe über NN \Sol{Verhältnisskala}
+  \item DSH-Prüfungsniveau (I -- III) \Sol{Ordinalskala}
+  \item Verhältnis Satzlänge in Wörtern zu Wortlänge in Silben in einem Text \Sol{Verhältnisskala}
+  \item Wortklasse (=~Wortart) \Sol{Nominalskala}
+  \item Beschleunigung \Sol{Verhältnisskala}
+  \item Textniveau (leicht, mittel, schwer) \Sol{Ordinalskala}
+  \item Frequenz eines Wortes im Korpus pro eine Millionen Wörter \Sol{Intervallskala}
+  \item Textsorte \Sol{Nominalskala}
 \end{enumerate}
 
 \section{Modus und Median}
 \label{sec:modmed}
 
-Ermitteln von Hand (ohne R!) Sie den Modus und wo möglich den Median für folgende Messreihen:
+Ermitteln Sie den Modus und wo möglich den Median für folgende Messreihen von Hand (ohne Software):
 % Zeichnen Sie Histogramme (Häufigkeitsdiagramme) und ermitteln Sie den Modus und wenn möglich den Median für folgende Messreihen:
 
 \begin{enumerate}
-  \item $x=[$Nom, Akk, Akk, Akk, Nom, Dat, Gen, Nom, Nom, Akk, Dat, Dat, Akk, Akk$]$
-  \item $x=[$4, 5, 3, 3, 3, 2, 1, 2, 2, 1, 5, 4, 2, 2, 1, 3, 2$]$
-  \item $x=[$4.3, 5.0, 3.0, 3.3, 3.7, 2.3, 1.3, 2.7, 2.0, 1.0, 5.0, 4.3, 2.0, 2.0, 1.3, 3.0, 2.7$]$
+  \item $x=[$Nom, Akk, Akk, Akk, Nom, Dat, Gen, Nom, Nom, Akk, Dat, Dat, Akk, Akk$]$\Sol{\\Modus: 6, Median: n.\,d.}
+  \item $x=[$4, 5, 3, 3, 3, 2, 1, 2, 2, 1, 5, 4, 2, 2, 1, 3, 2$]$\Sol{\\Modus: 2, Median: 2}
+  \item $x=[$4.3, 5.0, 3.0, 3.3, 3.7, 2.3, 1.3, 2.7, 2.0, 1.0, 5.0, 4.3, 2.0, 2.0, 1.3, 3.0, 2.7$]$\Sol{\\Modus: 2.0, Median: 2.7}
 \end{enumerate}
 
 \newpage
@@ -37,19 +41,27 @@ Ermitteln von Hand (ohne R!) Sie den Modus und wo möglich den Median für folge
 \section{Mittel und Streuung}
 \label{sec:mittelstreu}
 
-Ermitteln Sie zuerst von Hand (gerne "`von Hand in R"') für eine der Messreihen und dann in \texttt{R} für alle Messreihen das arithmetische Mittel, die Varianz und die Standardabweichung:
+Ermitteln Sie von Hand für die untenstehenden Messreihen das arithmetische Mittel, die Varianz und die Standardabweichung:
 % Zeichnen Sie Histogramme und ermitteln Sie zuerst von Hand und dann in \texttt{R} das arithmetische Mittel, die Varianz und die Standardabweichung für folgende Messreihen:
 
 \begin{enumerate}
-  \item $x=[2.73, 1.85, 21.24, 17.97, 5.49, 18.90, 12.46, 0.97, 6.45, 7.43]$
-  \item $x=[1.00, 1.91, 3.12, 4.38, 4.72, 5.29, 3.82, 3.25, 2.04, 0.93]$
-  \item $x=[1.07, 1.06, 0.94, 1.84, 3.04, 3.22, 4.18, 5.27, 6.27, 6.75]$
+  \item $x=[2.73, 1.85, 21.24, 17.97, 5.49, 18.90, 12.46, 0.97, 6.45, 7.43]$\Sol{\\$\bar{x}=9.55$, $var(x)=57.05$, $stdev(x)=7.55$}
+  \item $x=[1.00, 1.91, 3.12, 4.38, 4.72, 5.29, 3.82, 3.25, 2.04, 0.93]$\Sol{\\$\bar{x}=3.05$, $var(x)=2.36$, $stdev(x)=1.54$}
+  \item $x=[1.07, 1.06, 0.94, 1.84, 3.04, 3.22, 4.18, 5.27, 6.27, 6.75]$\Sol{\\$\bar{x}=3.36$, $var(x)=4.79$, $stdev(x)=2.19$}
 \end{enumerate}
 
 \section{z-Werte und Standardfehler}
 
-Ermitteln Sie für die Messreihen aus Aufgabe~\ref{sec:mittelstreu} die z-Werte für die Messpunkte und die Standardfehler (entweder von Hand oder "`von Hand in R"').
+Ermitteln Sie für die Messreihen aus Aufgabe~\ref{sec:mittelstreu} die z-Werte für die Messpunkte und die Standardfehler von Hand.
 Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfehler angeben.
+
+\Sol{\begin{enumerate}
+  \item z-Werte: $[-0.9, -1.02, 1.55, 1.11, -0.54, 1.24, 0.39, -1.14, -0.41, -0.28]$, $SF=2.39$
+  \item z-Werte: $[-1.33, -0.74, 0.05, 0.87, 1.09, 1.46, 0.5, 0.13, -0.66, -1.38]$, $SF=0.49$
+  \item z-Werte: $[-1.05, -1.05, -1.11, -0.7, -0.15, -0.07, 0.37, 0.87, 1.33, 1.55]$, $SF=0.69$
+  \end{enumerate}}
+
+  \Sol{Die z-Werte sind die in Standardabweichungen normierten Abweichungen der Messwerte vom Mittelwert der Stichprobe. Der Standardfehler ist die mittlere Abweichung des beobachteten Stichprobenmittels vom wahren Populationsmittel in wiederholten Stichproben der gegebenen Größe (falls die Varianz in der Population der Varianz in der Stichprobe entspricht). (Die "`gegebene Größe"' ist die Größe der tatsächlichen Stichprobe.) Vereinfacht gesagt ist er der Erwartungswert, um den Stichproben der vorliegenden Größe vom wahren Mittelwert abweichen.}
 
 % \section{Quartile}
 % 
@@ -82,13 +94,37 @@ Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfe
 
 \section{Konfidenzintervalle (Anteilswerte)}
 
-Berechnen Sie für folgende Anteilswerte (alle $p_i$) die Konfidenzintervalle bei den Stichprobengrößen $n=10$ und $n=100$ auf den Konfidenzniveaus $0.9$ und und $0.99$.
-Benutzen Sie zum Auffinden der kritischen Werte die Quantil-Funktion der Normalverteilung \texttt{qnorm()} in \texttt{R}.
+\subsection{Berechnung des Konfidenzintervalls für Anteilswerte}
+
+Berechnen Sie für folgende Anteilswerte ($f$) die Konfidenzintervalle bei den Stichprobengrößen $n=10$ und $n=100$ auf den Konfidenzniveaus $0.9$ und und $0.99$ (also je vier Mal den unteren un oberen Wert des Konfidenzintervalls).
+Die kritischen Werte der Normalverteilung entnehmen Sie bitte der zur Verfügung gestellten Tabelle.
+ Nachkommastellen.Runden Sie auf drei Nachkommastellen.
 
 \begin{enumerate}
-  \item $p=[0.21, 0.79]$ 
-  \item $p=[0.49, 0.51]$
-  \item $p=[0.12, 0.71, 0.17]$
+  \item $f=0.21$ 
+  \item $f=0.49$
+  \item $f=0.89$
 \end{enumerate}
 
+\Sol{%
+  \begin{center}
+    \begin{tabular}[h]{rcccc}
+      \hline
+      \textbf{f} & \textbf{n=10, k=0.9} & \textbf{n=100, k=0.9} & \textbf{n=10, k=0.99} & \textbf{n=100, k=0.99} \\
+      \hline
+      0.21 & $[-0.002, 0.422]$ & $[0.143, 0.277]$ & $[-0.122, 0.542]$ & $[0.105, 0.315]$ \\
+      0.49 & $[0.23, 0.75]$ & $[0.408, 0.572]$ & $[0.083, 0.897]$ & $[0.361, 0.619]$ \\
+      0.89 & $[0.727, 1.053]$ & $[0.839, 0.941]$ & $[0.635, 1.145]$ & $[0.809, 0.971]$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+}
 
+
+\subsection{Schlechte Praxis beim Berichten von Konfidenzintervallen}
+
+Warum hätte folgende Tabelle ganz ohne Nachrechnen nicht gedruckt werden dürfen?
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{graphics/cischrott}
+\end{center}
