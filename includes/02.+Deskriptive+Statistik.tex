@@ -355,8 +355,8 @@
       \Halbzeile
     \item Viele Stichproben mit n=100 | Ergebnis \rot{nicht} immer 39 zu 61
      \Doppelzeile 
-    \item \alert{95\%-Konfidenzintervall} | \gruen{In welchem Bereich liegen 95\% aller Messwerte bei n=100?}
-    \item Güte von Stichproben einer bestimmten Größe angesichts gegebener Proportionen
+    \item \alert{95\%-Konfidenzintervall} \\
+      \gruen{In welchem Bereich liegen 95\% aller Anteilswerte bei n=100?}
   \end{itemize}
 \end{frame}
 
@@ -379,20 +379,20 @@
 \begin{frame}
   {Standardfehler}
   \begin{itemize}[<+->]
-    \item Die \alert{meisten $p$} | Nah am wahren Wert $P$
-    \item Sehr \alert{wenige $p$} | Weit von $P$ entfernt
+    \item Die \alert{meisten $q$} | Nah am wahren Wert $Q$
+    \item Sehr \alert{wenige $q$} | Weit von $Q$ entfernt
       \Halbzeile
     \item Bei unendlich vielen Messungen
       \begin{itemize}[<+->]
-        \item \alert{\orongsch{Mittelwert} der gemessenen Anteilswerte gleich $P$}
-        \item Gemessene Anteilswerte \orongsch{normalverteilt um $P$}
-        \item \alert{Standardabweichung} der Messwerte um P bekannt \ding{222} Standardfehler
+        \item \alert{\orongsch{Mittelwert} der gemessenen Anteilswerte gleich $Q$}
+        \item Gemessene Anteilswerte \orongsch{normalverteilt um $Q$}
+        \item \alert{Standardabweichung} der Messwerte um Q bekannt \ding{222} \gruen{Standardfehler}
       \end{itemize}
      \Zeile 
-    \item \alert{Standarfehler} | Standardabweichung der Messwerte
+    \item \gruen{Standarfehler} | Standardabweichung der Messwerte
       \begin{itemize}[<+->]
-        \item Bei \orongsch{gegebener Stichprobengröße $n$}
-        \item Bei einem \orongsch{bekannten Populationsanteil P}
+        \item Bei \alert{gegebener Stichprobengröße $n$}
+        \item Bei einem \alert{bekannten Populationsanteil Q}
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -400,21 +400,21 @@
 \begin{frame}
   {Standardfehler für Anteilswerte | Berechnung}
   \begin{itemize}[<+->]
-    \item Für einen wahren Anteilswert $P$
+    \item Für einen wahren Anteilswert $Q$
     \item Bei Stichprobengröße $n$
   \end{itemize}
   \Halbzeile
   \begin{center}
-    \alert{$SF(P,n)=\sqrt{\frac{P\cdot(1-P)}{n}}$}\\
+    \alert{$SF(Q,n)=\sqrt{\frac{Q\cdot(1-Q)}{n}}$}\\
     \Doppelzeile
-    Bsp. für $P=0.39$ und $n=100$ | $SF(p)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
+    Bsp. für $Q=0.39$ und $n=100$ | $SF(q)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
   \end{center}
 \end{frame}
 
 \begin{frame}
   {Standardfehler | Interpretation}
   \begin{center}
-    \alert{$SF(P,n)=\sqrt{\frac{P\cdot(1-P)}{n}}$}\\
+    \alert{$SF(Q,n)=\sqrt{\frac{Q\cdot(1-Q)}{n}}$}\\
 
     \vspace{.1cm}
     Bsp.: $SF(0.39,100)=\sqrt{\frac{0.39\cdot(1-0.39)}{100}}=0.0488$
@@ -423,11 +423,12 @@
   \begin{itemize}[<+->]
     \item Für \alert{beliebig viele} Stichproben
     \item Bei \alert{Stichprobengröße $n=100$}
-    \item Aus einer Grundgesamtheit mit \alert{wahrem Anteilswert $P=0.39$}
+    \item Aus einer Grundgesamtheit mit \alert{wahrem Anteilswert $Q=0.39$}
       \Halbzeile
-    \item Abweichung der gemessenen Anteile von $P=0.39$ mit einem \alert{$SF=0.0488$}
+    \item Abweichung der gemessenen Anteile von $Q=0.39$ mit einem \alert{$SF=0.0488$}
   \end{itemize}
 \end{frame}
+
 
 \begin{frame}
   {Konfidenzintervall | Standardfehler und Normalverteilung}
@@ -440,10 +441,28 @@
 
 
 \begin{frame}
+  {Verteilungsfunktion der Normalverteilung}
+  \onslide<+->
+  \onslide<+->
+  \centering 
+  \LARGE
+  \begin{math}
+    p(\orongsch{x})=\grau{\frac{1}{\gruen{\sigma}\sqrt{2\pi}}}e^{-\frac{1}{2}\left(\frac{\orongsch{x}-\alert{\mu}}{\gruen{\sigma}}\right)^2}
+  \end{math}\\
+  \large
+  \Doppelzeile
+  Wenn Sie mehr wissen möchten:\\
+  \url{https://youtu.be/cy8r7WSuT1I}\\
+  Großartiges Video von Grant Sanderson (3blue1brown)
+\end{frame}
+
+
+\begin{frame}
   {Konfidenzintervall | z-Werte}
   \begin{itemize}[<+->]
-    \item Stichproben \alert{normalverteilt} 
-    \item \alert{z-Wert} | \orongsch{Wie viele Standardfehler definieren 95\% der Fläche unter der Kurve?}
+    \item Stichproben (wie erwähnt) \alert{normalverteilt} 
+    \item Der \alert{z-Wert}, zum Beispiel für $\alpha=0.95$: \alert{$z(0.95)$} beantwortet:\\
+      \orongsch{Wie viele Standardfehler definieren 95\% der Fläche unter der Kurve?}
       \Zeile
     \item \alert{Quantilfunktion der Normalverteilung} | In R mit \alert{\texttt{qnorm()}} oder \alert{Tabelle}
     \item Quantilfunktion | Wie viele Standardabweichungen trennen auf jeder Seite 2.5\% ab?
@@ -456,11 +475,11 @@
   \begin{itemize}[<+->]
     \item Standardfehler | \alert{Standardabweichung} der Stichprobenwerte
     \item \alert{Konfidenzbreite} | \orongsch{z-Wert multipliziert mit Standardfehler}
-    \item 95\% der Werte | Intervall \orongsch{Wahrer Anteilswert ± Konfidenzbreite}
+    \item 95\% der Werte | Intervall \orongsch{Anteilswert ± Konfidenzbreite}
   \end{itemize}
   \Doppelzeile
   \begin{center}
-    \alert{$KI(P,n,s)=P\pm z(s)\cdot SF(P,n)$}\\
+    \alert{$KI(Q,n,\alpha)=Q\pm z(\alpha)\cdot SF(Q,n)$}\\
     \Zeile
   Bsp.: $KI(0.39,100,0.95)=0.39\pm1.96\cdot 0.0488=0.39\pm0.096=\alert{[0.29, 0.49]}$
   \end{center}
@@ -476,22 +495,83 @@
   \end{center}
   \Zeile
   \begin{itemize}[<+->]
-    \item Praxis | \orongsch{Wahrer Anteil nicht bekannt}, daher \orongsch{Schätzung aus Stichprobenanteil $p$}
+    \item Praxis | \orongsch{Wahrer Anteil nicht bekannt}, daher \orongsch{Schätzung aus Stichprobenanteil $q$}
     \Zeile
-    \item \rot{Der gemessene Anteil $p$ kann aber eine totale Fehlschätzung sein!}
-    \item Die Philosophie bezieht sich auf \alert{wiederholte Messungen}.
+    \item \rot{Der gemessene Anteil $q$ kann aber eine totale Fehlschätzung sein!}
+    \item Die Philosophie dahinter geht von \alert{wiederholten Messungen} aus.
       \Halbzeile
     \item Entweder liegt der gemessene Wert im Konfidenzintervall,\\
       \rot{oder ein seltenes Ereignis ist eingetreten}.
       \Halbzeile
-    \item \rot{Wir sind \textbf{\ul{nicht}} zu 95\% sicher, dass der wahre Wert zwischen 0.29 und 0.49 liegt!}
+    \item \rot{\textbf{Falsche Interpretation}:\\Wir sind zu 95\% sicher, dass der wahre Wert zwischen 0.29 und 0.49 liegt.}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  {Konfidenzintervall | Breite bei verschiedenen P, n und Niveaus}
+  {Konfidenzintervall | Breite bei verschiedenen Q, n und $\alpha$}
   \centering 
   \includegraphics[height=0.85\textheight]{RVorlesung/threecis}
+\end{frame}
+
+\begin{frame}
+  {Konfidenzintervall für Mittelwerte}
+  \onslide<+->
+  \onslide<+->
+  Parallel zum KI für Anteilswerte: \alert{KI für Mittelwerte} mit \orongsch{derselben Formel}\\
+  \Doppelzeile
+  \onslide<+->
+  \centering 
+  Nur der Standardfehler wird anders berechnet:\\
+  \Zeile
+  \alert{$SF(\sigma, n)=\frac{\sigma}{\sqrt(n)}$}\\
+  \Halbzeile
+  \grau{$KI(\bar{x},n,\alpha)=\bar{x}\pm z(\alpha)\cdot SF(\sigma,n)$}\\
+  \onslide<+->
+  \Doppelzeile
+  Interpretation des KI (95\%): Für einen \alert{beliebigen Mittelwert $\bar{x}$}\\
+  und die \alert{wahre Standardabweichung der Population $\sigma$} liegen\\
+  im Grenzwert exakt \alert{95\% aller Stichproben der Größe $n$ im 95\%-KI}.\\
+  \Zeile
+  Hier wird die wahre Standardabweichung $\sigma$ ggf.\\
+  aus der Standardabweichung $s(x)$ Stichprobe geschätzt.
+\end{frame}
+
+\begin{frame}
+  {Zur Interpretation des KIs}
+  \onslide<+->
+  \onslide<+->
+  \centering 
+  Schauen Sie sich möglichst mein (sehr altes) Video zur Interpretation von KIs an,\\
+  auch wenn ich deutlich weniger im Kopf habe als Grant Sanderson.\\
+  \Zeile
+  \url{https://www.youtube.com/watch?v=TG8Z3RXL4E8X}
+\end{frame}
+
+
+\begin{frame}
+  {Kritische Werte für Normalverteilung}
+  \centering 
+  \begin{tabular}[h]{ccp{0.1\textwidth}cc}
+    \toprule
+    \textbf{$\alpha$} & \textbf{$z(\alpha)$} && \textbf{$\alpha$} & \textbf{$z(\alpha)$}\\
+    \midrule
+    0.99 & 2.576 && 0.84 &  1.405 \\
+    0.98 & 2.326 && 0.83 &  1.372 \\
+    0.97 & 2.170 && 0.82 &  1.341 \\
+    0.96 & 2.054 && 0.81 &  1.311 \\
+    0.95 & 1.960 && 0.80 &  1.282 \\
+    0.94 & 1.881 && 0.79 &  1.254 \\
+    0.93 & 1.812 && 0.78 &  1.227 \\
+    0.92 & 1.751 && 0.77 &  1.200 \\
+    0.91 & 1.695 && 0.76 &  1.175 \\
+    0.90 & 1.645 && 0.75 &  1.150 \\
+    0.89 & 1.598 && & \\ 
+    0.88 & 1.555 && & \\ 
+    0.87 & 1.514 && & \\ 
+    0.86 & 1.476 && & \\ 
+    0.85 & 1.440 && & \\ 
+    \bottomrule
+  \end{tabular}
 \end{frame}
 
 \ifdefined\TITLE

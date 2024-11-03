@@ -373,7 +373,7 @@ polygon(
   col = "cadetblue3")
 
 lines(rep(0.39, 2), c(0, crv$y[imean]), col = "navy", lwd = 4, lty = 3)
-text(0.39+0.05, crv$y[imean], paste0("P=0.39"), col = "navy", cex = 1.5)
+text(0.39+0.05, crv$y[imean], paste0("Q=0.39"), col = "navy", cex = 1.5)
 
 lower <- rmean-rsf
 upper <- rmean+rsf
