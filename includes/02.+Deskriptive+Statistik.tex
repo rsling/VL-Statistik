@@ -296,7 +296,7 @@
 
 
 \begin{frame}
-  {z-Wert}
+  {z-Wert}\label{slide:z}
   Für jeden Messpunkt $x_i$ | \alert{$z_i=\frac{x_i-\bar{x}}{s(x)}$}\\
   \begin{center}
     \includegraphics[height=0.8\textheight]{RVorlesung/fourzs}
@@ -389,7 +389,7 @@
         \item \alert{Standardabweichung} der Messwerte um Q bekannt \ding{222} \gruen{Standardfehler}
       \end{itemize}
      \Zeile 
-    \item \gruen{Standarfehler} | Standardabweichung der Messwerte
+    \item \gruen{Standardfehler} | Standardabweichung der Messwerte
       \begin{itemize}[<+->]
         \item Bei \alert{gegebener Stichprobengröße $n$}
         \item Bei einem \alert{bekannten Populationsanteil Q}
@@ -447,12 +447,20 @@
   \centering 
   \LARGE
   \begin{math}
-    p(\orongsch{x})=\grau{\frac{1}{\gruen{\sigma}\sqrt{2\pi}}}e^{-\frac{1}{2}\left(\frac{\orongsch{x}-\alert{\mu}}{\gruen{\sigma}}\right)^2}
+    p(\orongsch{x})=\grau{\frac{1}{\sigma\sqrt{2\pi}}}e^{-\frac{1}{2}\left(\frac{\orongsch{x}-\alert{\mu}}{\gruen{\sigma}}\right)^2}
   \end{math}\\
-  \large
+  \Zeile 
+  \footnotesize \orongsch{$x$} ist der Wert, für den die Funktion die Wahrscheinlichkeit angibt. Der \grau{graue Term}\\
+  skaliert die Verteilung lediglich, damit die Fläche unter der Kurve 1 ist. Der Kern der Funktion ist $e^{-x^2}$,\\
+  weil \blau{$-\mu$} lediglich für die mögliche Verschiebung des Modus von 0 benötigt wird und \gruen{$\sigma$}\\
+  die Spreizung der Verteilung modelliert (größere Standardabweichung bedeutet flachere Kurve).\\
+  Für den Standardnormalfall kann $\mu=0$ und $\sigma=1$ angesetzt werden.\\
+  \gruen{$\mu$} und \alert{$\sigma$} sind sogenannte Parameter der Funktion.\\
   \Doppelzeile
-  Wenn Sie mehr wissen möchten:\\
+  Falls Sie mehr wissen möchten:\\
+  \Viertelzeile
   \url{https://youtu.be/cy8r7WSuT1I}\\
+  \Viertelzeile
   Großartiges Video von Grant Sanderson (3blue1brown)
 \end{frame}
 
@@ -460,9 +468,10 @@
 \begin{frame}
   {Konfidenzintervall | z-Werte}
   \begin{itemize}[<+->]
-    \item Stichproben (wie erwähnt) \alert{normalverteilt} 
+    \item Anteilswerte oder Mittelwerte aus Stichproben (wie erwähnt) \alert{normalverteilt} 
     \item Der \alert{z-Wert}, zum Beispiel für $\alpha=0.95$: \alert{$z(0.95)$} beantwortet:\\
       \orongsch{Wie viele Standardfehler definieren 95\% der Fläche unter der Kurve?}
+    \item \grau{\footnotesize Achtung: Dieser z-Wert ist nicht ganz dasselbe wie der rein deskriptive z-Wert von Folie~\ref{slide:z}}
       \Zeile
     \item \alert{Quantilfunktion der Normalverteilung} | In R mit \alert{\texttt{qnorm()}} oder \alert{Tabelle}
     \item Quantilfunktion | Wie viele Standardabweichungen trennen auf jeder Seite 2.5\% ab?
@@ -523,7 +532,7 @@
   \centering 
   Nur der Standardfehler wird anders berechnet:\\
   \Zeile
-  \alert{$SF(\sigma, n)=\frac{\sigma}{\sqrt(n)}$}\\
+  \alert{$SF(\sigma, n)=\frac{\sigma}{\sqrt{n}}$}\\
   \Halbzeile
   \grau{$KI(\bar{x},n,\alpha)=\bar{x}\pm z(\alpha)\cdot SF(\sigma,n)$}\\
   \onslide<+->
