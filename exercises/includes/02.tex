@@ -61,7 +61,7 @@ Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfe
   \item z-Werte: $[-1.05, -1.05, -1.11, -0.7, -0.15, -0.07, 0.37, 0.87, 1.33, 1.55]$, $SF=0.69$
   \end{enumerate}}
 
-  \Sol{Die z-Werte sind die in Standardabweichungen normierten Abweichungen der Messwerte vom Mittelwert der Stichprobe. Der Standardfehler ist die mittlere Abweichung des beobachteten Stichprobenmittels vom wahren Populationsmittel in wiederholten Stichproben der gegebenen Größe (falls die Varianz in der Population der Varianz in der Stichprobe entspricht). (Die "`gegebene Größe"' ist die Größe der tatsächlichen Stichprobe.) Vereinfacht gesagt ist er der Erwartungswert, um den Stichproben der vorliegenden Größe vom wahren Mittelwert abweichen.}
+  \Sol{Die z-Werte sind die in Standardabweichungen normierten Abweichungen der Messwerte vom Mittelwert der Stichprobe. Der Standardfehler ist die mittlere Abweichung des beobachteten Stichprobenmittels vom Populationsmittel in (unendlich) vielen Stichproben der gegebenen Größe (falls die Varianz in der Population der Varianz in der Stichprobe entspricht). (Mit "`gegebener Größe"' ist hier die Größe der Stichprobe gemeint.) Vereinfacht gesagt ist er der Erwartungswert, um den Stichproben der gegebenen Größe vom wahren Mittelwert abweichen.}
 
 % \section{Quartile}
 % 
@@ -98,7 +98,7 @@ Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfe
 
 Berechnen Sie für folgende Anteilswerte ($q$) die Konfidenzintervalle bei den Stichprobengrößen $n=10$ und $n=100$ auf den Konfidenzniveaus $\alpha=0.9$ und und $\alpha=0.99$ (also je vier Mal den unteren un oberen Wert des Konfidenzintervalls).
 Die kritischen Werte der Normalverteilung entnehmen Sie bitte der zur Verfügung gestellten Tabelle.
- Nachkommastellen.Runden Sie auf drei Nachkommastellen.
+Runden Sie auf drei Nachkommastellen.
 
 \begin{enumerate}
   \item $q=0.21$ 
@@ -113,7 +113,7 @@ Die kritischen Werte der Normalverteilung entnehmen Sie bitte der zur Verfügung
       \textbf{q} & \textbf{n=10, $\alpha$=0.9} & \textbf{n=100, $\alpha$=0.9} & \textbf{n=10, $\alpha$=0.99} & \textbf{n=100, $\alpha$=0.99} \\
       \hline
       0.21 & $[-0.002, 0.422]$ & $[0.143, 0.277]$ & $[-0.122, 0.542]$ & $[0.105, 0.315]$ \\
-      0.49 & $[0.23, 0.75]$ & $[0.408, 0.572]$ & $[0.083, 0.897]$ & $[0.361, 0.619]$ \\
+      0.49 & $[0.230, 0.750]$ & $[0.408, 0.572]$ & $[0.083, 0.897]$ & $[0.361, 0.619]$ \\
       0.89 & $[0.727, 1.053]$ & $[0.839, 0.941]$ & $[0.635, 1.145]$ & $[0.809, 0.971]$ \\
       \hline
     \end{tabular}
@@ -121,14 +121,53 @@ Die kritischen Werte der Normalverteilung entnehmen Sie bitte der zur Verfügung
 }
 
 
-\subsection{Schlechte Praxis beim Berichten von Konfidenzintervallen}
+\subsection{Konfidenzintervalle für Mittelwerte}
 
-Warum hätte folgende Tabelle ganz ohne Nachrechnen nicht gedruckt werden dürfen?
+\subsubsection{Fehler finden}
+
+Warum hätte folgende Tabelle ganz nicht gedruckt werden dürfen?
+Der Fehler ist ohne nachzurechnen erkennbar?
 
 \begin{center}
   \includegraphics[width=1\textwidth]{graphics/cischrott}\\
   \Zeile
-  Ingrid Mora-Plaza, Joan C. Mora, Mireia Ortega and Cristina Aliaga-Garcia. Is L2 pronunciation affected by increased task complexity in pronunciation-unfocused speaking tasks? \textit{Studies in Second Language Acquisition}. First View. \url{https://doi.org/10.1017/S0272263124000470}
-  \grau{\tiny }
-
+  \grau{\footnotesize Ingrid Mora-Plaza, Joan C. Mora, Mireia Ortega and Cristina Aliaga-Garcia. Is L2 pronunciation affected by increased task complexity in pronunciation-unfocused speaking tasks? \textit{Studies in Second Language Acquisition}. First View. \url{https://doi.org/10.1017/S0272263124000470}}
 \end{center}
+
+\Sol{Die Werte für das CI bei \textit{Age of onset} können nicht korrekt sein. Erstens ist die untere Grenze höher als die obere Grenze. Zweitens liegt der Wert für $M$ (das Mittel; bei uns $\bar{x}$) liegt nicht zwischen den beiden Grenzen des KIs. Das gilt selbst dann, wenn \textit{Lower} und \textit{Upper} vertauscht wurden. Drittens sind die Differenzen zwischen den Werten $5.13-5-53=0.4$ und $5.74-5.53=0.21$. Da das gewöhnliche Konfidenzintervall immer symmetrisch ist, können also auch nicht einfach die Zahlen vertauscht worden sein.}
+
+\subsubsection{Stichprobengröße (Transfer)}
+
+Aus den Zahlen für \textit{Age at testing} können wir den Standardfehler und die Stichprobengröße rekonstruieren \textbf{auch ohne in den Originalartikel zu schauen}.
+Finden Sie zuerst den Standardfehler und dann die Stichprobengröße. Mit der Stichprobengröße können Sie dann das korrekte KI für \textit{Age of onset} berechnen.\\
+
+\Sol{(1)~Da es sich um das 95\%-Konfidenzintervall handelt, ist $z=1.96$, und die Grenzen des KIs sollten $1.96\cdot SF$ vom Stichprobenmittel entfernt sein. Wir betrachten der Einfachheit halber nur die untere Grenze.
+%
+\begin{align}
+  1.96\cdot SF &= 20.23-19.59\\
+  1.96\cdot SF &= 0.64 \\
+  SF &= 0.33
+\end{align}
+%
+(2)~Die Stichprobengröße kann man nun auf verschiedene Weise herleiten. Wir kennen die Gleichung für den Standardfehler bei einer gegebenen Standardabweichung $\sigma$ und einer gegebenen Stichprobengröße $n$ und schreiben diesen Standardfehler der Einfachheit halber nur als $SF$. Es ergibt sich.
+%
+\begin{align}
+  SF &= \frac{\sigma}{\sqrt{n}}\\[0.5\baselineskip]
+  \frac{SF}{\sigma} &= \frac{1}{\sqrt{n}}\\[0.5\baselineskip]
+  \frac{\sigma}{SF} &= \sqrt{n}\\[0.5\baselineskip]
+  \frac{\sigma}{SF}^2 &= n
+\end{align}
+%
+Wenn wir hier die bekannten Werte einsetzen, erhalten wir $n=79.37$. Es scheinen also (bis auf Rundungsfehler) 79 Probanden gewesen zu sein. Die angegebenen Werte sind auch mit leicht anderen Stichprobengrößen kompatibel. Es handelt sich um eine Schätzung, die aber die Größenordnung der Stichprobe hinreichend genau rekonstruiert. (Wir rechnen mit $n=79$ weiter, aber der Artikel informiert uns, dass es $n=82$ waren. Sie sehen daran, wie schnell sich durch Rundungen Fehler in der Rechnung fortsetzen und zu größeren Abweichungen führen können.)
+%
+\begin{align}
+  n &= \frac{2.94}{0.33}^2\\[0.5\baselineskip]
+  n &= 79.37
+\end{align}
+%
+(3)~Für das KI des zweiten Werts gilt weiterhin $z=1.96$. Wir erhalten:
+\begin{align}
+ KI=\bar{x}\pm1.96\cdot\frac{1.78}{\sqrt{79}} 
+\end{align}
+%
+Da wir noch nicht wissen, was von dem präsentierten Datensalat das Mittel ist, betrachten wir $1.96\cdot\frac{1.78}{\sqrt{79}}=0,39$. Die Differenz $5.53-5.13=0.4$ ist dazu gleich bis auf Rundungsfehler, während $5.74$ nicht in eine solche Beziehung zu den anderen Werten gesetzt werden kann. Vermutlich ist $5.74$ verschrieben zu $4.74=5.13-0.39$, und das Mittel ist tatsächlich $5.13$.}
