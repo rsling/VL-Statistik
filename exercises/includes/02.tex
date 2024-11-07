@@ -31,9 +31,9 @@ Ermitteln Sie den Modus und wo möglich den Median für folgende Messreihen von 
 % Zeichnen Sie Histogramme (Häufigkeitsdiagramme) und ermitteln Sie den Modus und wenn möglich den Median für folgende Messreihen:
 
 \begin{enumerate}
-  \item $x=[$Nom, Akk, Akk, Akk, Nom, Dat, Gen, Nom, Nom, Akk, Dat, Dat, Akk, Akk$]$\Sol{\\Modus: Akk, Median: n.\,d.}
-  \item $x=[$4, 5, 3, 3, 3, 2, 1, 2, 2, 1, 5, 4, 2, 2, 1, 3, 2$]$\Sol{\\Modus: 2, Median: 2}
-  \item $x=[$4.3, 5.0, 3.0, 3.3, 3.7, 2.3, 1.3, 2.7, 2.0, 1.0, 5.0, 4.3, 2.0, 2.0, 1.3, 3.0, 2.7$]$\Sol{\\Modus: 2.0, Median: 2.7}
+  \item $x_1=[$Nom, Akk, Akk, Akk, Nom, Dat, Gen, Nom, Nom, Akk, Dat, Dat, Akk, Akk$]$\Sol{\\Modus: Akk, Median: n.\,d.}
+  \item $x_2=[$4, 5, 3, 3, 3, 2, 1, 2, 2, 1, 5, 4, 2, 2, 1, 3, 2$]$\Sol{\\Modus: 2, Median: 2}
+  \item $x_3=[$4.3, 5.0, 3.0, 3.3, 3.7, 2.3, 1.3, 2.7, 2.0, 1.0, 5.0, 4.3, 2.0, 2.0, 1.3, 3.0, 2.7$]$\Sol{\\Modus: 2.0, Median: 2.7}
 \end{enumerate}
 
 \newpage
@@ -45,9 +45,12 @@ Ermitteln Sie von Hand für die untenstehenden Messreihen das arithmetische Mitt
 % Zeichnen Sie Histogramme und ermitteln Sie zuerst von Hand und dann in \texttt{R} das arithmetische Mittel, die Varianz und die Standardabweichung für folgende Messreihen:
 
 \begin{enumerate}
-  \item $x=[2.73, 1.85, 21.24, 17.97, 5.49, 18.90, 12.46, 0.97, 6.45, 7.43]$\Sol{\\$\bar{x}=9.55$, $var(x)=57.05$, $stdev(x)=7.55$}
-  \item $x=[1.00, 1.91, 3.12, 4.38, 4.72, 5.29, 3.82, 3.25, 2.04, 0.93]$\Sol{\\$\bar{x}=3.05$, $var(x)=2.36$, $stdev(x)=1.54$}
-  \item $x=[1.07, 1.06, 0.94, 1.84, 3.04, 3.22, 4.18, 5.27, 6.27, 6.75]$\Sol{\\$\bar{x}=3.36$, $var(x)=4.79$, $stdev(x)=2.19$}
+  \item $x_4=[2.73, 1.85, 21.24, 17.97, 5.49, 18.90, 12.46, 0.97, 6.45, 7.43]$%
+    \Sol{\\$\bar{x_4}=9.55$, $var(x_4)=57.05$, $s(x_4)=7.55$}
+  \item $x_5=[1.00, 1.91, 3.12, 4.38, 4.72, 5.29, 3.82, 3.25, 2.04, 0.93]$%
+    \Sol{\\$\bar{x_5}=3.05$, $var(x_5)=2.36$, $s(x_5)=1.54$}
+  \item $x_6=[1.07, 1.06, 0.94, 1.84, 3.04, 3.22, 4.18, 5.27, 6.27, 6.75]$%
+    \Sol{\\$\bar{x_6}=3.36$, $var(x_6)=4.79$, $s(x_6)=2.19$}
 \end{enumerate}
 
 \section{z-Werte und Standardfehler}
@@ -56,9 +59,9 @@ Ermitteln Sie für die Messreihen aus Aufgabe~\ref{sec:mittelstreu} die z-Werte 
 Formulieren Sie in eigenen Worten (jeweils ein Satz), was z-Werte und Standardfehler angeben.
 
 \Sol{\begin{enumerate}
-  \item z-Werte: $[-0.9, -1.02, 1.55, 1.11, -0.54, 1.24, 0.39, -1.14, -0.41, -0.28]$, $SF=2.39$
-  \item z-Werte: $[-1.33, -0.74, 0.05, 0.87, 1.09, 1.46, 0.5, 0.13, -0.66, -1.38]$, $SF=0.49$
-  \item z-Werte: $[-1.05, -1.05, -1.11, -0.7, -0.15, -0.07, 0.37, 0.87, 1.33, 1.55]$, $SF=0.69$
+  \item z-Werte $x_4$: $[-0.9, -1.02, 1.55, 1.11, -0.54, 1.24, 0.39, -1.14, -0.41, -0.28]$, $SF=2.39$
+  \item z-Werte $x_5$: $[-1.33, -0.74, 0.05, 0.87, 1.09, 1.46, 0.5, 0.13, -0.66, -1.38]$, $SF=0.49$
+  \item z-Werte $x_6$: $[-1.05, -1.05, -1.11, -0.7, -0.15, -0.07, 0.37, 0.87, 1.33, 1.55]$, $SF=0.69$
   \end{enumerate}}
 
   \Sol{Die z-Werte sind die in Standardabweichungen normierten Abweichungen der Messwerte vom Mittelwert der Stichprobe. Der Standardfehler ist die mittlere Abweichung des beobachteten Stichprobenmittels vom Populationsmittel in (unendlich) vielen Stichproben der gegebenen Größe (falls die Varianz in der Population der Varianz in der Stichprobe entspricht). (Mit "`gegebener Größe"' ist hier die Größe der Stichprobe gemeint.) Vereinfacht gesagt ist er der Erwartungswert, um den Stichproben der gegebenen Größe vom wahren Mittelwert abweichen.}
@@ -101,9 +104,9 @@ Die kritischen Werte der Normalverteilung entnehmen Sie bitte der zur Verfügung
 Runden Sie auf drei Nachkommastellen.
 
 \begin{enumerate}
-  \item $q=0.21$ 
-  \item $q=0.49$
-  \item $q=0.89$
+  \item $q_1=0.21$ 
+  \item $q_2=0.49$
+  \item $q_3=0.89$
 \end{enumerate}
 
 \Sol{%
@@ -149,16 +152,16 @@ Finden Sie zuerst den Standardfehler und dann die Stichprobengröße. Mit der St
   SF &= 0.33
 \end{align}
 %
-(2)~Die Stichprobengröße kann man nun auf verschiedene Weise herleiten. Wir kennen die Gleichung für den Standardfehler bei einer gegebenen Standardabweichung $\sigma$ und einer gegebenen Stichprobengröße $n$ und schreiben diesen Standardfehler der Einfachheit halber nur als $SF$. Es ergibt sich.
+(2)~Die Stichprobengröße kann man nun auf verschiedene Weise herleiten. Der aus meiner Sicht einfachste, aber etwas umständliche Weg: Wir kennen die Gleichung für den Standardfehler $SF$ bei einer bekannten Standardabweichung $\sigma$ (geschätzt aus einer Stichprobe als $s$) und einer gegebenen Stichprobengröße $n$. Es ergibt sich.
 %
 \begin{align}
-  SF &= \frac{\sigma}{\sqrt{n}}\\[0.5\baselineskip]
-  \frac{SF}{\sigma} &= \frac{1}{\sqrt{n}}\\[0.5\baselineskip]
-  \frac{\sigma}{SF} &= \sqrt{n}\\[0.5\baselineskip]
-  \frac{\sigma}{SF}^2 &= n
+  SF &= \frac{s}{\sqrt{n}}\\[0.5\baselineskip]
+  \frac{SF}{s} &= \frac{1}{\sqrt{n}}\\[0.5\baselineskip]
+  \frac{s}{SF} &= \sqrt{n}\\[0.5\baselineskip]
+  \frac{s^2}{SF} &= n
 \end{align}
 %
-Wenn wir hier die bekannten Werte einsetzen, erhalten wir $n=79.37$. Es scheinen also (bis auf Rundungsfehler) 79 Probanden gewesen zu sein. Die angegebenen Werte sind auch mit leicht anderen Stichprobengrößen kompatibel. Es handelt sich um eine Schätzung, die aber die Größenordnung der Stichprobe hinreichend genau rekonstruiert. (Wir rechnen mit $n=79$ weiter, aber der Artikel informiert uns, dass es $n=82$ waren. Sie sehen daran, wie schnell sich durch Rundungen Fehler in der Rechnung fortsetzen und zu größeren Abweichungen führen können.)
+Wenn wir hier die bekannten Werte einsetzen, erhalten wir $n=79.37$. Es scheinen also (bis auf Rundungsfehler) 79 Probanden gewesen zu sein. Die angegebenen Werte sind auch mit leicht anderen Stichprobengrößen kompatibel. Es handelt sich um eine Schätzung, die aber die Größenordnung der Stichprobe hinreichend genau rekonstruiert. (Wir rechnen mit $n=79$ weiter, aber der Artikel informiert uns, dass es $n=82$ waren. Sie sehen daran, wie schnell sich durch Rundungen Fehler in der Rechnung fortsetzen und zu zumindest nicht trivialen Abweichungen führen können.)
 %
 \begin{align}
   n &= \frac{2.94}{0.33}^2\\[0.5\baselineskip]
@@ -170,4 +173,4 @@ Wenn wir hier die bekannten Werte einsetzen, erhalten wir $n=79.37$. Es scheinen
  KI=\bar{x}\pm1.96\cdot\frac{1.78}{\sqrt{79}} 
 \end{align}
 %
-Da wir noch nicht wissen, was von dem präsentierten Datensalat das Mittel ist, betrachten wir $1.96\cdot\frac{1.78}{\sqrt{79}}=0,39$. Die Differenz $5.53-5.13=0.4$ ist dazu gleich bis auf Rundungsfehler, während $5.74$ nicht in eine solche Beziehung zu den anderen Werten gesetzt werden kann. Vermutlich ist $5.74$ verschrieben zu $4.74=5.13-0.39$, und das Mittel ist tatsächlich $5.13$.}
+Da wir noch nicht wissen, was von dem präsentierten Datensalat das Mittel ist, betrachten wir $1.96\cdot\frac{1.78}{\sqrt{79}}=0,39$. Die Differenz $5.53-5.13=0.4$ ist dem gleich bis auf Rundungsfehler, während $5.74$ nicht in eine solche Beziehung zu den anderen Werten gesetzt werden kann. Vermutlich ist $5.74$ verschrieben zu $4.74=5.13-0.39$, und das Mittel ist tatsächlich $5.13$.}
