@@ -203,7 +203,7 @@ Um zu zeigen, dass dies tatsächlich die Varianz für Bernoulli-Stichproben ist,
 Die Varianz für eine solche Stichprobe (oder Grundgesamtheit) ist dann wie zu erwarten gegeben:
 
 \begin{align}
-  s^2(x)=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})}{n}
+  s^2(x)=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n}
 \end{align}
 
 Zeigen Sie für solche Fälle, dass:
@@ -215,24 +215,21 @@ Zeigen Sie für solche Fälle, dass:
 Es ist also hinreichend, zu zeigen, dass:
 
 \begin{align}
-  \frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})}{n}=q(1-q)
+  \frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}{n}=q(1-q)
 \end{align}
 
 Berechnen Sie anschließend zur Kontrolle auf beiden Wegen das Ergebnis für $x_7=[0,1,1,0,0,1,1,1,1,0]$.
 
-\Sol{Wir kürzen $\sum\limits_{i=1}^{n}$ als $\sum$ ab.
-\begin{align}
-  &\frac{\sum(x_i-\bar{x})}{n}\\[0.5\baselineskip]
-  \frac{\sum x_i}{n}&\cdot\frac{\sum(1-x_i)}{n}\\[0.5\baselineskip]
-  q&\cdot(1-q)
-\end{align}%
-Und das war es eigentlich schon.
-Die Definition der Anteilswerte für Einsen und Nullen des entspricht den Multiplikanden, wenn man die Summenformel auflöst.
-Die Beispielrechnung:
-  \begin{align}
-    x_7&=[0,1,1,0,0,1,1,1,1,0,0]\\
-    n_7&=10\\
-    \bar{x_7}&=q_7=0.6\\
-    s^2(x_7)&=\frac{\sum(x_{7_i}-\bar{x_7})^2}{n_7}=0.24=q_7(1-q_7)=0.6\cdot0.4\\
-  \end{align}%
-}
+% \Sol{Wir kürzen $\sum\limits_{i=1}^{n}$ als $\sum$ und $x_i$ als $x$ ab.
+% \begin{align}
+%   q&\cdot(1-q)\\[0.5\baselineskip]
+%   \frac{\sum x}{n}&\cdot\left(1-\frac{\sum x}{n}\right)\\[0.5\baselineskip]
+% \end{align}%
+% Die Beispielrechnung:
+%   \begin{align}
+%     x_7&=[0,1,1,0,0,1,1,1,1,0,0]\\
+%     n_7&=10\\
+%     \bar{x_7}&=q_7=0.6\\
+%     s^2(x_7)&=\frac{\sum(x_{7_i}-\bar{x_7})^2}{n_7}=0.24=q_7(1-q_7)=0.6\cdot0.4\\
+%   \end{align}%
+% }
