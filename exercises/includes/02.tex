@@ -140,7 +140,7 @@ Der Fehler ist ohne nachzurechnen erkennbar?
 
 \Sol{Die Werte für das CI bei \textit{Age of onset} können nicht korrekt sein. Erstens ist die untere Grenze höher als die obere Grenze. Zweitens liegt der Wert für $M$ (das Mittel; bei uns $\bar{x}$) liegt nicht zwischen den beiden Grenzen des KIs. Das gilt selbst dann, wenn \textit{Lower} und \textit{Upper} vertauscht wurden. Drittens sind die Differenzen zwischen den Werten $5.13-5-53=0.4$ und $5.74-5.53=0.21$. Da das gewöhnliche Konfidenzintervall immer symmetrisch ist, können also auch nicht einfach die Zahlen vertauscht worden sein.}
 
-\subsubsection{Stichprobengröße (Transfer)}
+\subsubsection{Transfer: Stichprobengröße}
 
 Aus den Zahlen für \textit{Age at testing} können wir den Standardfehler und die Stichprobengröße rekonstruieren \textbf{auch ohne in den Originalartikel zu schauen}.
 Finden Sie zuerst den Standardfehler und dann die Stichprobengröße. Mit der Stichprobengröße können Sie dann das korrekte KI für \textit{Age of onset} berechnen.\\
@@ -175,3 +175,64 @@ Wenn wir hier die bekannten Werte einsetzen, erhalten wir $n=79.37$. Es scheinen
 \end{align}
 %
 Da wir noch nicht wissen, was von dem präsentierten Datensalat das Mittel ist, betrachten wir $1.96\cdot\frac{1.78}{\sqrt{79}}=0,39$. Die Differenz $5.53-5.13=0.4$ ist dem gleich bis auf Rundungsfehler, während $5.74$ nicht in eine solche Beziehung zu den anderen Werten gesetzt werden kann. Vermutlich ist $5.74$ verschrieben zu $4.74=5.13-0.39$, und das Mittel ist tatsächlich $5.13$.}
+
+
+\section{Transfer: Anteilswerte und Mittelwerte}
+
+In dieser Transferaufgabe geht es darum, zu zeigen, wie sich der Standardfehler für Anteilswerte aus dem Standardfehler für Mittelwerte ableiten lässt.
+Der allgemeine Standardfehler für Normalverteilungen wird berechnet mit:
+
+\begin{align}
+  SE=\frac{s}{\sqrt{n}}=\frac{\sqrt{s^2}}{\sqrt{n}}=\blau{\sqrt{\frac{s^2}{n}}}
+\end{align}
+
+In der Wurzel der dritten Variante steht also die Varianz (hier der Einfachheit halber die nicht korrigierte Version mit $n$ statt $n-1$ im Nenner).
+Der Standardfehler für Anteilswerte --- also für Stichproben von $n$ Einsen und Nullen (also letztlich Zähldaten aus einem Bernoulli-Experiment) wie $x_7=[0,1,1,0,0,1,1,1,1,0]$ --- wird berechnet mit:
+
+\begin{align}
+  SE=\blau{\sqrt{\frac{q(1-q)}{n}}}
+\end{align}
+
+Was bei dem SE für Mittelwerte die Varianz ist, erscheint hier als $p(1-p)$.
+Um zu zeigen, dass dies tatsächlich die Varianz für Bernoulli-Stichproben ist, können wir die zunächst genauso berechnen wie für Mittelwerte, wenn wir den Anteilswert von Einsen $q$ als Mittelwert ansetzen.
+
+\begin{align}
+  q=\bar{x}=\frac{\sum\limits_{i=1}^{n}x_i}{n}
+\end{align}
+
+Die Varianz für eine solche Stichprobe (oder Grundgesamtheit) ist dann wie zu erwarten gegeben:
+
+\begin{align}
+  s^2(x)=\frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})}{n}
+\end{align}
+
+Zeigen Sie für solche Fälle, dass:
+
+\begin{align}
+  \blau{\sqrt{\frac{s^2}{n}}=\sqrt{\frac{q(1-q)}{n}}}
+\end{align}
+
+Es ist also hinreichend, zu zeigen, dass:
+
+\begin{align}
+  \frac{\sum\limits_{i=1}^{n}(x_i-\bar{x})}{n}=q(1-q)
+\end{align}
+
+Berechnen Sie anschließend zur Kontrolle auf beiden Wegen das Ergebnis für $x_7=[0,1,1,0,0,1,1,1,1,0]$.
+
+\Sol{Wir kürzen $\sum\limits_{i=1}^{n}$ als $\sum$ ab.
+\begin{align}
+  &\frac{\sum(x_i-\bar{x})}{n}\\[0.5\baselineskip]
+  \frac{\sum x_i}{n}&\cdot\frac{\sum(1-x_i)}{n}\\[0.5\baselineskip]
+  q&\cdot(1-q)
+\end{align}%
+Und das war es eigentlich schon.
+Die Definition der Anteilswerte für Einsen und Nullen des entspricht den Multiplikanden, wenn man die Summenformel auflöst.
+Die Beispielrechnung:
+  \begin{align}
+    x_7&=[0,1,1,0,0,1,1,1,1,0,0]\\
+    n_7&=10\\
+    \bar{x_7}&=q_7=0.6\\
+    s^2(x_7)&=\frac{\sum(x_{7_i}-\bar{x_7})^2}{n_7}=0.24=q_7(1-q_7)=0.6\cdot0.4\\
+  \end{align}%
+}
