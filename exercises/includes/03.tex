@@ -19,7 +19,43 @@ Die 17 Probanden vergeben die folgenden Punktzahlen für die Verb-Zweit-Sätze.
 (b) Vergleichen Sie das Ergebnis mit einem t-Test, ebenfalls bei sig=0.01.
 (c) Falls Sie Abweichungen feststellen, wie kommen diese Abweichungen zustande?
 (d) Quantifizieren Sie die Effektstärke für den t-Test mit $d$ und $r^2$.
-Interpretieren Sie die Testergebnisse und die Effektstärke.
+Interpretieren Sie die Testergebnisse und die Effektstärke.\\
+
+\Sol{%
+  (a) \begin{align}
+    \bar{x}&=31.35\\[0.25\baselineskip]
+    SF_{z}&=\frac{8.4}{\sqrt{17}}=2.04\\[0.25\baselineskip]
+    z&=\frac{31.35-22.3}{2.04}=4.44\\[0.25\baselineskip]
+    4.44&>2.58 \text{ (sig-Niveau erreicht.)}
+  \end{align}
+}
+
+\Sol{%
+  (b) \begin{align}
+    sd_{x}&=13.35\\[0.25\baselineskip]
+    SF_{t}&=\frac{13.35}{\sqrt{17}}=3.24\\[0.25\baselineskip]
+    t&=\frac{31.35-22.3}{3.24}=2.8\\[0.25\baselineskip]
+%    c_{t_{16},0.99}&=2.92\\[0.25\baselineskip]
+    2.8&\not>2.92 \text{ (sig-Niveau nicht erreicht.)}
+  \end{align}
+}
+
+\Sol{%
+  (c) Die Abweichung zwischen den Ergebnissen hat zwei Ursachen:
+  (i) Die Varianz in der Stichprobe ist deutlich größer als die in der Approximation der Grundgesamtheit.
+  Dadurch wird der Standardfehler größer, und der t-Wert ist kleiner als der z-Wert.
+  (ii) Durch die Abhängigkeit der t-Verteilung von den Freiheitsgraden (hier 16) ist der kritische Wert größer (2.92 gegenüber 2.58), und der t-Wert liegt knapp darunter.\\
+}
+
+\Sol{%
+  (d)
+  \begin{align}
+    d&=\frac{31.35-22.3}{13.35}=0.68\\[0.25\baselineskip]
+    r^2&=\frac{2.8^2}{2.8^2+16}=0.33
+  \end{align}
+}
+
+\Sol{Gemäß z-Test ist die mittlere Bewertung der Sätze durch Probanden nicht dieselbe, wenn die besondere Interpunktion hinzugefügt wird, oder es ist ein seltenes Ereignis eingetreten. Selten heißt, dass nur in einem von hundert Fällen ein solches oder ein extremeres Ereignis zu erwarten ist, wenn die Mittellwerte in der Grundgesamtheit gleich sind und man dasselbe Experiment immer wieder macht. Der z-Test liefert also vorläufige Evidenz dafür, dass es einen Unterschied geben könnte. Das Ergebnis des t-Tests liefert keine Evidenz für irgendetwas und darf nicht inferenziell interpretiert werden. Die Werte für $d$ und $r^2$ dürfen daher auch nicht interpretiert werden. Insgesamt sollte auch das Ergebnis des z-Tests mit Vorsicht behandelt werden, da die Varianz in der Stichprobe erheblich vom bekannten Wert $\sigma$ abweicht. Es muss überprüft werden, ob das aktuelle Experiment im Design oder in der Durchführung von den Referenz-Experimenten abweicht.}
 
 \section{t-Test für zwei Stichprobenmittel} \label{sec:t}
 
@@ -39,16 +75,82 @@ In den Gruppen wurden für die Verbzweitstellung folgende Werte vergeben:
 Interpretieren Sie die Testergebnisse und die Effektstärke.
 (c) \textbf{(Bonus)} Es stellt sich heraus, dass die Person, die Gruppe M betreut hat, den letzten vier Teilnehmenden aus Versehen verraten hat, um welches Phänomen es im Experiment geht.
 Die letzten vier Werte aus $x_M$ müssen also entfernt werden.
-Berechnen Sie den neuen korrekten t-Test und interpretieren Sie das Ergebnis.
+Berechnen Sie den neuen korrekten t-Test und interpretieren Sie das Ergebnis.\\
+
+\Sol{%
+  (a) \begin{align}
+    \bar{x}_O&=27\\[0.25\baselineskip]
+    \bar{x}_M&=35.8\\[0.25\baselineskip]
+    var_{x_O}&=124.57\\[0.25\baselineskip]
+    var_{x_M}&=102.6\\[0.25\baselineskip]
+    SF_{\bar{x}_O-\bar{x}_M}&=\sqrt{\frac{124.57}{15}+\frac{102.6}{15}}=3.89\\[0.25\baselineskip]
+    t&=\frac{27-35.8}{3.89}=-2.26\\[0.25\baselineskip]
+    -2.26&<-2.05 \text{ (sig-Niveau bei sig=0.05 erreicht.)}\\[0.25\baselineskip]
+    -2.26&\not<-2.76 \text{ (sig-Niveau bei sig=0.01 nicht erreicht.)}
+  \end{align}
+}
+
+\Sol{%
+  (b) \begin{align}
+    var_{x_O,x_M}&=\frac{1744+1436.4}{14+14}=113.59\\[0.25\baselineskip]
+    d&=\frac{27-35.8}{\sqrt{113.59}}=-0.83\\[0.25\baselineskip]
+    r^2&=\frac{5.11}{5.11+28}=0.15
+\end{align}
+}
+
+\Sol{%
+  (c) \begin{align}
+    \bar{x}_{M\prime}=36\\
+    var_{x_O,x_M\prime}&=\frac{1744+962}{14+10}=112.75\\[0.25\baselineskip]
+    SF_{\bar{x}_O-\bar{x}_M\prime}&=\sqrt{\frac{112.75}{15}+\frac{112.75}{11}}=4.22\\[0.25\baselineskip]
+    t&=\frac{27-36}{4.22}=-2.14
+  \end{align}
+}
+
+\Sol{Die Interpretation bleibt im Wesentlichen dieselbe, auch wenn vier Datenpunkte gelöscht werden und die Varianz damit als zusammengelegte Varianz berechnet wird.}
 
 \section{Transfer: Tests und Konfidenzintervalle}
 
-Berechnen Sie die 95\%- und 99\%-Konfidenzintervalle für Aufgabe~\ref{sec:t}.
+Berechnen Sie die 95\%- und 99\%-Konfidenzintervalle für Aufgabe~\ref{sec:t} (mit den vollen Stichproben, nicht mit dem um vier Datenpunkte reduzierten Datensatz).
 Versuchen Sie zu verstehen, in welcher Relation die Tests und die Konfidenzintervalle stehen.
+
+\Sol{%
+  \begin{align}
+    SF_O&=\sqrt{\frac{124.57}{15}}=2.88\\[0.25\baselineskip]
+    KI_{95,O}&=27\pm1.96\cdot 2.88=[21.35, 32.65]\\[0.25\baselineskip]
+    KI_{99,O}&=27\pm2.85\cdot 2.88=[18.79, 35.21]\\[0.25\baselineskip]
+    SF_M&=\sqrt{\frac{102.6}{15}}=2.62\\[0.25\baselineskip]
+    KI_{95,M}&=35.8\pm1.96\cdot 2.62=[30.67, 40.93]\\[0.25\baselineskip]
+    KI_{99,M}&=35.8\pm2.85\cdot 2.62=[28.35, 43.25]
+  \end{align}
+}
+
+\Sol{Die KIs fokussieren die Genauigkeit einer Schätzung, während die p-Werte bzw. der Signifikanztest eine Ja\slash Nein-Entscheidung über den Wert der Evidenz für eine wissenschaftliche Inferenz zum Ziel haben.
+Im Prinzip gilt dabei: Die äußeren Grenzen der Konfindenzintervalle korrespondieren mit dem Erreichen oder Verfehlen der kritischen Werte des Tests.
+Es gilt ein Zusammenhang der folgenden Art:
+Überlappen die KIs bei einem bestimmten Konfidenzniveau, so wird der Unterschiedstest beim zugehörigen sig-Niveau nicht signifikant.
+Überlappen die KIs nicht, wird der Test signifikant.
+Das ist wünschenswert, da die KIs mit steigendem Konfidenzniveau breiter werden, weil die Schätzung bei einem hohen Konfidenzniveau mehr Werte einschließt.
+Bei einem niedrigeren sig-Niveau ist es dementsprechend "`schwerer"', ein signifikantes Testergebnis (also Nicht-Überlappung der Intervalle) zu erreichen.
+Im gegebenen Fall überschneiden die 95\%-Konfidenzintervalle einander allerdings knapp um $32.65-30.67=1.98$, obwohl der t-Test sig=0.05 erreicht hat.
+Das liegt in diesem Fall daran, dass die asymptotisch normalen KIs zwei einzelne Schätzungen darstellen, der t-Test aber ein einzelner asymptotischer Test der Mittelwertdifferenz auf $H0=\bar{x}_O-\bar{x}_M=0$ ist.
+Ohne auf die Details einzugehen, ist es plausibel, dass hier nicht dasselbe herauskommt, da es sich nicht um die genau zum gerechneten Test korrespondierenden KIs handelt.
+Berechnet man hingegen das KI für $\bar{x}_O-\bar{x}_M$, so konvergiert dies sowohl in der normalen als auch der t-Approximation mit dem Testergebnis:
+Das 95\%-KI schließt in beiden Fällen 0 ein, das 99\%-KI nicht.
+}
+
+\Sol{%
+  \begin{align}
+    KI_{z,95,\bar{x}_M-\bar{x}_O}=(27-35.8)\cdot 1.96\cdot 3.89=[-16.43, -1.17]\\[0.25\baselineskip]
+    KI_{z,99,\bar{x}_M-\bar{x}_O}=(27-35.8)\cdot 2.85\cdot 3.89=[-18.84, 1.24]\\[0.25\baselineskip]
+    KI_{t_{28},95,\bar{x}_M-\bar{x}_O}=(27-35.8)\cdot 2.05\cdot 3.89=[-16.78, -0.82]\\[0.25\baselineskip]
+    KI_{t_{28},99,\bar{x}_M-\bar{x}_O}=(27-35.8)\cdot 2.76\cdot 3.89=[-19.54, 1.94]
+  \end{align}
+}
 
 \section{Transfer: Einseitige und zweiseitige Tests}
 
-Wie haben zweiseitige Tests gerechnet.
+Wir haben sogenannte zweiseitige Tests gerechnet.
 Der Unterschied zu einem einseitigen Test besteht in der Art der H0 und der zugehörigen theoretischen Erwartung an das Testergebnis.
 Überlegen Sie anhand der untenstehenden H0s für den Zwei-Stichproben-t-Test, wie sich die Tests unterscheiden könnten, und was sich mathematisch ändern müsste.
 
